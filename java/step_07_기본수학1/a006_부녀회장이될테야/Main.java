@@ -1,9 +1,9 @@
-/*
- 	¹®Á¦ÃâÃ³ : BACKJOON, https://www.acmicpc.net/problem/2775
- 	¹®Á¦¹øÈ£ : 2775
- 	¾Ë°í¸®Áò : ¼öÇĞ, ±¸Çö
+ï»¿/*
+ 	ë¬¸ì œì¶œì²˜ : BACKJOON, https://www.acmicpc.net/problem/2775
+ 	ë¬¸ì œë²ˆí˜¸ : 2775
+ 	ì•Œê³ ë¦¬ì¦˜ : ìˆ˜í•™, êµ¬í˜„
 */
-package step_07_±âº»¼öÇĞ1.a006_ºÎ³àÈ¸ÀåÀÌµÉÅ×¾ß;
+package step_07_ê¸°ë³¸ìˆ˜í•™1.a006_ë¶€ë…€íšŒì¥ì´ë í…Œì•¼;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -18,14 +18,14 @@ public class Main {
 		
 		int T = Integer.parseInt(br.readLine());
 		
-		int k = 0;	// Ãş
-		int n = 0;	// È£
+		int k = 0;	// ì¸µ
+		int n = 0;	// í˜¸
 		for(int x=0; x<T; x++)
 		{
 			k = Integer.parseInt(br.readLine());
 			n = Integer.parseInt(br.readLine());
 			
-			int[][] knArray = new int[k+1][n];		//¹®Á¦ÀÇ kÃşÀº 0ÃşºÎÅÍ½ÃÀÛÇÏ¹Ç·Î. ¹è¿­ row °³¼ö´Â +1 ÇØÁà¾ßÇÔ
+			int[][] knArray = new int[k+1][n];		//ë¬¸ì œì˜ kì¸µì€ 0ì¸µë¶€í„°ì‹œì‘í•˜ë¯€ë¡œ. ë°°ì—´ row ê°œìˆ˜ëŠ” +1 í•´ì¤˜ì•¼í•¨
 			
 			for(int i=0; i<knArray.length; i++)
 			{
@@ -33,22 +33,22 @@ public class Main {
 				
 				for(int j=0; j<n; j++)
 				{
-					if(i==0)	// ¸Ç ¹Ù´ÚÃşÀÌ¶ó¸é °ª ÃÊ±âÈ­ÇØÁÜ
+					if(i==0)	// ë§¨ ë°”ë‹¥ì¸µì´ë¼ë©´ ê°’ ì´ˆê¸°í™”í•´ì¤Œ
 					{
-						knArray[i][j] = j+1;	// ¹Ù´ÚÃş ÃÊ±âÈ­
-						upFloorCalc += j+1;		// À­Ãş °è»êÇØ¼­ ³Ö¾îÁÜ
+						knArray[i][j] = j+1;	// ë°”ë‹¥ì¸µ ì´ˆê¸°í™”
+						upFloorCalc += j+1;		// ìœ—ì¸µ ê³„ì‚°í•´ì„œ ë„£ì–´ì¤Œ
 						
-						if(k > 0 )	// À§¿¡ ÃşÀÌ Á¸ÀçÇÑ´Ù¸é
+						if(k > 0 )	// ìœ„ì— ì¸µì´ ì¡´ì¬í•œë‹¤ë©´
 						{
-							knArray[i+1][j] = upFloorCalc;	// À­Ãş °è»êÇØ¼­ ³Ö¾îÁÜ 
+							knArray[i+1][j] = upFloorCalc;	// ìœ—ì¸µ ê³„ì‚°í•´ì„œ ë„£ì–´ì¤Œ 
 						}
 					}
-					else		// ¹Ù´ÚÃşÀÌ ¾Æ´Ï¶ó¸é
+					else		// ë°”ë‹¥ì¸µì´ ì•„ë‹ˆë¼ë©´
 					{
-						if(i != knArray.length-1)	// À§¿¡ ÃşÀÌ Á¸ÀçÇÑ´Ù¸é
+						if(i != knArray.length-1)	// ìœ„ì— ì¸µì´ ì¡´ì¬í•œë‹¤ë©´
 						{
-							upFloorCalc += knArray[i][j];	// À­Ãş°è»ê
-							knArray[i+1][j] = upFloorCalc; 	// À­Ãş¿¡ °ª ³Ö¾îÁÜ
+							upFloorCalc += knArray[i][j];	// ìœ—ì¸µê³„ì‚°
+							knArray[i+1][j] = upFloorCalc; 	// ìœ—ì¸µì— ê°’ ë„£ì–´ì¤Œ
 						}
 					}
 					
@@ -57,7 +57,7 @@ public class Main {
 			}
 			
 			/*
-			 * ¹è¿­ ÀüÃ¼ Ãâ·Â
+			 * ë°°ì—´ ì „ì²´ ì¶œë ¥
 			for(int[] item : knArray)
 			{
 				for(int innerItem : item)

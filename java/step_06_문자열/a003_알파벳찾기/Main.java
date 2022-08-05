@@ -1,9 +1,9 @@
-/*
- 	¹®Á¦ÃâÃ³ : BACKJOON, https://www.acmicpc.net/problem/11720
- 	¹®Á¦¹øÈ£ : 11720
- 	¾Ë°í¸®Áò : ¼öÇĞ, ±¸Çö, ¹®ÀÚ¿­
+ï»¿/*
+ 	ë¬¸ì œì¶œì²˜ : BACKJOON, https://www.acmicpc.net/problem/11720
+ 	ë¬¸ì œë²ˆí˜¸ : 11720
+ 	ì•Œê³ ë¦¬ì¦˜ : ìˆ˜í•™, êµ¬í˜„, ë¬¸ìì—´
 */
-package step_06_¹®ÀÚ¿­.a003_¾ËÆÄºªÃ£±â;
+package step_06_ë¬¸ìì—´.a003_ì•ŒíŒŒë²³ì°¾ê¸°;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -14,8 +14,8 @@ import java.io.OutputStreamWriter;
 class Main {
 	
 	/*
-	 * param1 : ÀÔ·Â¹ŞÀº ÃÖÃÊÀÇ ¹®ÀÚ¿­
-	 * param2 : a ~ z Áß ÇöÀç °Ë»çÇÒ ¹®ÀÚ¿­
+	 * param1 : ì…ë ¥ë°›ì€ ìµœì´ˆì˜ ë¬¸ìì—´
+	 * param2 : a ~ z ì¤‘ í˜„ì¬ ê²€ì‚¬í•  ë¬¸ìì—´
 	 */
 	public String findIdx(StringBuilder _inputStr, char _targetChar)
 	{
@@ -38,15 +38,15 @@ class Main {
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		StringBuilder sb = new StringBuilder();
 		
-		char startChar = 'a';		// ÀÔ·Â¹ŞÀ»¼öÀÖ´Â ¹üÀ§ÀÇ a ~ z ¼ıÀÚÁß Ã¹¹øÂ° ¹®ÀÚ ¾Æ½ºÅ° ÄÚµå°ª
-		char endChar = 'z';			// ÀÔ·Â¹ŞÀ»¼öÀÖ´Â ¹üÀ§ÀÇ a ~ z ¼ıÀÚÁß ¸¶Áö¸· ¹®ÀÚ ¾Æ½ºÅ° ÄÚµå°ª
+		char startChar = 'a';		// ì…ë ¥ë°›ì„ìˆ˜ìˆëŠ” ë²”ìœ„ì˜ a ~ z ìˆ«ìì¤‘ ì²«ë²ˆì§¸ ë¬¸ì ì•„ìŠ¤í‚¤ ì½”ë“œê°’
+		char endChar = 'z';			// ì…ë ¥ë°›ì„ìˆ˜ìˆëŠ” ë²”ìœ„ì˜ a ~ z ìˆ«ìì¤‘ ë§ˆì§€ë§‰ ë¬¸ì ì•„ìŠ¤í‚¤ ì½”ë“œê°’
 		sb.append(br.readLine());
 
-		String result = "";			// ÃÖÁ¾ °á°ú¸¦ ´ãÀ» º¯¼ö
+		String result = "";			// ìµœì¢… ê²°ê³¼ë¥¼ ë‹´ì„ ë³€ìˆ˜
 		
-		for(; startChar <= endChar; startChar++)		// ¾Æ½ºÅ°ÄÚµå a ~ z ±îÁö loop
+		for(; startChar <= endChar; startChar++)		// ì•„ìŠ¤í‚¤ì½”ë“œ a ~ z ê¹Œì§€ loop
 		{
-			result += main.findIdx(sb, startChar) + " ";	// findIdx ¸Ş¼Òµå È£Ãâ
+			result += main.findIdx(sb, startChar) + " ";	// findIdx ë©”ì†Œë“œ í˜¸ì¶œ
 			
 		}
 

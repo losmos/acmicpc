@@ -1,9 +1,9 @@
-/*
- 	¹®Á¦ÃâÃ³ : BACKJOON, https://www.acmicpc.net/problem/2941
- 	¹®Á¦¹øÈ£ : 2941
- 	¾Ë°í¸®Áò : ±¸Çö, ¹®ÀÚ¿­
+ï»¿/*
+ 	ë¬¸ì œì¶œì²˜ : BACKJOON, https://www.acmicpc.net/problem/2941
+ 	ë¬¸ì œë²ˆí˜¸ : 2941
+ 	ì•Œê³ ë¦¬ì¦˜ : êµ¬í˜„, ë¬¸ìì—´
 */
-package step_06_¹®ÀÚ¿­.a009_Å©·Î¾ÆÆ¼¾Æ¾ËÆÄºª;
+package step_06_ë¬¸ìì—´.a009_í¬ë¡œì•„í‹°ì•„ì•ŒíŒŒë²³;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -20,24 +20,24 @@ class Main {
 
 		String[] croatia = new String[] {"c=", "c-", "dz=", "d-", "lj", "nj", "s=", "z="};
 		
-		sb.append(br.readLine());		// ¹®ÀÚ¿­ ÀÔ·Â¹ŞÀ½
+		sb.append(br.readLine());		// ë¬¸ìì—´ ì…ë ¥ë°›ìŒ
 		
-		String sbStr = sb.toString();	// ÀÔ·Â¹ŞÀº ¹®ÀÚ¿­ sbStr º¯¼ö¿¡ ´ãÀ½
-		String replaceStr = sbStr;			// replaceÇÑ °á°ú ÀÓ½Ã·Î ´ãÀ» º¯¼ö
+		String sbStr = sb.toString();	// ì…ë ¥ë°›ì€ ë¬¸ìì—´ sbStr ë³€ìˆ˜ì— ë‹´ìŒ
+		String replaceStr = sbStr;			// replaceí•œ ê²°ê³¼ ì„ì‹œë¡œ ë‹´ì„ ë³€ìˆ˜
 		
 		int checkLength = sbStr.length();
 		int wordCount = 0;
 		for(int i=0; i<croatia.length; i++)
 		{
-			replaceStr = replaceStr.replaceAll(croatia[i], "0");		// 0À¸·Î replace ¼öÇà
-			if(checkLength != replaceStr.length())				// replaceAll·Î º¯ÇÑ°ªÀÌ ÀÖ´Ù¸é
+			replaceStr = replaceStr.replaceAll(croatia[i], "0");		// 0ìœ¼ë¡œ replace ìˆ˜í–‰
+			if(checkLength != replaceStr.length())				// replaceAllë¡œ ë³€í•œê°’ì´ ìˆë‹¤ë©´
 			{
-				wordCount += (checkLength - replaceStr.length()) / (croatia[i].length()-1);	// º¯ÇÑ¸¸Å­ÀÇ ±æÀÌ¸¦ °è»êÇØ¼­ ´Ü¾î ¼ö counting (-1À» ÇØÁÖ´Â°Ç replaceAllÀ»ÅëÇØ "0"À¸·Î ¹Ù²ãÁÖ±â¶§¹®¿¡ "0"¸¸Å­ÀÇ length¸¦ °í·ÁÇÔ)
+				wordCount += (checkLength - replaceStr.length()) / (croatia[i].length()-1);	// ë³€í•œë§Œí¼ì˜ ê¸¸ì´ë¥¼ ê³„ì‚°í•´ì„œ ë‹¨ì–´ ìˆ˜ counting (-1ì„ í•´ì£¼ëŠ”ê±´ replaceAllì„í†µí•´ "0"ìœ¼ë¡œ ë°”ê¿”ì£¼ê¸°ë•Œë¬¸ì— "0"ë§Œí¼ì˜ lengthë¥¼ ê³ ë ¤í•¨)
 				checkLength = replaceStr.length();
 			}
 		}
 		
-		wordCount += replaceStr.length() - (replaceStr.length() - replaceStr.replaceAll("0", "").length());	// replaceAll ÇÏ°í ³²Àº ³ª¸ÓÁö ¹®ÀÚ´Â Å©·Î¾ÆÆ¼¾Æ ¾ËÆÄºªÀÌ ¾Æ´Ï¹Ç·Î, length 1°³´ç ¹®ÀÚ 1°³¾¿ Ãë±ŞÇØ¼­ ´õÇØÁÜ
+		wordCount += replaceStr.length() - (replaceStr.length() - replaceStr.replaceAll("0", "").length());	// replaceAll í•˜ê³  ë‚¨ì€ ë‚˜ë¨¸ì§€ ë¬¸ìëŠ” í¬ë¡œì•„í‹°ì•„ ì•ŒíŒŒë²³ì´ ì•„ë‹ˆë¯€ë¡œ, length 1ê°œë‹¹ ë¬¸ì 1ê°œì”© ì·¨ê¸‰í•´ì„œ ë”í•´ì¤Œ
 		
 		bw.write(String.valueOf(wordCount));
 		bw.flush();

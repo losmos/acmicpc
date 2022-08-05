@@ -1,9 +1,9 @@
-/*
- 	¹®Á¦ÃâÃ³ : BACKJOON, https://www.acmicpc.net/problem/10171
- 	¹®Á¦¹øÈ£ : 10171
- 	¾Ë°í¸®Áò : ±¸Çö
+ï»¿/*
+ 	ë¬¸ì œì¶œì²˜ : BACKJOON, https://www.acmicpc.net/problem/10171
+ 	ë¬¸ì œë²ˆí˜¸ : 10171
+ 	ì•Œê³ ë¦¬ì¦˜ : êµ¬í˜„
 */
-package Step_01_ÀÔÃâ·Â°ú_»çÄ¢¿¬»ê.a003_°í¾çÀÌ;
+package Step_01_ì…ì¶œë ¥ê³¼_ì‚¬ì¹™ì—°ì‚°.a003_ê³ ì–‘ì´;
 
 public class Main {
 	public static void main(String[] args) {

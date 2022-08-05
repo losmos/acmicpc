@@ -1,9 +1,9 @@
-/*
- 	¹®Á¦ÃâÃ³ : BACKJOON, https://www.acmicpc.net/problem/10757
- 	¹®Á¦¹øÈ£ : 10757
- 	¾Ë°í¸®Áò : ¼öÇĞ, ±¸Çö, »çÄ¢¿¬»ê, ÀÓÀÇ Á¤¹Ğµµ/Å« ¼ö ¿¬»ê
+ï»¿/*
+ 	ë¬¸ì œì¶œì²˜ : BACKJOON, https://www.acmicpc.net/problem/10757
+ 	ë¬¸ì œë²ˆí˜¸ : 10757
+ 	ì•Œê³ ë¦¬ì¦˜ : ìˆ˜í•™, êµ¬í˜„, ì‚¬ì¹™ì—°ì‚°, ì„ì˜ ì •ë°€ë„/í° ìˆ˜ ì—°ì‚°
 */
-package step_07_±âº»¼öÇĞ1.a008_Å«¼öA´õÇÏ±âB;
+package step_07_ê¸°ë³¸ìˆ˜í•™1.a008_í°ìˆ˜Aë”í•˜ê¸°B;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -35,40 +35,40 @@ public class Main {
 		String result = "";
 		int carry = 0;
 
-		boolean _aArrOvered = true;	// true : loopµµ´ÂÁß¿¡ _aArrÀÇ length¸¦ ³ÑÁö¾Ê¾ÒÀ½. false : ³Ñ¾úÀ½
-		boolean _bArrOvered = true; // true : loopµµ´ÂÁß¿¡ _bArrÀÇ length¸¦ ³ÑÁö¾Ê¾ÒÀ½. false : ³Ñ¾úÀ½
+		boolean _aArrOvered = true;	// true : loopë„ëŠ”ì¤‘ì— _aArrì˜ lengthë¥¼ ë„˜ì§€ì•Šì•˜ìŒ. false : ë„˜ì—ˆìŒ
+		boolean _bArrOvered = true; // true : loopë„ëŠ”ì¤‘ì— _bArrì˜ lengthë¥¼ ë„˜ì§€ì•Šì•˜ìŒ. false : ë„˜ì—ˆìŒ
 		
 		int overedIndexA = 0;
 		int overedIndexB = 0;
 		
 		for(int i=0; i<length+1; i++)
 		{
-			int a = 0;		// A¹®ÀÚ¿­ÀÇ ¸Ç ³¡ 1ÀÚ¸® ÃßÃâ
-			int b = 0;		// B¹®ÀÚ¿­ÀÇ ¸Ç ³¡ 1ÀÚ¸® ÃßÃâ
+			int a = 0;		// Aë¬¸ìì—´ì˜ ë§¨ ë 1ìë¦¬ ì¶”ì¶œ
+			int b = 0;		// Bë¬¸ìì—´ì˜ ë§¨ ë 1ìë¦¬ ì¶”ì¶œ
 			
 			
-			if(_aArrOvered)				// ¾ÆÁ÷ length ¾È³Ñ¾ú´Ù¸é
+			if(_aArrOvered)				// ì•„ì§ length ì•ˆë„˜ì—ˆë‹¤ë©´
 			{
 				a = _aArr[_aArr.length-1-i];
 			}
-			else						// ³Ñ¾úÀ¸¸é 0
+			else						// ë„˜ì—ˆìœ¼ë©´ 0
 			{
 				a = 0;
 			}
 			
-			if(_bArrOvered)				// ¾ÆÁ÷ length ¾È³Ñ¾ú´Ù¸é
+			if(_bArrOvered)				// ì•„ì§ length ì•ˆë„˜ì—ˆë‹¤ë©´
 			{
 				b = _bArr[_bArr.length-1-i];
 			}
 			else
 			{
-				b = 0;					// ³Ñ¾úÀ¸¸é 0
+				b = 0;					// ë„˜ì—ˆìœ¼ë©´ 0
 			}
 			
 			
-			if(carry == 0 && (!_aArrOvered || !_bArrOvered))	// carry°¡ ¹ß»ıÇÏÁö¾Ê¾Ò°í, A³ª BÀÇ ¹®ÀÚ¿­Áß ÂªÀºÇÑÂÊÀÇ ¼ıÀÚ±îÁö ¸ğµÎ´Ù ´õÇßÀ»°æ¿ì.
+			if(carry == 0 && (!_aArrOvered || !_bArrOvered))	// carryê°€ ë°œìƒí•˜ì§€ì•Šì•˜ê³ , Aë‚˜ Bì˜ ë¬¸ìì—´ì¤‘ ì§§ì€í•œìª½ì˜ ìˆ«ìê¹Œì§€ ëª¨ë‘ë‹¤ ë”í–ˆì„ê²½ìš°.
 			{
-				if(!_aArrOvered)		// ÂªÀº°Ô A¶ó¸é BÀÇ ³ª¸ÓÁö ¹®ÀÚ¿­À» result ¾Õ¿¡´Ù°¡ ºÙÀÓ
+				if(!_aArrOvered)		// ì§§ì€ê²Œ Aë¼ë©´ Bì˜ ë‚˜ë¨¸ì§€ ë¬¸ìì—´ì„ result ì•ì—ë‹¤ê°€ ë¶™ì„
 				{
 					int remainLength = _bArr.length - overedIndexA - (i - overedIndexA);
 					for(int j=0; j<remainLength; j++)
@@ -76,7 +76,7 @@ public class Main {
 						result = _bArr[remainLength-1-j] + result;
 					}
 				}
-				else if(!_bArrOvered)	// ÂªÀº°Ô B¶ó¸é AÀÇ ³ª¸ÓÁö ¹®ÀÚ¿­À» result ¾Õ¿¡´Ù°¡ ºÙÀÓ
+				else if(!_bArrOvered)	// ì§§ì€ê²Œ Bë¼ë©´ Aì˜ ë‚˜ë¨¸ì§€ ë¬¸ìì—´ì„ result ì•ì—ë‹¤ê°€ ë¶™ì„
 				{
 					int remainLength = _aArr.length - overedIndexB - (i - overedIndexB);
 					for(int j=0; j<remainLength; j++)
@@ -89,9 +89,9 @@ public class Main {
 			}
 			
 			int plus = a + b + carry;
-			result = plus%10 + result;	// result ¹®ÀÚ¿­ ¸¸µé±â
+			result = plus%10 + result;	// result ë¬¸ìì—´ ë§Œë“¤ê¸°
 			
-			if(plus >= 10 && (_aArrOvered || _bArrOvered))	// carry°¡ ¹ß»ıÇß´Ù¸é
+			if(plus >= 10 && (_aArrOvered || _bArrOvered))	// carryê°€ ë°œìƒí–ˆë‹¤ë©´
 			{
 				carry = plus / 10;
 			}
@@ -103,13 +103,13 @@ public class Main {
 			
 			if(i == _aArr.length-1)
 			{
-				_aArrOvered = false;	// length ³Ñ¾úÀ½
-				overedIndexA = i+1;		// overµÈ ½ÃÁ¡ÀÇ index i°ª ÀúÀå
+				_aArrOvered = false;	// length ë„˜ì—ˆìŒ
+				overedIndexA = i+1;		// overëœ ì‹œì ì˜ index iê°’ ì €ì¥
 			}
 			if(i == _bArr.length-1)
 			{
-				_bArrOvered = false;	// length ³Ñ¾úÀ½
-				overedIndexB = i+1;		// overµÈ ½ÃÁ¡ÀÇ index i°ª ÀúÀå
+				_bArrOvered = false;	// length ë„˜ì—ˆìŒ
+				overedIndexB = i+1;		// overëœ ì‹œì ì˜ index iê°’ ì €ì¥
 			}
 			
 		}

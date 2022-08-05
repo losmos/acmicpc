@@ -1,9 +1,9 @@
-/*
- 	¹®Á¦ÃâÃ³ : BACKJOON, https://www.acmicpc.net/problem/1157
- 	¹®Á¦¹øÈ£ : 1157
- 	¾Ë°í¸®Áò : ±¸Çö, ¹®ÀÚ¿­
+ï»¿/*
+ 	ë¬¸ì œì¶œì²˜ : BACKJOON, https://www.acmicpc.net/problem/1157
+ 	ë¬¸ì œë²ˆí˜¸ : 1157
+ 	ì•Œê³ ë¦¬ì¦˜ : êµ¬í˜„, ë¬¸ìì—´
 */
-package step_06_¹®ÀÚ¿­.a005_´Ü¾î°øºÎ;
+package step_06_ë¬¸ìì—´.a005_ë‹¨ì–´ê³µë¶€;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -18,29 +18,29 @@ class Main {
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		StringBuilder sb = new StringBuilder();
 		
-		sb.append(br.readLine().toUpperCase());		// ¹®ÀÚ UpperCase()
+		sb.append(br.readLine().toUpperCase());		// ë¬¸ì UpperCase()
 		
 		char A = 'A';
 		char Z = 'Z';
 		
-		int[] alphabet = new int[Z - A + 1];	// A ~ Z ¹®ÀÚ°³¼ö¸¸Å­ÀÇ ¹è¿­ ÃÊ±âÈ­
+		int[] alphabet = new int[Z - A + 1];	// A ~ Z ë¬¸ìê°œìˆ˜ë§Œí¼ì˜ ë°°ì—´ ì´ˆê¸°í™”
 		
-		char resultStr = '\0';					// ÃÖ´ë ÃâÇö ¹®ÀÚ¸¦ ´ãÀ» º¯¼ö
-		int resultLength = 0;					// ÃÖ´ë ÃâÇö ¹®ÀÚ È½¼ö¸¦ ´ãÀ» º¯¼ö
+		char resultStr = '\0';					// ìµœëŒ€ ì¶œí˜„ ë¬¸ìë¥¼ ë‹´ì„ ë³€ìˆ˜
+		int resultLength = 0;					// ìµœëŒ€ ì¶œí˜„ ë¬¸ì íšŸìˆ˜ë¥¼ ë‹´ì„ ë³€ìˆ˜
 		
-		boolean commonVictory = false;				// Á¦ÀÏ ´Ù¼ö°³ ÃâÇöÇÑ ¹®ÀÚ °³¼ö°¡ 2°³ ÀÌ»óÀÌ¶ó¸é  true. ÃÖÁ¾ÀûÀ¸·Î "?"¹®ÀÚ¸¦ ¸®ÅÏ
+		boolean commonVictory = false;				// ì œì¼ ë‹¤ìˆ˜ê°œ ì¶œí˜„í•œ ë¬¸ì ê°œìˆ˜ê°€ 2ê°œ ì´ìƒì´ë¼ë©´  true. ìµœì¢…ì ìœ¼ë¡œ "?"ë¬¸ìë¥¼ ë¦¬í„´
 		
 		for(int i=0; i<sb.length(); i++)
 		{
-			alphabet[sb.charAt(i) - A] ++;			// A ~ Z °¡ °¡Áö°íÀÖ´Â ¾Æ½ºÅ°ÄÚµå°ª¸¸Å­ÀÇ ¹è¿­À» ¼±¾ğÇÏ¸é ¸®¼Ò½º³¶ºñ. »ó´ëÁÖ¼Ò·Î ¾²±âÀ§ÇØ A¸¸Å­ÀÇ ¾Æ½ºÅ°ÄÚµå°ªÀ» »©ÁÜ
+			alphabet[sb.charAt(i) - A] ++;			// A ~ Z ê°€ ê°€ì§€ê³ ìˆëŠ” ì•„ìŠ¤í‚¤ì½”ë“œê°’ë§Œí¼ì˜ ë°°ì—´ì„ ì„ ì–¸í•˜ë©´ ë¦¬ì†ŒìŠ¤ë‚­ë¹„. ìƒëŒ€ì£¼ì†Œë¡œ ì“°ê¸°ìœ„í•´ Aë§Œí¼ì˜ ì•„ìŠ¤í‚¤ì½”ë“œê°’ì„ ë¹¼ì¤Œ
 		}
 		
 		for(int i=0; i<alphabet.length; i++)
 		{
-			if(alphabet[i] > resultLength)			// º¯¼ö¿¡ ÀúÀåÇß¾ú´ø  ÃÖ´ëÃâÇö ¹®ÀÚ È½¼ö¸¦ °»½ÅÇÑ´Ù¸é
+			if(alphabet[i] > resultLength)			// ë³€ìˆ˜ì— ì €ì¥í–ˆì—ˆë˜  ìµœëŒ€ì¶œí˜„ ë¬¸ì íšŸìˆ˜ë¥¼ ê°±ì‹ í•œë‹¤ë©´
 			{
-				resultLength = alphabet[i];			// ÃÖ´ëÃâÇö ¹®ÀÚ°³¼ö ÀúÀå 
-				resultStr = (char)(i+A);			// ÃÖ´ëÃâÇö ¹®ÀÚ ÀúÀå
+				resultLength = alphabet[i];			// ìµœëŒ€ì¶œí˜„ ë¬¸ìê°œìˆ˜ ì €ì¥ 
+				resultStr = (char)(i+A);			// ìµœëŒ€ì¶œí˜„ ë¬¸ì ì €ì¥
 				commonVictory = false;
 			}
 			else if(alphabet[i] == resultLength && resultStr != (char)i)

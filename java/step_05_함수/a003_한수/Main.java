@@ -1,9 +1,9 @@
-/*
- 	¹®Á¦ÃâÃ³ : BACKJOON, https://www.acmicpc.net/problem/1065
- 	¹®Á¦¹øÈ£ : 1065
- 	¾Ë°í¸®Áò : ºê·çÆ®Æ÷½º ¾Ë°í¸®Áò
+ï»¿/*
+ 	ë¬¸ì œì¶œì²˜ : BACKJOON, https://www.acmicpc.net/problem/1065
+ 	ë¬¸ì œë²ˆí˜¸ : 1065
+ 	ì•Œê³ ë¦¬ì¦˜ : ë¸Œë£¨íŠ¸í¬ìŠ¤ ì•Œê³ ë¦¬ì¦˜
 */
-package step_05_ÇÔ¼ö.a003_ÇÑ¼ö;
+package step_05_í•¨ìˆ˜.a003_í•œìˆ˜;
 
 import java.util.Scanner;
 
@@ -30,7 +30,7 @@ class Main {
 			shiftNum = i;
 			while(true)
 			{
-				if(i <= 99)	// ¼ö°¡ ¼¼ÀÚ¸®¼ö ¹Ì¸¸ÀÏ°æ¿ì ¹«Á¶°Ç µîÂ÷¼ö¿­Á¶°Ç¿¡ ºÎÇÕ.
+				if(i <= 99)	// ìˆ˜ê°€ ì„¸ìë¦¬ìˆ˜ ë¯¸ë§Œì¼ê²½ìš° ë¬´ì¡°ê±´ ë“±ì°¨ìˆ˜ì—´ì¡°ê±´ì— ë¶€í•©.
 				{
 					result = true;
 					break;

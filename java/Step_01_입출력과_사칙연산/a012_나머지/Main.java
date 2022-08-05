@@ -1,9 +1,9 @@
-/*
- 	¹®Á¦ÃâÃ³ : BACKJOON, https://www.acmicpc.net/problem/10430
- 	¹®Á¦¹øÈ£ : 10430
- 	¾Ë°í¸®Áò : ¼öÇÐ, ±¸Çö, »çÄ¢¿¬»ê
+ï»¿/*
+ 	ë¬¸ì œì¶œì²˜ : BACKJOON, https://www.acmicpc.net/problem/10430
+ 	ë¬¸ì œë²ˆí˜¸ : 10430
+ 	ì•Œê³ ë¦¬ì¦˜ : ìˆ˜í•™, êµ¬í˜„, ì‚¬ì¹™ì—°ì‚°
 */
-package Step_01_ÀÔÃâ·Â°ú_»çÄ¢¿¬»ê.a012_³ª¸ÓÁö;
+package Step_01_ìž…ì¶œë ¥ê³¼_ì‚¬ì¹™ì—°ì‚°.a012_ë‚˜ë¨¸ì§€;
 
 import java.util.Scanner;
 

@@ -1,9 +1,9 @@
-/*
- 	¹®Á¦ÃâÃ³ : BACKJOON, https://www.acmicpc.net/problem/10757
- 	¹®Á¦¹øÈ£ : 10757
- 	¾Ë°í¸®Áò : ¼öÇĞ, ±¸Çö, »çÄ¢¿¬»ê, ÀÓÀÇ Á¤¹Ğµµ/Å« ¼ö ¿¬»ê
+ï»¿/*
+ 	ë¬¸ì œì¶œì²˜ : BACKJOON, https://www.acmicpc.net/problem/10757
+ 	ë¬¸ì œë²ˆí˜¸ : 10757
+ 	ì•Œê³ ë¦¬ì¦˜ : ìˆ˜í•™, êµ¬í˜„, ì‚¬ì¹™ì—°ì‚°, ì„ì˜ ì •ë°€ë„/í° ìˆ˜ ì—°ì‚°
 */
-package step_07_±âº»¼öÇĞ1.a008_Å«¼öA´õÇÏ±âB;
+package step_07_ê¸°ë³¸ìˆ˜í•™1.a008_í°ìˆ˜Aë”í•˜ê¸°B;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -12,25 +12,25 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
-public class Main_83¶óÀÎ¿¡¼­»ı°¢¹Ù²Ù°í¼³°èºÎÅÍ´Ù½ÃÇÔ {
+public class Main_83ë¼ì¸ì—ì„œìƒê°ë°”ê¾¸ê³ ì„¤ê³„ë¶€í„°ë‹¤ì‹œí•¨ {
 	
 	public int calc(StringBuilder _A, StringBuilder _B, int _carry)
 	{
-		int a = Character.getNumericValue(_A.charAt(_A.length()-1));	// A ¹®ÀÚ¿­ ¸Ç µŞÀÚ¸®¼ö ÃßÃâ
-		int b = Character.getNumericValue(_B.charAt(_B.length()-1));	// B ¹®ÀÚ¿­ ¸Ç µŞÀÚ¸®¼ö ÃßÃâ
+		int a = Character.getNumericValue(_A.charAt(_A.length()-1));	// A ë¬¸ìì—´ ë§¨ ë’·ìë¦¬ìˆ˜ ì¶”ì¶œ
+		int b = Character.getNumericValue(_B.charAt(_B.length()-1));	// B ë¬¸ìì—´ ë§¨ ë’·ìë¦¬ìˆ˜ ì¶”ì¶œ
 		int plus = a + b + _carry; 
 		
 		return plus;
 	}
 	
 	public static void main(String[] args) throws IOException {
-		Main_83¶óÀÎ¿¡¼­»ı°¢¹Ù²Ù°í¼³°èºÎÅÍ´Ù½ÃÇÔ main = new Main_83¶óÀÎ¿¡¼­»ı°¢¹Ù²Ù°í¼³°èºÎÅÍ´Ù½ÃÇÔ();
+		Main_83ë¼ì¸ì—ì„œìƒê°ë°”ê¾¸ê³ ì„¤ê³„ë¶€í„°ë‹¤ì‹œí•¨ main = new Main_83ë¼ì¸ì—ì„œìƒê°ë°”ê¾¸ê³ ì„¤ê³„ë¶€í„°ë‹¤ì‹œí•¨();
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-		StringBuilder A = new StringBuilder();	// ÀÔ·Â°ª A
-		StringBuilder B = new StringBuilder();	// ÀÔ·Â°ª B
-		String result = "";						// ÃÖÁ¾°á°ú°ª
+		StringBuilder A = new StringBuilder();	// ì…ë ¥ê°’ A
+		StringBuilder B = new StringBuilder();	// ì…ë ¥ê°’ B
+		String result = "";						// ìµœì¢…ê²°ê³¼ê°’
 		StringTokenizer st = null;
 		
 		st = new StringTokenizer(br.readLine(), " ");
@@ -38,15 +38,15 @@ public class Main_83¶óÀÎ¿¡¼­»ı°¢¹Ù²Ù°í¼³°èºÎÅÍ´Ù½ÃÇÔ {
 		B.append(st.nextToken());
 
 		
-		int ALength = A.length();	// A¹®ÀÚ¿­ ±æÀÌ
-		int BLength = B.length();	// B¹®ÀÚ¿­ ±æÀÌ
-		int carry = 0;				// ¿Ã¸²ÀÚ¸®¼ö
+		int ALength = A.length();	// Aë¬¸ìì—´ ê¸¸ì´
+		int BLength = B.length();	// Bë¬¸ìì—´ ê¸¸ì´
+		int carry = 0;				// ì˜¬ë¦¼ìë¦¬ìˆ˜
 		
-		for(int i=0; i<(ALength>=BLength?BLength:ALength); i++)	// A¶û BÁß¿¡¼­ ´õ ÂªÀº ¹®ÀÚ¿­ length¸¸Å­ loop µº
+		for(int i=0; i<(ALength>=BLength?BLength:ALength); i++)	// Aë‘ Bì¤‘ì—ì„œ ë” ì§§ì€ ë¬¸ìì—´ lengthë§Œí¼ loop ë
 		{
 			int plus = main.calc(A, B, carry);
 			
-			if(plus >= 10)	// ÀÚ¸® ¿Ã¸²¼ö°¡ ¹ß»ıÇßÀ»°æ¿ì ¿Ã¸²¼ö ÀúÀå
+			if(plus >= 10)	// ìë¦¬ ì˜¬ë¦¼ìˆ˜ê°€ ë°œìƒí–ˆì„ê²½ìš° ì˜¬ë¦¼ìˆ˜ ì €ì¥
 			{
 				carry = plus / 10;
 			}
@@ -55,32 +55,32 @@ public class Main_83¶óÀÎ¿¡¼­»ı°¢¹Ù²Ù°í¼³°èºÎÅÍ´Ù½ÃÇÔ {
 				carry = 0;
 			}
 			
-			A.delete(A.length()-1, A.length());	// A¸Ç µÚ ¹®ÀÚ »èÁ¦
-			B.delete(B.length()-1, B.length());	// B¸Ç µÚ ¹®ÀÚ »èÁ¦
+			A.delete(A.length()-1, A.length());	// Aë§¨ ë’¤ ë¬¸ì ì‚­ì œ
+			B.delete(B.length()-1, B.length());	// Bë§¨ ë’¤ ë¬¸ì ì‚­ì œ
 			
-			result = plus%10 + result;			// A+B´õÇÑ ¹®ÀÚ ÇÏ³ªÇÏ³ª¾¿ Â÷°îÂ÷°î result¿¡ ½×À½
+			result = plus%10 + result;			// A+Bë”í•œ ë¬¸ì í•˜ë‚˜í•˜ë‚˜ì”© ì°¨ê³¡ì°¨ê³¡ resultì— ìŒ“ìŒ
 		}
 		
 		
-		if(ALength == BLength)					// A¿Í BÀÇ±æÀÌ°¡ °°´Ù¸é
+		if(ALength == BLength)					// Aì™€ Bì˜ê¸¸ì´ê°€ ê°™ë‹¤ë©´
 		{
 			if(carry > 0)
 			{
-				bw.write(carry + result);		// carry°¡ ¹ß»ıÇßÀ»°æ¿ì ¸Ç¾Õ¿¡´Ù ºÙ¿©ÁÜ
+				bw.write(carry + result);		// carryê°€ ë°œìƒí–ˆì„ê²½ìš° ë§¨ì•ì—ë‹¤ ë¶™ì—¬ì¤Œ
 			}
 			else
 			{
-				bw.write(result);				// carry ¾øÀ¸¸é ±×³É Ãâ·Â
+				bw.write(result);				// carry ì—†ìœ¼ë©´ ê·¸ëƒ¥ ì¶œë ¥
 			}
 			
 		}
 		else if(ALength > BLength)
 		{
-			if(carry > 0)	// carry°¡ ¹ß»ıÇßÀ»°æ¿ì, ¸Ç³¡ÀÚ¸® ¼ıÀÚ¿Í carry¸¦ ´õÇØÁÜ
+			if(carry > 0)	// carryê°€ ë°œìƒí–ˆì„ê²½ìš°, ë§¨ëìë¦¬ ìˆ«ìì™€ carryë¥¼ ë”í•´ì¤Œ
 			{
 				int secondPlus = Character.getNumericValue(A.charAt(A.length()-1)) + carry;
 				int secondCarry = 0;
-				if(secondPlus > 10)		// ¶Ç Ä³¸®°¡ ¹ß»ıÇÒ°æ¿ì µÎ¼ö¸¦ ¶Ç ´õÇØÁÖ´Â..... ¾Æ ÀÌ°Ç ¾Æ´Ï´Ù½Í´Ù.
+				if(secondPlus > 10)		// ë˜ ìºë¦¬ê°€ ë°œìƒí• ê²½ìš° ë‘ìˆ˜ë¥¼ ë˜ ë”í•´ì£¼ëŠ”..... ì•„ ì´ê±´ ì•„ë‹ˆë‹¤ì‹¶ë‹¤.
 				{
 					for(int i=0; i<1; i++)
 					{

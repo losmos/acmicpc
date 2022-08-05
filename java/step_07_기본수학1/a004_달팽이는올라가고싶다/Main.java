@@ -1,9 +1,9 @@
-/*
- 	¹®Á¦ÃâÃ³ : BACKJOON, https://www.acmicpc.net/problem/2869
- 	¹®Á¦¹øÈ£ : 2869
- 	¾Ë°í¸®Áò : ¼öÇĞ
+ï»¿/*
+ 	ë¬¸ì œì¶œì²˜ : BACKJOON, https://www.acmicpc.net/problem/2869
+ 	ë¬¸ì œë²ˆí˜¸ : 2869
+ 	ì•Œê³ ë¦¬ì¦˜ : ìˆ˜í•™
 */
-package step_07_±âº»¼öÇĞ1.a004_´ŞÆØÀÌ´Â¿Ã¶ó°¡°í½Í´Ù;
+package step_07_ê¸°ë³¸ìˆ˜í•™1.a004_ë‹¬íŒ½ì´ëŠ”ì˜¬ë¼ê°€ê³ ì‹¶ë‹¤;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -14,7 +14,7 @@ import java.util.StringTokenizer;
 
 public class Main {
 	/*
-	 * ¹İ·Ê(Ãâ·Â : ¸Â´Â´ä)
+	 * ë°˜ë¡€(ì¶œë ¥ : ë§ëŠ”ë‹µ)
 	 * 	395271219 358589396 978208508
 		17
 		113567503 44910068 559112065
@@ -41,11 +41,11 @@ public class Main {
 		
 		st = new StringTokenizer(br.readLine(), " ");
 		
-		double A = Double.parseDouble(st.nextToken());	// ³·¿¡ ¿Ã¶ó°¥¼öÀÖ´Â °Å¸® A
-		double B = Double.parseDouble(st.nextToken());	// ¹ãµÇ¸é ¹Ì²ô·¯Áö´Â °Å¸® B
-		double V = Double.parseDouble(st.nextToken());	// ¿Ã¶ó°¡°íÀÚÇÏ´Â ¸ñÇ¥ Á¤»ó°Å¸® C
+		double A = Double.parseDouble(st.nextToken());	// ë‚®ì— ì˜¬ë¼ê°ˆìˆ˜ìˆëŠ” ê±°ë¦¬ A
+		double B = Double.parseDouble(st.nextToken());	// ë°¤ë˜ë©´ ë¯¸ë„ëŸ¬ì§€ëŠ” ê±°ë¦¬ B
+		double V = Double.parseDouble(st.nextToken());	// ì˜¬ë¼ê°€ê³ ìí•˜ëŠ” ëª©í‘œ ì •ìƒê±°ë¦¬ C
 		
-		double targetV = V - A;	// ³· A¸¸Å­À» »« °Å¸®. Áï targetV¸¸Å­ µµ´ŞÇÑ´ÙÀ½¿¡. ´ÙÀ½³¯ ³·¿¡ A¸¸Å­ ÇÑ¹ø¸¸ ¿Ã¶ó°¡¸é Á¤»óµµÇÔ.
+		double targetV = V - A;	// ë‚® Aë§Œí¼ì„ ëº€ ê±°ë¦¬. ì¦‰ targetVë§Œí¼ ë„ë‹¬í•œë‹¤ìŒì—. ë‹¤ìŒë‚  ë‚®ì— Aë§Œí¼ í•œë²ˆë§Œ ì˜¬ë¼ê°€ë©´ ì •ìƒë„í•¨.
 		
 		int day = (int)Math.ceil(targetV / (A-B)); 
 		

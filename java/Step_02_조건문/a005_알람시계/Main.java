@@ -1,9 +1,9 @@
-/*
- 	¹®Á¦ÃâÃ³ : BACKJOON, https://www.acmicpc.net/problem/2884
- 	¹®Á¦¹øÈ£ : 2884
- 	¾Ë°í¸®Áò : ¼öÇÐ, »çÄ¢¿¬»ê
+ï»¿/*
+ 	ë¬¸ì œì¶œì²˜ : BACKJOON, https://www.acmicpc.net/problem/2884
+ 	ë¬¸ì œë²ˆí˜¸ : 2884
+ 	ì•Œê³ ë¦¬ì¦˜ : ìˆ˜í•™, ì‚¬ì¹™ì—°ì‚°
 */
-package Step_02_Á¶°Ç¹®.a005_¾Ë¶÷½Ã°è;
+package Step_02_ì¡°ê±´ë¬¸.a005_ì•ŒëžŒì‹œê³„;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

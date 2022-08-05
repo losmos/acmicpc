@@ -1,9 +1,9 @@
-/*
- 	¹®Á¦ÃâÃ³ : BACKJOON, https://www.acmicpc.net/problem/1978
- 	¹®Á¦¹øÈ£ : 1978
- 	¾Ë°í¸®Áò : ¼öÇĞ, Á¤¼ö·Ğ, ¼Ò¼ö ÆÇÁ¤, ¿¡¶óÅä½ºÅ×³×½ºÀÇ Ã¼
+ï»¿/*
+ 	ë¬¸ì œì¶œì²˜ : BACKJOON, https://www.acmicpc.net/problem/1978
+ 	ë¬¸ì œë²ˆí˜¸ : 1978
+ 	ì•Œê³ ë¦¬ì¦˜ : ìˆ˜í•™, ì •ìˆ˜ë¡ , ì†Œìˆ˜ íŒì •, ì—ë¼í† ìŠ¤í…Œë„¤ìŠ¤ì˜ ì²´
 */
-package step_08_±âº»¼öÇĞ2.a001_¼Ò¼öÃ£±â;
+package step_08_ê¸°ë³¸ìˆ˜í•™2.a001_ì†Œìˆ˜ì°¾ê¸°;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -20,38 +20,38 @@ public class Main {
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		StringTokenizer st = null;
 		
-		int N = Integer.parseInt(br.readLine());		// ÀÔ·ÂÇÒ ¼Ò¼öÀÇ °³¼ö. »ç¿ëÀº¾ÈÇÒ°ÅÀÓ
-		st = new StringTokenizer(br.readLine(), " ");	// ÀÔ·ÂµÈ ¼ö¸¦ " " °ø¹é±âÁØÀ¸·Î Tokenizer ÇÔ
+		int N = Integer.parseInt(br.readLine());		// ì…ë ¥í•  ì†Œìˆ˜ì˜ ê°œìˆ˜. ì‚¬ìš©ì€ì•ˆí• ê±°ì„
+		st = new StringTokenizer(br.readLine(), " ");	// ì…ë ¥ëœ ìˆ˜ë¥¼ " " ê³µë°±ê¸°ì¤€ìœ¼ë¡œ Tokenizer í•¨
 		
-		int primeNumberCount = 0;	// ÅäÅ» ¼Ò¼ö°³¼ö ÀúÀå 
+		int primeNumberCount = 0;	// í† íƒˆ ì†Œìˆ˜ê°œìˆ˜ ì €ì¥ 
 		
-		while(st.hasMoreTokens())	// ÅäÅ«ÀÌ ³²¾ÆÀÖÀ»¶§ ±îÁö loop
+		while(st.hasMoreTokens())	// í† í°ì´ ë‚¨ì•„ìˆì„ë•Œ ê¹Œì§€ loop
 		{
-			int inputNumber = Integer.parseInt(st.nextToken());	// ´ÙÀ½ ÅäÅ«°ª
+			int inputNumber = Integer.parseInt(st.nextToken());	// ë‹¤ìŒ í† í°ê°’
 			
-			if(inputNumber == 2 )		// ÀÔ·Â°ªÀÌ 2¶ó¸é ¼Ò¼öÀÓ
+			if(inputNumber == 2 )		// ì…ë ¥ê°’ì´ 2ë¼ë©´ ì†Œìˆ˜ì„
 			{
-				primeNumberCount++;		// ¼Ò¼ö°³¼ö +1
+				primeNumberCount++;		// ì†Œìˆ˜ê°œìˆ˜ +1
 				continue;
 			}
 			
-			// i´Â 0ÀÌ³ª 1ºÎÅÍ½ÃÀÛÇÒÇÊ¿ä ¾øÀ½.
+			// iëŠ” 0ì´ë‚˜ 1ë¶€í„°ì‹œì‘í• í•„ìš” ì—†ìŒ.
 			for(int i=2; i<inputNumber; i++)
 			{
-				if(inputNumber%i == 0)			// ¼Ò¼öÀÎ Á¶°ÇÀÓ. i·Î ³ª´« ³ª¸ÓÁö°¡ 0ÀÌ¶ó¸é ¼Ò¼ö°¡ ¾Æ´Ô. 
+				if(inputNumber%i == 0)			// ì†Œìˆ˜ì¸ ì¡°ê±´ì„. ië¡œ ë‚˜ëˆˆ ë‚˜ë¨¸ì§€ê°€ 0ì´ë¼ë©´ ì†Œìˆ˜ê°€ ì•„ë‹˜. 
 				{
-					break;		// ¼Ò¼ö°¡ ¾Æ´Ô
+					break;		// ì†Œìˆ˜ê°€ ì•„ë‹˜
 				}
 				
-				if(i == inputNumber-1)			// ÀÔ·Â¼ıÀÚ - 1±îÁö °Ë»çÇß´Âµ¥µµ ³ª´²¶³¾îÁö´Â°Ô¾øÀ¸¸é
+				if(i == inputNumber-1)			// ì…ë ¥ìˆ«ì - 1ê¹Œì§€ ê²€ì‚¬í–ˆëŠ”ë°ë„ ë‚˜ëˆ ë–¨ì–´ì§€ëŠ”ê²Œì—†ìœ¼ë©´
 				{
-					primeNumberCount++;			// ¼Ò¼ö´Ï±î ¼Ò¼ö°³¼ö +1
+					primeNumberCount++;			// ì†Œìˆ˜ë‹ˆê¹Œ ì†Œìˆ˜ê°œìˆ˜ +1
 				}
 				
 			}
 		}
 		
-		bw.write(String.valueOf(primeNumberCount));	// Ãâ·Â
+		bw.write(String.valueOf(primeNumberCount));	// ì¶œë ¥
 		bw.flush();
 		bw.close();
 		

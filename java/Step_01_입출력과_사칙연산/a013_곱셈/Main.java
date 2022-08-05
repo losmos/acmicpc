@@ -1,9 +1,9 @@
-/*
- 	¹®Á¦ÃâÃ³ : BACKJOON, https://www.acmicpc.net/problem/2588
- 	¹®Á¦¹øÈ£ : 2588
- 	¾Ë°í¸®Áò : ¼öÇĞ, »çÄ¢¿¬»ê
+ï»¿/*
+ 	ë¬¸ì œì¶œì²˜ : BACKJOON, https://www.acmicpc.net/problem/2588
+ 	ë¬¸ì œë²ˆí˜¸ : 2588
+ 	ì•Œê³ ë¦¬ì¦˜ : ìˆ˜í•™, ì‚¬ì¹™ì—°ì‚°
 */
-package Step_01_ÀÔÃâ·Â°ú_»çÄ¢¿¬»ê.a013_°ö¼À;
+package Step_01_ì…ì¶œë ¥ê³¼_ì‚¬ì¹™ì—°ì‚°.a013_ê³±ì…ˆ;
 
 import java.util.Scanner;
 
@@ -18,7 +18,7 @@ public class Main {
 		int[] input2Arr = new int[3];
 		int[][] resultArr = new int[3][4];
 		
-		for(int i=2; i>=0; i--)	//int[3] ¹è¿­ ¼±¾ğÈÄ °¢ index¿¡ ¼¼ÀÚ¸®¼ö¸¦ ÇÏ³ª¾¿ ²¨³»¼­ ³ÖÀ½
+		for(int i=2; i>=0; i--)	//int[3] ë°°ì—´ ì„ ì–¸í›„ ê° indexì— ì„¸ìë¦¬ìˆ˜ë¥¼ í•˜ë‚˜ì”© êº¼ë‚´ì„œ ë„£ìŒ
 		{
 			input1Arr[i] = input1 % 10;
 			input1 = input1 / 10;
@@ -30,7 +30,7 @@ public class Main {
 		int tempVal = 0;
 		int index = 2;
 		
-		for(int i=0; i<3; i++)	// loop µ¹¸é¼­ ¿Ã¸²ÀÚ¸®¼ö´Â tempVal¿¡ ÀúÀåÇÏ°í ¹®Á¦¿¡¸Â°Ô ¹è¿­¿¡ Àß ³Ö¾îÁÜ
+		for(int i=0; i<3; i++)	// loop ëŒë©´ì„œ ì˜¬ë¦¼ìë¦¬ìˆ˜ëŠ” tempValì— ì €ì¥í•˜ê³  ë¬¸ì œì—ë§ê²Œ ë°°ì—´ì— ì˜ ë„£ì–´ì¤Œ
 		{
 			for(int j=2; j>=0; j--)
 			{
@@ -52,7 +52,7 @@ public class Main {
 			tempVal = 0;
 		}
 
-		// °á°ú Ãâ·Â
+		// ê²°ê³¼ ì¶œë ¥
 		int result = 0;
 		int lastResult = 0;
 		int shift = 1;

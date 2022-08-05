@@ -1,9 +1,9 @@
-/*
-s 	¹®Á¦ÃâÃ³ : BACKJOON, https://www.acmicpc.net/problem/3052
- 	¹®Á¦¹øÈ£ : 3052
- 	¾Ë°í¸®Áò : ¼öÇĞ, »çÄ¢¿¬»ê
+ï»¿/*
+s 	ë¬¸ì œì¶œì²˜ : BACKJOON, https://www.acmicpc.net/problem/3052
+ 	ë¬¸ì œë²ˆí˜¸ : 3052
+ 	ì•Œê³ ë¦¬ì¦˜ : ìˆ˜í•™, ì‚¬ì¹™ì—°ì‚°
 */
-package step_04_1Â÷¿ø¹è¿­.a004_³ª¸ÓÁö;
+package step_04_1ì°¨ì›ë°°ì—´.a004_ë‚˜ë¨¸ì§€;
 
 import java.util.HashMap;
 import java.util.Map;

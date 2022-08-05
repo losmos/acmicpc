@@ -1,9 +1,9 @@
-/*
- 	¹®Á¦ÃâÃ³ : BACKJOON, https://www.acmicpc.net/problem/1157
- 	¹®Á¦¹øÈ£ : 1157
- 	¾Ë°í¸®Áò : ±¸Çö, ¹®ÀÚ¿­
+ï»¿/*
+ 	ë¬¸ì œì¶œì²˜ : BACKJOON, https://www.acmicpc.net/problem/1157
+ 	ë¬¸ì œë²ˆí˜¸ : 1157
+ 	ì•Œê³ ë¦¬ì¦˜ : êµ¬í˜„, ë¬¸ìì—´
 */
-package step_06_¹®ÀÚ¿­.a005_´Ü¾î°øºÎ;
+package step_06_ë¬¸ìì—´.a005_ë‹¨ì–´ê³µë¶€;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -12,7 +12,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
-class Main_¸Ş¸ğ¸®ÃÊ°ú {
+class Main_ë©”ëª¨ë¦¬ì´ˆê³¼ {
 	public static void main(String[] args) throws IOException
 	{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -20,27 +20,27 @@ class Main_¸Ş¸ğ¸®ÃÊ°ú {
 		StringBuilder sb = new StringBuilder();
 		StringTokenizer st = null;
 		
-		sb.append(br.readLine().toUpperCase());		// ¹®ÀÚ UpperCase()
+		sb.append(br.readLine().toUpperCase());		// ë¬¸ì UpperCase()
 		int resultLength = 100000;
 		String resultStr = "";
-		boolean commonVictory = false;				// Á¦ÀÏ ´Ù¼ö°³ ÃâÇöÇÑ ¹®ÀÚ °³¼ö°¡ 2°³ ÀÌ»óÀÌ¶ó¸é  true. ÃÖÁ¾ÀûÀ¸·Î "?"¹®ÀÚ¸¦ ¸®ÅÏ
+		boolean commonVictory = false;				// ì œì¼ ë‹¤ìˆ˜ê°œ ì¶œí˜„í•œ ë¬¸ì ê°œìˆ˜ê°€ 2ê°œ ì´ìƒì´ë¼ë©´  true. ìµœì¢…ì ìœ¼ë¡œ "?"ë¬¸ìë¥¼ ë¦¬í„´
 		String getSplitChar = "";
 		String replacedStr = "";
 		
-		// ¾Æ¸¶µµ replaceAll·Î ÀÎÇÑ ¸Ş¸ğ¸®ÃÊ°ú
+		// ì•„ë§ˆë„ replaceAllë¡œ ì¸í•œ ë©”ëª¨ë¦¬ì´ˆê³¼
 		for(int i=0; i<sb.length(); i++)
 		{
 			getSplitChar = String.valueOf(sb.charAt(i));
 			
-			replacedStr = sb.toString().replaceAll(getSplitChar, "");	// °Ë»çÇÏ°íÀÚÇÏ´Â ¹®ÀÚ¸¦ °ø¹é("")À¸·Î replaceAll ÇÔ
+			replacedStr = sb.toString().replaceAll(getSplitChar, "");	// ê²€ì‚¬í•˜ê³ ìí•˜ëŠ” ë¬¸ìë¥¼ ê³µë°±("")ìœ¼ë¡œ replaceAll í•¨
 			
-			if(resultLength > replacedStr.length())		// replaceAllÇÑ ¹®ÀÚ±æÀÌ°¡ Á¦ÀÏ Âª´Ù¸é, sb.charAt(i) ¹®ÀÚ°¡ Á¦ÀÏ ¸¹ÀÌ µé¾î°¡ÀÖ´Ù´Â ÀÇ¹Ì
+			if(resultLength > replacedStr.length())		// replaceAllí•œ ë¬¸ìê¸¸ì´ê°€ ì œì¼ ì§§ë‹¤ë©´, sb.charAt(i) ë¬¸ìê°€ ì œì¼ ë§ì´ ë“¤ì–´ê°€ìˆë‹¤ëŠ” ì˜ë¯¸
 			{
 				resultStr =  getSplitChar;
 				resultLength = replacedStr.length();
 				commonVictory = false;
 			}
-			else if(resultLength == replacedStr.length() && !resultStr.equals(getSplitChar))	// ¹®ÀÚÃâÇöÀÌ È½¼ö°¡ µ¿·üÀÌ¸é¼­, °°Àº¹®ÀÚ°¡ ¾Æ´Ñ°æ¿ì
+			else if(resultLength == replacedStr.length() && !resultStr.equals(getSplitChar))	// ë¬¸ìì¶œí˜„ì´ íšŸìˆ˜ê°€ ë™ë¥ ì´ë©´ì„œ, ê°™ì€ë¬¸ìê°€ ì•„ë‹Œê²½ìš°
 			{
 				commonVictory = true;		
 			}

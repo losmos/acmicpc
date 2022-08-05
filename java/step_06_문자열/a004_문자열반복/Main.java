@@ -1,9 +1,9 @@
-/*
- 	¹®Á¦ÃâÃ³ : BACKJOON, https://www.acmicpc.net/problem/2675
- 	¹®Á¦¹øÈ£ : 2675
- 	¾Ë°í¸®Áò : ±¸Çö, ¹®ÀÚ¿­
+ï»¿/*
+ 	ë¬¸ì œì¶œì²˜ : BACKJOON, https://www.acmicpc.net/problem/2675
+ 	ë¬¸ì œë²ˆí˜¸ : 2675
+ 	ì•Œê³ ë¦¬ì¦˜ : êµ¬í˜„, ë¬¸ìì—´
 */
-package step_06_¹®ÀÚ¿­.a004_¹®ÀÚ¿­¹İº¹;
+package step_06_ë¬¸ìì—´.a004_ë¬¸ìì—´ë°˜ë³µ;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -19,23 +19,23 @@ class Main {
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		StringTokenizer st = null;
 		
-		int T = Integer.parseInt(br.readLine());		// Å×½ºÆ®ÄÉÀÌ½º T
+		int T = Integer.parseInt(br.readLine());		// í…ŒìŠ¤íŠ¸ì¼€ì´ìŠ¤ T
 		
 		for(int i=0; i<T; i++)
 		{
 			String result = "";
 
 			st = new StringTokenizer(br.readLine(), " ");
-			int R = Integer.parseInt(st.nextToken());	// Å×½ºÆ® ÄÉÀÌ½º ¹İº¹È½¼ö R
+			int R = Integer.parseInt(st.nextToken());	// í…ŒìŠ¤íŠ¸ ì¼€ì´ìŠ¤ ë°˜ë³µíšŸìˆ˜ R
 			String inputStr = "";
 			
-			inputStr = st.nextToken();					// ¹İº¹À» ¼öÇàÇÒ input ¹®ÀÚ¿­
+			inputStr = st.nextToken();					// ë°˜ë³µì„ ìˆ˜í–‰í•  input ë¬¸ìì—´
 			
 			for(int x=0; x<inputStr.length(); x++)
 			{
 				for(int j=0; j<R; j++)
 				{
-					result+=inputStr.charAt(x);			// ÀÔ·ÂµÈ ¹®ÀÚ¿­¿¡¼­ ÇÑ±ÛÀÚ¾¿ Àß¶ó¼­ ÀÔ·ÂµÈ R¸¸Å­ ¹İº¹ÇØ¼­ append
+					result+=inputStr.charAt(x);			// ì…ë ¥ëœ ë¬¸ìì—´ì—ì„œ í•œê¸€ìì”© ì˜ë¼ì„œ ì…ë ¥ëœ Rë§Œí¼ ë°˜ë³µí•´ì„œ append
 				}
 			}
 			bw.write(result.toString() + "\n");

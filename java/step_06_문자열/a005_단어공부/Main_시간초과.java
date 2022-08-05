@@ -1,9 +1,9 @@
-/*
- 	¹®Á¦ÃâÃ³ : BACKJOON, https://www.acmicpc.net/problem/1157
- 	¹®Á¦¹øÈ£ : 1157
- 	¾Ë°í¸®Áò : ±¸Çö, ¹®ÀÚ¿­
+ï»¿/*
+ 	ë¬¸ì œì¶œì²˜ : BACKJOON, https://www.acmicpc.net/problem/1157
+ 	ë¬¸ì œë²ˆí˜¸ : 1157
+ 	ì•Œê³ ë¦¬ì¦˜ : êµ¬í˜„, ë¬¸ìì—´
 */
-package step_06_¹®ÀÚ¿­.a005_´Ü¾î°øºÎ;
+package step_06_ë¬¸ìì—´.a005_ë‹¨ì–´ê³µë¶€;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -11,37 +11,37 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-class Main_½Ã°£ÃÊ°ú {
+class Main_ì‹œê°„ì´ˆê³¼ {
 	public static void main(String[] args) throws IOException
 	{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		StringBuilder sb = new StringBuilder();
 		
-		sb.append(br.readLine().toUpperCase());		// ¹®ÀÚ UpperCase()
+		sb.append(br.readLine().toUpperCase());		// ë¬¸ì UpperCase()
 		int resultLength = 0;
 		char resultStr = '\0';
-		boolean commonVictory = false;				// Á¦ÀÏ ´Ù¼ö°³ ÃâÇöÇÑ ¹®ÀÚ °³¼ö°¡ 2°³ ÀÌ»óÀÌ¶ó¸é  true. ÃÖÁ¾ÀûÀ¸·Î "?"¹®ÀÚ¸¦ ¸®ÅÏ
+		boolean commonVictory = false;				// ì œì¼ ë‹¤ìˆ˜ê°œ ì¶œí˜„í•œ ë¬¸ì ê°œìˆ˜ê°€ 2ê°œ ì´ìƒì´ë¼ë©´  true. ìµœì¢…ì ìœ¼ë¡œ "?"ë¬¸ìë¥¼ ë¦¬í„´
 	
-		// ÀÌÁßfor¹®À¸·Î ÀÎÇÑ ½Ã°£ÃÊ°ú
+		// ì´ì¤‘forë¬¸ìœ¼ë¡œ ì¸í•œ ì‹œê°„ì´ˆê³¼
 		for(int i=0; i<sb.length(); i++)
 		{
-			char getSplitChar = sb.charAt(i);		// °Ë»çÇÒ ¹®ÀÚ ÃßÃâ
+			char getSplitChar = sb.charAt(i);		// ê²€ì‚¬í•  ë¬¸ì ì¶”ì¶œ
 			
 			int charLength = 0;
 			
 			for(int j=0; j<sb.length(); j++)
 			{
-				if(sb.charAt(j) == getSplitChar)	// °Ë»çÇÒ¹®ÀÚ°¡ ¹®ÀÚ¿­¿¡¼­ °ËÃâµÈ °æ¿ì
+				if(sb.charAt(j) == getSplitChar)	// ê²€ì‚¬í• ë¬¸ìê°€ ë¬¸ìì—´ì—ì„œ ê²€ì¶œëœ ê²½ìš°
 				{
-					charLength ++;					// ÃÑ °ËÃâµÈ È½¼ö¸¦ counting ÇÏ±â À§ÇØ +1
+					charLength ++;					// ì´ ê²€ì¶œëœ íšŸìˆ˜ë¥¼ counting í•˜ê¸° ìœ„í•´ +1
 				}
 			}
 			
-			if(resultLength < charLength)			// ÃÖ´ë°ËÃâÈ½¼ö°¡ °»½ÅµÈ´Ù¸é
+			if(resultLength < charLength)			// ìµœëŒ€ê²€ì¶œíšŸìˆ˜ê°€ ê°±ì‹ ëœë‹¤ë©´
 			{
-				resultStr =  getSplitChar;			// ÃÖ´ë°ËÃâÀ» °»½ÅÇÑ ¹®ÀÚ ÀúÀå
-				resultLength = charLength;			// °ËÃâ(ÃâÇö)ÇÑ È½¼ö
+				resultStr =  getSplitChar;			// ìµœëŒ€ê²€ì¶œì„ ê°±ì‹ í•œ ë¬¸ì ì €ì¥
+				resultLength = charLength;			// ê²€ì¶œ(ì¶œí˜„)í•œ íšŸìˆ˜
 				commonVictory = false;
 			}
 			else if(resultLength == charLength && resultStr != getSplitChar)

@@ -1,9 +1,9 @@
-/*
- 	¹®Á¦ÃâÃ³ : BACKJOON, https://www.acmicpc.net/problem/11720
- 	¹®Á¦¹øÈ£ : 11720
- 	¾Ë°í¸®Áò : ¼öÇĞ, ±¸Çö, ¹®ÀÚ¿­
+ï»¿/*
+ 	ë¬¸ì œì¶œì²˜ : BACKJOON, https://www.acmicpc.net/problem/11720
+ 	ë¬¸ì œë²ˆí˜¸ : 11720
+ 	ì•Œê³ ë¦¬ì¦˜ : ìˆ˜í•™, êµ¬í˜„, ë¬¸ìì—´
 */
-package step_06_¹®ÀÚ¿­.a002_¼ıÀÚÀÇÇÕ;
+package step_06_ë¬¸ìì—´.a002_ìˆ«ìì˜í•©;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -18,11 +18,11 @@ class Main {
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		StringBuilder sb = new StringBuilder();
 		
-		int N = Integer.parseInt(br.readLine());		// ÀÔ·ÂÀº¹ŞÁö¸¸ ¾²ÀÌÁø ¾ÊÀ½
+		int N = Integer.parseInt(br.readLine());		// ì…ë ¥ì€ë°›ì§€ë§Œ ì“°ì´ì§„ ì•ŠìŒ
 		
-		sb.append(br.readLine());						// ¿¬¼ÓµÈ ¼ıÀÚ ÀÔ·Â¹ŞÀ½. ¼ıÀÚ±æÀÌ´Â 100ÀÌÇÏÀÌ¹Ç·Î, ¼ıÀÚÇü TypeÀ¸·Î¹ŞÀ¸¸é ¿¡·¯³²
+		sb.append(br.readLine());						// ì—°ì†ëœ ìˆ«ì ì…ë ¥ë°›ìŒ. ìˆ«ìê¸¸ì´ëŠ” 100ì´í•˜ì´ë¯€ë¡œ, ìˆ«ìí˜• Typeìœ¼ë¡œë°›ìœ¼ë©´ ì—ëŸ¬ë‚¨
 		
-		String[] splitStr = sb.toString().split("");	// ÇÑ±ÛÀÚ¾¿ splitÇØ¼­ String ¹è¿­¿¡ ³ÖÀ½
+		String[] splitStr = sb.toString().split("");	// í•œê¸€ìì”© splití•´ì„œ String ë°°ì—´ì— ë„£ìŒ
 		
 		int result = 0;
 		for(int i=0; i < splitStr.length; i++)

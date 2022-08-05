@@ -1,9 +1,9 @@
-/*
- 	¹®Á¦ÃâÃ³ : BACKJOON, https://www.acmicpc.net/problem/2908
- 	¹®Á¦¹øÈ£ : 2908
- 	¾Ë°í¸®Áò : ¼öÇĞ, ±¸Çö
+ï»¿/*
+ 	ë¬¸ì œì¶œì²˜ : BACKJOON, https://www.acmicpc.net/problem/2908
+ 	ë¬¸ì œë²ˆí˜¸ : 2908
+ 	ì•Œê³ ë¦¬ì¦˜ : ìˆ˜í•™, êµ¬í˜„
 */
-package step_06_¹®ÀÚ¿­.a007_»ó¼ö;
+package step_06_ë¬¸ìì—´.a007_ìƒìˆ˜;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -22,25 +22,25 @@ class Main {
 		
 		st = new StringTokenizer(br.readLine(), " ");
 		
-		String strA = st.nextToken();	// Ã¹¹ø¤Š ¼¼ÀÚ¸® ¼ıÀÚ
-		String strB = st.nextToken();	// µÎ¹øÂ° ¼¼[ÀÚ¸® ¼ıÀÚ
+		String strA = st.nextToken();	// ì²«ë²ˆ? ì„¸ìë¦¬ ìˆ«ì
+		String strB = st.nextToken();	// ë‘ë²ˆì§¸ ì„¸[ìë¦¬ ìˆ«ì
 
 		int multiple = 100;
-		int tempNumA = Integer.parseInt(strA);	// int·Î º¯È¯
-		int tempNumB = Integer.parseInt(strB);	// int·Î º¯È¯
+		int tempNumA = Integer.parseInt(strA);	// intë¡œ ë³€í™˜
+		int tempNumB = Integer.parseInt(strB);	// intë¡œ ë³€í™˜
 		
 		int numA = 0;
 		int numB = 0;
 		
 		for(int i=0; i<3; i++)
 		{
-			numA += tempNumA % 10 * multiple;	// ¸Ç µŞ ÀÚ¸®¼ö¿¡ multiple ¸¸Å­ °öÇÑ°ªÀ» °á°ú¿¡ ´ãÀ½
+			numA += tempNumA % 10 * multiple;	// ë§¨ ë’· ìë¦¬ìˆ˜ì— multiple ë§Œí¼ ê³±í•œê°’ì„ ê²°ê³¼ì— ë‹´ìŒ
 			tempNumA = tempNumA / 10;
 			
 			numB += tempNumB % 10 * multiple;
 			tempNumB = tempNumB / 10;
 			
-			multiple = multiple / 10;			// multipleÀº loop¸¦ µ¹¶§¸¶´Ù ³ª´©±â 10ÇØÁÜ
+			multiple = multiple / 10;			// multipleì€ loopë¥¼ ëŒë•Œë§ˆë‹¤ ë‚˜ëˆ„ê¸° 10í•´ì¤Œ
 		}
 		
 		if(numA > numB)

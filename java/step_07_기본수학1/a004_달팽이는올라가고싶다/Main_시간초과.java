@@ -1,9 +1,9 @@
-/*
- 	¹®Á¦ÃâÃ³ : BACKJOON, https://www.acmicpc.net/problem/2869
- 	¹®Á¦¹øÈ£ : 2869
- 	¾Ë°í¸®Áò : ¼öÇĞ
+ï»¿/*
+ 	ë¬¸ì œì¶œì²˜ : BACKJOON, https://www.acmicpc.net/problem/2869
+ 	ë¬¸ì œë²ˆí˜¸ : 2869
+ 	ì•Œê³ ë¦¬ì¦˜ : ìˆ˜í•™
 */
-package step_07_±âº»¼öÇĞ1.a004_´ŞÆØÀÌ´Â¿Ã¶ó°¡°í½Í´Ù;
+package step_07_ê¸°ë³¸ìˆ˜í•™1.a004_ë‹¬íŒ½ì´ëŠ”ì˜¬ë¼ê°€ê³ ì‹¶ë‹¤;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -12,7 +12,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
-public class Main_½Ã°£ÃÊ°ú {
+public class Main_ì‹œê°„ì´ˆê³¼ {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -20,23 +20,23 @@ public class Main_½Ã°£ÃÊ°ú {
 		
 		st = new StringTokenizer(br.readLine(), " ");
 		
-		int A = Integer.parseInt(st.nextToken());	// ³·¿¡ ¿Ã¶ó°¥¼öÀÖ´Â °Å¸® A
-		int B = Integer.parseInt(st.nextToken());	// ¹ãµÇ¸é ¹Ì²ô·¯Áö´Â °Å¸® B
-		int V = Integer.parseInt(st.nextToken());	// ¿Ã¶ó°¡°íÀÚÇÏ´Â ¸ñÇ¥ Á¤»ó°Å¸® C
+		int A = Integer.parseInt(st.nextToken());	// ë‚®ì— ì˜¬ë¼ê°ˆìˆ˜ìˆëŠ” ê±°ë¦¬ A
+		int B = Integer.parseInt(st.nextToken());	// ë°¤ë˜ë©´ ë¯¸ë„ëŸ¬ì§€ëŠ” ê±°ë¦¬ B
+		int V = Integer.parseInt(st.nextToken());	// ì˜¬ë¼ê°€ê³ ìí•˜ëŠ” ëª©í‘œ ì •ìƒê±°ë¦¬ C
 		
 		int distance = 0;
 		int day = 0;
 		while(true)
 		{
-			day ++;				// ÇÏ·ç°¡ Áö³²
-			distance += A;		// ¿Ã¶ó°¨
+			day ++;				// í•˜ë£¨ê°€ ì§€ë‚¨
+			distance += A;		// ì˜¬ë¼ê°
 			
-			if(distance >= V)	// Á¤»ó¿¡ µµ´ŞÇß´Ù¸é break
+			if(distance >= V)	// ì •ìƒì— ë„ë‹¬í–ˆë‹¤ë©´ break
 			{
 				break;
 			}
 			
-			distance -= B;		// ¹Ì²ô·¯Áü
+			distance -= B;		// ë¯¸ë„ëŸ¬ì§
 		}
 		
 		bw.write(String.valueOf(day));

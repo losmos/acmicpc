@@ -1,9 +1,9 @@
-/*
- 	¹®Á¦ÃâÃ³ : BACKJOON, https://www.acmicpc.net/problem/1712
- 	¹®Á¦¹øÈ£ : 1712
- 	¾Ë°í¸®Áò : ¼öÇĞ, »çÄ¢¿¬»ê
+ï»¿/*
+ 	ë¬¸ì œì¶œì²˜ : BACKJOON, https://www.acmicpc.net/problem/1712
+ 	ë¬¸ì œë²ˆí˜¸ : 1712
+ 	ì•Œê³ ë¦¬ì¦˜ : ìˆ˜í•™, ì‚¬ì¹™ì—°ì‚°
 */
-package step_07_±âº»¼öÇĞ1.a001_¼ÕÀÍºĞ±âÁ¡;
+package step_07_ê¸°ë³¸ìˆ˜í•™1.a001_ì†ìµë¶„ê¸°ì ;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -20,14 +20,14 @@ public class Main {
 		
 		st = new StringTokenizer(br.readLine(), " ");
 		
-		long A = Long.parseLong(st.nextToken());	// °íÁ¤ºñ
-		long B = Long.parseLong(st.nextToken());	// »ı»êºñ
-		long C = Long.parseLong(st.nextToken());	// ÆÇ¸Å°¡
+		long A = Long.parseLong(st.nextToken());	// ê³ ì •ë¹„
+		long B = Long.parseLong(st.nextToken());	// ìƒì‚°ë¹„
+		long C = Long.parseLong(st.nextToken());	// íŒë§¤ê°€
 		
 		long result = 0;
 
-		//C-B°¡ 1´ëÆÇ¸ÅÇÒ¶§¸¶´Ù ³²´Â ¼øÀÌÀÍ
-		if(C-B <= 0)	//ÆÈ¼ö·Ï ¼ÕÇØ¶ó¸é
+		//C-Bê°€ 1ëŒ€íŒë§¤í• ë•Œë§ˆë‹¤ ë‚¨ëŠ” ìˆœì´ìµ
+		if(C-B <= 0)	//íŒ”ìˆ˜ë¡ ì†í•´ë¼ë©´
 		{
 			bw.write("-1");
 		}

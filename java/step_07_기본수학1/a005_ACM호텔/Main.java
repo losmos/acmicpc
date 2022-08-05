@@ -1,9 +1,9 @@
-/*
- 	¹®Á¦ÃâÃ³ : BACKJOON, https://www.acmicpc.net/problem/10250
- 	¹®Á¦¹øÈ£ : 10250
- 	¾Ë°í¸®Áò : ¼öÇĞ, ±¸Çö, »çÄ¢¿¬»ê
+ï»¿/*
+ 	ë¬¸ì œì¶œì²˜ : BACKJOON, https://www.acmicpc.net/problem/10250
+ 	ë¬¸ì œë²ˆí˜¸ : 10250
+ 	ì•Œê³ ë¦¬ì¦˜ : ìˆ˜í•™, êµ¬í˜„, ì‚¬ì¹™ì—°ì‚°
 */
-package step_07_±âº»¼öÇĞ1.a005_ACMÈ£ÅÚ;
+package step_07_ê¸°ë³¸ìˆ˜í•™1.a005_ACMí˜¸í…”;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -15,35 +15,35 @@ public class Main {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = null;
 		
-		int T = Integer.parseInt(br.readLine());	// Å×½ºÆ®ÄÉÀÌ½º T
+		int T = Integer.parseInt(br.readLine());	// í…ŒìŠ¤íŠ¸ì¼€ì´ìŠ¤ T
 		
 		for(int i=0; i<T; i++)
 		{
 			st = new StringTokenizer(br.readLine(), " ");
-			int H = Integer.parseInt(st.nextToken());	// È£ÅÚ ³ôÀÌ
-			int W = Integer.parseInt(st.nextToken());	// È£ÅÚ ³Êºñ
-			int N = Integer.parseInt(st.nextToken());	// È£ÅÚ¿¡ ÀÔÀåÇÏ´Â N¹øÂ°¼Õ´Ô
+			int H = Integer.parseInt(st.nextToken());	// í˜¸í…” ë†’ì´
+			int W = Integer.parseInt(st.nextToken());	// í˜¸í…” ë„ˆë¹„
+			int N = Integer.parseInt(st.nextToken());	// í˜¸í…”ì— ì…ì¥í•˜ëŠ” Në²ˆì§¸ì†ë‹˜
 			
-			int column = (int)(N / H);		// ¿­(¹æ¹øÈ£), ½ÃÀÛÀÎµ¦½º°¡ 0¿­ ºÎÅÍ½ÃÀÛ
+			int column = (int)(N / H);		// ì—´(ë°©ë²ˆí˜¸), ì‹œì‘ì¸ë±ìŠ¤ê°€ 0ì—´ ë¶€í„°ì‹œì‘
 			
 			if( N % H == 0)
 			{
-				column = column -1;			// N / H °ªÀÌ µü ¶³¾îÁö¸é ÇØ´ç ¿­±îÁö »ç¶÷ÀÌ ²ËÂ÷ÀÖ´Ù°í ÆÇ´ÜÇÏ°ÔµÇ´Âµ¥, »ç½ÇÀº ±× Àü ÄÃ·³(¿­) ±îÁö¸¸ ²ËÂ÷ÀÖ±â¶§¹®¿¡ ifÃ³¸®
+				column = column -1;			// N / H ê°’ì´ ë”± ë–¨ì–´ì§€ë©´ í•´ë‹¹ ì—´ê¹Œì§€ ì‚¬ëŒì´ ê½‰ì°¨ìˆë‹¤ê³  íŒë‹¨í•˜ê²Œë˜ëŠ”ë°, ì‚¬ì‹¤ì€ ê·¸ ì „ ì»¬ëŸ¼(ì—´) ê¹Œì§€ë§Œ ê½‰ì°¨ìˆê¸°ë•Œë¬¸ì— ifì²˜ë¦¬
 			}
 			
-			if(N <= H)	// N¹øÂ°¼Õ´ÔÀÌ H ÇÑÃşÀ» ´Ù ¸øÃ¤¿ì´Â ¼ıÀÚ¶ó¸é
+			if(N <= H)	// Në²ˆì§¸ì†ë‹˜ì´ H í•œì¸µì„ ë‹¤ ëª»ì±„ìš°ëŠ” ìˆ«ìë¼ë©´
 			{
 				column = 0;
 			}
 			
-			int row = 0;					// Çà(È£ÅÚÃş)
-			if(column == 0)	// ÇÑ columnµµ ²ËÂ÷ÀÖÁö¾Ê±â¶§¹®¿¡. (column) * H) °è»êÀ¸·Î ÀÌ¹Ì µé¾îÂ÷ÀÖ´Â ¼Õ´Ô¼ö¸¦ °è»êÇÏÁö ¾ÊÀ½.
+			int row = 0;					// í–‰(í˜¸í…”ì¸µ)
+			if(column == 0)	// í•œ columnë„ ê½‰ì°¨ìˆì§€ì•Šê¸°ë•Œë¬¸ì—. (column) * H) ê³„ì‚°ìœ¼ë¡œ ì´ë¯¸ ë“¤ì–´ì°¨ìˆëŠ” ì†ë‹˜ìˆ˜ë¥¼ ê³„ì‚°í•˜ì§€ ì•ŠìŒ.
 			{
 				row = N;
 			}
 			else
 			{
-				row = (N - ((column) * H));	// ¼Õ´ÔÀº column * H ¼ö¸¸Å­ ¹æ¿¡ µé¾î°¡ÀÖÀ½
+				row = (N - ((column) * H));	// ì†ë‹˜ì€ column * H ìˆ˜ë§Œí¼ ë°©ì— ë“¤ì–´ê°€ìˆìŒ
 			}
 			
 			System.out.printf(row +""+ "%02d\n", column+1);

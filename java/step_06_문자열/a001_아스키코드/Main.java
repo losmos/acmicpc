@@ -1,10 +1,10 @@
-/*
- 	¹®Á¦ÃâÃ³ : BACKJOON, https://www.acmicpc.net/problem/11654
- 	¹®Á¦¹øÈ£ : 11654
- 	¾Ë°í¸®Áò : ±¸Çö
+ï»¿/*
+ 	ë¬¸ì œì¶œì²˜ : BACKJOON, https://www.acmicpc.net/problem/11654
+ 	ë¬¸ì œë²ˆí˜¸ : 11654
+ 	ì•Œê³ ë¦¬ì¦˜ : êµ¬í˜„
 */
 
-package step_06_¹®ÀÚ¿­.a001_¾Æ½ºÅ°ÄÚµå;
+package step_06_ë¬¸ìì—´.a001_ì•„ìŠ¤í‚¤ì½”ë“œ;
 
 import java.util.Scanner;
 
@@ -12,7 +12,7 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		
-		char input = scan.next().charAt(0);	// Scanner·Î ÀÔ·Â¹ŞÀº String ¹®ÀÚ¿­Áß 0¹øÂ° ÀÎµ¦½º¸¦ ²¨³»¼­ character ÇüÀ¸·Î ¹ŞÀ½
+		char input = scan.next().charAt(0);	// Scannerë¡œ ì…ë ¥ë°›ì€ String ë¬¸ìì—´ì¤‘ 0ë²ˆì§¸ ì¸ë±ìŠ¤ë¥¼ êº¼ë‚´ì„œ character í˜•ìœ¼ë¡œ ë°›ìŒ
 		scan.close();
 		
 		System.out.println((int)input);

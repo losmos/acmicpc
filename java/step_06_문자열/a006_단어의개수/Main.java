@@ -1,9 +1,9 @@
-/*
- 	¹®Á¦ÃâÃ³ : BACKJOON, https://www.acmicpc.net/problem/1152
- 	¹®Á¦¹øÈ£ : 1152
- 	¾Ë°í¸®Áò : ±¸Çö, ¹®ÀÚ¿­
+ï»¿/*
+ 	ë¬¸ì œì¶œì²˜ : BACKJOON, https://www.acmicpc.net/problem/1152
+ 	ë¬¸ì œë²ˆí˜¸ : 1152
+ 	ì•Œê³ ë¦¬ì¦˜ : êµ¬í˜„, ë¬¸ìì—´
 */
-package step_06_¹®ÀÚ¿­.a006_´Ü¾îÀÇ°³¼ö;
+package step_06_ë¬¸ìì—´.a006_ë‹¨ì–´ì˜ê°œìˆ˜;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -19,13 +19,13 @@ class Main {
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		StringTokenizer st = null;
 		
-		st = new StringTokenizer(br.readLine(), " ");	// ¹®ÀÚ¿­ ÀÔ·Â¹ŞÀ½
+		st = new StringTokenizer(br.readLine(), " ");	// ë¬¸ìì—´ ì…ë ¥ë°›ìŒ
 		
 		int count = 0;
 		
-		while(st.hasMoreTokens())	// °ø¹é±¸ºĞÀ¸·Î Tokenize µÈ ¹®ÀÚ°¡ ´õ ÀÖ´Ù¸é °è¼Ó loop
+		while(st.hasMoreTokens())	// ê³µë°±êµ¬ë¶„ìœ¼ë¡œ Tokenize ëœ ë¬¸ìê°€ ë” ìˆë‹¤ë©´ ê³„ì† loop
 		{
-			st.nextToken();			// Token ²¨³»¼­ ¾ø¾Ú
+			st.nextToken();			// Token êº¼ë‚´ì„œ ì—†ì•°
 			count++;
 		}
 		

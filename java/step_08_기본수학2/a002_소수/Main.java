@@ -1,9 +1,9 @@
-/*
- 	¹®Á¦ÃâÃ³ : BACKJOON, https://www.acmicpc.net/problem/2581
- 	¹®Á¦¹øÈ£ : 2581
- 	¾Ë°í¸®Áò : ¼öÇĞ, Á¤¼ö·Ğ, ¼Ò¼ö ÆÇÁ¤
+ï»¿/*
+ 	ë¬¸ì œì¶œì²˜ : BACKJOON, https://www.acmicpc.net/problem/2581
+ 	ë¬¸ì œë²ˆí˜¸ : 2581
+ 	ì•Œê³ ë¦¬ì¦˜ : ìˆ˜í•™, ì •ìˆ˜ë¡ , ì†Œìˆ˜ íŒì •
 */
-package step_08_±âº»¼öÇĞ2.a002_¼Ò¼ö;
+package step_08_ê¸°ë³¸ìˆ˜í•™2.a002_ì†Œìˆ˜;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -13,13 +13,13 @@ import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-// ¼Ò¼öÁ¤º¸ Å¬·¡½º
+// ì†Œìˆ˜ì •ë³´ í´ë˜ìŠ¤
 class PrimeNumberInfo
 {
-	public int sumNumber;	// ¼Ò¼öÀÇ ÃÑ ÇÕ°è
-	public int minNumber;	// ¼Ò¼öÁß min °ª
+	public int sumNumber;	// ì†Œìˆ˜ì˜ ì´ í•©ê³„
+	public int minNumber;	// ì†Œìˆ˜ì¤‘ min ê°’
 	
-	//»ı¼ºÀÚ
+	//ìƒì„±ì
 	public PrimeNumberInfo(int sumNumber, int minNumber) {
 		this.sumNumber = sumNumber;
 		this.minNumber = minNumber;
@@ -28,29 +28,29 @@ class PrimeNumberInfo
 
 public class Main {
 	
-	// _MÀÌ»ó ~ _NÀÌÇÏ »çÀÌÀÇ ÀÚ¿¬¼ö Áß ¼Ò¼öÀÎ°ÍµéÀ» ¸®½ºÆ®¿¡ ³Ö¾î¼­ return ÇØÁÜ 
+	// _Mì´ìƒ ~ _Nì´í•˜ ì‚¬ì´ì˜ ìì—°ìˆ˜ ì¤‘ ì†Œìˆ˜ì¸ê²ƒë“¤ì„ ë¦¬ìŠ¤íŠ¸ì— ë„£ì–´ì„œ return í•´ì¤Œ 
 	public List<Integer> getPrimeNumberList(int _M, int _N)
 	{
-		List<Integer> primNumberList = new ArrayList<Integer>();	// ¼Ò¼öList ÀúÀå
+		List<Integer> primNumberList = new ArrayList<Integer>();	// ì†Œìˆ˜List ì €ì¥
 		
-		for(; _M<=_N; _M++)				// _MÀÌ»ó _N ÀÌÇÏÀÇ ¼ö¸¦ ÇÏ³ª¾¿ loop µ¹¸é¼­
+		for(; _M<=_N; _M++)				// _Mì´ìƒ _N ì´í•˜ì˜ ìˆ˜ë¥¼ í•˜ë‚˜ì”© loop ëŒë©´ì„œ
 		{
-			if(_M == 2 )				// _M°ªÀÌ 2¶ó¸é
+			if(_M == 2 )				// _Mê°’ì´ 2ë¼ë©´
 			{
-				primNumberList.add(_M);	// ¼Ò¼öÀÓ
+				primNumberList.add(_M);	// ì†Œìˆ˜ì„
 				continue;
 			}
 			
-			for(int i=2; i<_M; i++)		// ¼Ò¼öÀÎÁö °Ë»ç
+			for(int i=2; i<_M; i++)		// ì†Œìˆ˜ì¸ì§€ ê²€ì‚¬
 			{
 				if(_M % i == 0)
 				{
-					break;		// ¼Ò¼ö°¡ ¾Æ´Ô
+					break;		// ì†Œìˆ˜ê°€ ì•„ë‹˜
 				}
 				
-				if(i == _M-1)	// ³¡±îÁö»ì¾Æ³²¾Ò´Ù´Ï. ³Í ¼Ò¼ö´Ù
+				if(i == _M-1)	// ëê¹Œì§€ì‚´ì•„ë‚¨ì•˜ë‹¤ë‹ˆ. ë„Œ ì†Œìˆ˜ë‹¤
 				{
-					primNumberList.add(_M);		// _MÀº ¼Ò¼öÀÓ
+					primNumberList.add(_M);		// _Mì€ ì†Œìˆ˜ì„
 				}
 			}
 		}
@@ -58,23 +58,23 @@ public class Main {
 		return primNumberList;
 	}
 	
-	// ¼Ò¼öList¸¦ ¹Ş¾Æ¼­ ¼Ò¼öÁß Á¦ÀÏÀÛÀº min°ª°ú. ¼Ò¼öList¸¦ ¸ğµÎ´Ù ´õÇÑ sum°ªÀ» °¡Áø °´Ã¼(PrimeNumberInfo)¸¦ return ÇÔ
+	// ì†Œìˆ˜Listë¥¼ ë°›ì•„ì„œ ì†Œìˆ˜ì¤‘ ì œì¼ì‘ì€ minê°’ê³¼. ì†Œìˆ˜Listë¥¼ ëª¨ë‘ë‹¤ ë”í•œ sumê°’ì„ ê°€ì§„ ê°ì²´(PrimeNumberInfo)ë¥¼ return í•¨
 	public PrimeNumberInfo getResult(List<Integer> _primeNumberList)
 	{
-		int sum = _primeNumberList.get(0);		// 0¹ø index°ª get
-		int min = _primeNumberList.get(0);		// 0¹ø index°ª get
+		int sum = _primeNumberList.get(0);		// 0ë²ˆ indexê°’ get
+		int min = _primeNumberList.get(0);		// 0ë²ˆ indexê°’ get
 		
-		for(int i=1; i<_primeNumberList.size(); i++)	// 1¹ø indexºÎÅÍ loop
+		for(int i=1; i<_primeNumberList.size(); i++)	// 1ë²ˆ indexë¶€í„° loop
 		{
-			sum += _primeNumberList.get(i);				// loop µ¹¸é¼­ ¼Ò¼ö ´Ù ´õÇØÁÜ
+			sum += _primeNumberList.get(i);				// loop ëŒë©´ì„œ ì†Œìˆ˜ ë‹¤ ë”í•´ì¤Œ
 			
-			if(_primeNumberList.get(i) < min)			// min°ª °»½ÅÁ¶°Ç
+			if(_primeNumberList.get(i) < min)			// minê°’ ê°±ì‹ ì¡°ê±´
 			{
 				min = _primeNumberList.get(i);
 			}
 		}
 		
-		return new PrimeNumberInfo(sum, min);			// PrimeNumberInfo °´Ã¼ sum°ª min°ª ÃÊ±âÈ­ÇÏ¸é¼­ return
+		return new PrimeNumberInfo(sum, min);			// PrimeNumberInfo ê°ì²´ sumê°’ minê°’ ì´ˆê¸°í™”í•˜ë©´ì„œ return
 	}
 	
 	
@@ -86,15 +86,15 @@ public class Main {
 		int M = Integer.parseInt(br.readLine());
 		int N = Integer.parseInt(br.readLine());
 		
-		List<Integer> primeNumberList = main.getPrimeNumberList(M, N);	// ¼Ò¼ö List ¹Ş¾Æ¿È
+		List<Integer> primeNumberList = main.getPrimeNumberList(M, N);	// ì†Œìˆ˜ List ë°›ì•„ì˜´
 		
-		if(primeNumberList.size() == 0)	// ¼Ò¼ö°¡ ÇÏ³ªµµ¾ø´Ù¸é -1 return
+		if(primeNumberList.size() == 0)	// ì†Œìˆ˜ê°€ í•˜ë‚˜ë„ì—†ë‹¤ë©´ -1 return
 		{
 			bw.write("-1");
 		}
-		else	// ¼Ò¼ö°¡ ÇÏ³ª¶óµµ ÀÖ´Ù¸é
+		else	// ì†Œìˆ˜ê°€ í•˜ë‚˜ë¼ë„ ìˆë‹¤ë©´
 		{
-			PrimeNumberInfo pni = main.getResult(primeNumberList);	// sum, min°ª ±¸ÇÏ´Â method È£Ãâ
+			PrimeNumberInfo pni = main.getResult(primeNumberList);	// sum, minê°’ êµ¬í•˜ëŠ” method í˜¸ì¶œ
 			bw.write(String.valueOf(pni.sumNumber));
 			bw.newLine();
 			bw.write(String.valueOf(pni.minNumber));

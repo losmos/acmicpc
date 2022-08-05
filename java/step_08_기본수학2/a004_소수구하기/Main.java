@@ -1,9 +1,9 @@
-/*
- 	¹®Á¦ÃâÃ³ : BACKJOON, https://www.acmicpc.net/problem/1929
- 	¹®Á¦¹øÈ£ : 1929
- 	¾Ë°í¸®Áò : ¼öÇĞ, Á¤¼ö·Ğ, ¼Ò¼ö ÆÇÁ¤, ¿¡¶óÅä½ºÅ×³×½ºÀÇ Ã¼
+ï»¿/*
+ 	ë¬¸ì œì¶œì²˜ : BACKJOON, https://www.acmicpc.net/problem/1929
+ 	ë¬¸ì œë²ˆí˜¸ : 1929
+ 	ì•Œê³ ë¦¬ì¦˜ : ìˆ˜í•™, ì •ìˆ˜ë¡ , ì†Œìˆ˜ íŒì •, ì—ë¼í† ìŠ¤í…Œë„¤ìŠ¤ì˜ ì²´
 */
-package step_08_±âº»¼öÇĞ2.a004_¼Ò¼ö±¸ÇÏ±â;
+package step_08_ê¸°ë³¸ìˆ˜í•™2.a004_ì†Œìˆ˜êµ¬í•˜ê¸°;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -15,24 +15,24 @@ import java.util.StringTokenizer;
 
 public class Main{
 	
-	// _M ÀÌ»ó _NÀÌÇÏÀÇ ¼ö Áß ¼Ò¼öÀÎ°æ¿ì Ãâ·Â
+	// _M ì´ìƒ _Nì´í•˜ì˜ ìˆ˜ ì¤‘ ì†Œìˆ˜ì¸ê²½ìš° ì¶œë ¥
 	public boolean[] printPrimeNumber(int _M, int _N) throws IOException
 	{
-		boolean[] numberList = new boolean[_N];	// default : false(¼Ò¼ö), true(¼Ò¼ö°¡ ¾Æ´Ô)
+		boolean[] numberList = new boolean[_N];	// default : false(ì†Œìˆ˜), true(ì†Œìˆ˜ê°€ ì•„ë‹˜)
 
-		//¿¡¶óÅä½ºÅ×³×½ºÀÇ Ã¼
+		//ì—ë¼í† ìŠ¤í…Œë„¤ìŠ¤ì˜ ì²´
 		for(int i=2; i<=_N; i++)
 		{
 			for(int j=1; i*j<=_N; j++)
 			{
 				if(numberList[i*j-1] == false)
 				{
-					numberList[i*j-1] = true;		// ¼Ò¼ö°¡ ¾Æ´Ñ°æ¿ìÀÌ¹Ç·Î true°ª ¼³Á¤
+					numberList[i*j-1] = true;		// ì†Œìˆ˜ê°€ ì•„ë‹Œê²½ìš°ì´ë¯€ë¡œ trueê°’ ì„¤ì •
 				}
 			}
 		}
 		
-		numberList[1] = false;	// 2´Â ¼Ò¼öÀÌ¹Ç·Î
+		numberList[1] = false;	// 2ëŠ” ì†Œìˆ˜ì´ë¯€ë¡œ
 		
 		return numberList;
 	}
@@ -47,7 +47,7 @@ public class Main{
 		int M = Integer.parseInt(st.nextToken());
 		int N = Integer.parseInt(st.nextToken());
 		
-		boolean[] sieveOfEratosthenes = main.printPrimeNumber(M, N);	// printPrimeNumber ¸Ş¼Òµå È£Ãâ
+		boolean[] sieveOfEratosthenes = main.printPrimeNumber(M, N);	// printPrimeNumber ë©”ì†Œë“œ í˜¸ì¶œ
 		
 		for(int i=M-1; i<N; i++)
 		{

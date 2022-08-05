@@ -1,9 +1,9 @@
-/*
- 	¹®Á¦ÃâÃ³ : BACKJOON, https://www.acmicpc.net/problem/15596
- 	¹®Á¦¹øÈ£ : 15596
- 	¾Ë°í¸®Áò : ¼öÇĞ, ±¸Çö, »çÄ¢¿¬»ê
+ï»¿/*
+ 	ë¬¸ì œì¶œì²˜ : BACKJOON, https://www.acmicpc.net/problem/15596
+ 	ë¬¸ì œë²ˆí˜¸ : 15596
+ 	ì•Œê³ ë¦¬ì¦˜ : ìˆ˜í•™, êµ¬í˜„, ì‚¬ì¹™ì—°ì‚°
 */
-package step_05_ÇÔ¼ö.a001_Á¤¼öN°³ÀÇÇÕ;
+package step_05_í•¨ìˆ˜.a001_ì •ìˆ˜Nê°œì˜í•©;
 
 class Test {
 	public long sum(int[] a)

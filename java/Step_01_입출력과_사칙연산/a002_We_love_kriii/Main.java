@@ -1,15 +1,15 @@
-/*
- 	¹®Á¦ÃâÃ³ : BACKJOON, https://www.acmicpc.net/problem/10718
- 	¹®Á¦¹øÈ£ : 10718
- 	¾Ë°í¸®Áò : ±¸Çö
+ï»¿/*
+ 	ë¬¸ì œì¶œì²˜ : BACKJOON, https://www.acmicpc.net/problem/10718
+ 	ë¬¸ì œë²ˆí˜¸ : 10718
+ 	ì•Œê³ ë¦¬ì¦˜ : êµ¬í˜„
 */
-package Step_01_ÀÔÃâ·Â°ú_»çÄ¢¿¬»ê.a002_We_love_kriii;
+package Step_01_ìž…ì¶œë ¥ê³¼_ì‚¬ì¹™ì—°ì‚°.a002_We_love_kriii;
 
 public class Main {
 	public static void main(String[] args) {
 		for(int i=0; i<2; i++)
 		{
-			System.out.println("°­ÇÑÄ£±¸ ´ëÇÑÀ°±º");
+			System.out.println("ê°•í•œì¹œêµ¬ ëŒ€í•œìœ¡êµ°");
 		}
 	}
 }

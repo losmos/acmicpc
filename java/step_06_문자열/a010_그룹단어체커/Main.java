@@ -1,9 +1,9 @@
-/*
- 	¹®Á¦ÃâÃ³ : BACKJOON, https://www.acmicpc.net/problem/1316
- 	¹®Á¦¹øÈ£ : 1316
- 	¾Ë°í¸®Áò : ±¸Çö, ¹®ÀÚ¿­
+ï»¿/*
+ 	ë¬¸ì œì¶œì²˜ : BACKJOON, https://www.acmicpc.net/problem/1316
+ 	ë¬¸ì œë²ˆí˜¸ : 1316
+ 	ì•Œê³ ë¦¬ì¦˜ : êµ¬í˜„, ë¬¸ìì—´
 */
-package step_06_¹®ÀÚ¿­.a010_±×·ì´Ü¾îÃ¼Ä¿;
+package step_06_ë¬¸ìì—´.a010_ê·¸ë£¹ë‹¨ì–´ì²´ì»¤;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -21,16 +21,16 @@ class Main {
 		int index = 0;
 		for(int i=0; i<_checkingWord.length(); i++)
 		{
-			checkingWord = new StringBuilder(_checkingWord.toString());			// °Ë»çÇÒ ¹®ÀÚ¿­ ÃÊ±âÈ­
-			index = checkingWord.toString().indexOf(_checkingWord.charAt(i));	// °Ë»çÇÒ char ¹®ÀÚ°¡ ÃÖÃÊ·Î³ª¿Â index ÀúÀå
+			checkingWord = new StringBuilder(_checkingWord.toString());			// ê²€ì‚¬í•  ë¬¸ìì—´ ì´ˆê¸°í™”
+			index = checkingWord.toString().indexOf(_checkingWord.charAt(i));	// ê²€ì‚¬í•  char ë¬¸ìê°€ ìµœì´ˆë¡œë‚˜ì˜¨ index ì €ì¥
 			
-			// replaceÇÏ¸é¼­ ¹®ÀÚ¸¦ ÇÏ³ª¾¿¾ø¾Ö°¡¸ç indeOfÇÔ¼ö·Î Ã¼Å©ÇÏ¸ç ºÒ¿¬¼ÓÀûÀ¸·Î À§Ä¡ÇÒ¶§ return false
+			// replaceí•˜ë©´ì„œ ë¬¸ìë¥¼ í•˜ë‚˜ì”©ì—†ì• ê°€ë©° indeOfí•¨ìˆ˜ë¡œ ì²´í¬í•˜ë©° ë¶ˆì—°ì†ì ìœ¼ë¡œ ìœ„ì¹˜í• ë•Œ return false
 			for(int j=0; j<_checkingWord.length(); j++)
 			{
 				if(checkingWord.toString().indexOf(_checkingWord.charAt(i)) - index > 0)
 					
 				{
-					return false;	// ±×·ìÇÔ¼ö ¾Æ´Ô
+					return false;	// ê·¸ë£¹í•¨ìˆ˜ ì•„ë‹˜
 				}
 				
 				checkingWord = checkingWord.replace(i, i+1, "");
@@ -38,7 +38,7 @@ class Main {
 			
 		}
 		
-		return true;		// °Ë»ç¸¦ ¸ğµÎ Åë°úÇß´Ù¸é ±×·ì´Ü¾îÀÓ.
+		return true;		// ê²€ì‚¬ë¥¼ ëª¨ë‘ í†µê³¼í–ˆë‹¤ë©´ ê·¸ë£¹ë‹¨ì–´ì„.
 	}
 	
 	public static void main(String[] args) throws IOException
@@ -51,16 +51,16 @@ class Main {
 		StringTokenizer st = null;
 		
 		st = new StringTokenizer(br.readLine());
-		int N = Integer.parseInt(st.nextToken());	// ½ÃÇàÈ½¼ö N
+		int N = Integer.parseInt(st.nextToken());	// ì‹œí–‰íšŸìˆ˜ N
 		
 		
 		int result = 0;
 		while(N-- > 0)
 		{
-			st = new StringTokenizer(br.readLine());			// ¹®ÀÚ¿­ ÀÔ·Â
-			if(main.checkGroupWord(sb.append(st.nextToken())))	//±×·ì´Ü¾î Ã¼Å© ¸Ş¼Òµå È£Ãâ
+			st = new StringTokenizer(br.readLine());			// ë¬¸ìì—´ ì…ë ¥
+			if(main.checkGroupWord(sb.append(st.nextToken())))	//ê·¸ë£¹ë‹¨ì–´ ì²´í¬ ë©”ì†Œë“œ í˜¸ì¶œ
 			{
-				result ++;				// ±×·ì´Ü¾î¸¦ ÀÇ¹ÌÇÏ´Â return trueÀÏ°æ¿ì result°ª +1
+				result ++;				// ê·¸ë£¹ë‹¨ì–´ë¥¼ ì˜ë¯¸í•˜ëŠ” return trueì¼ê²½ìš° resultê°’ +1
 			}
 			
 			sb.delete(0,sb.length());	//sb clear

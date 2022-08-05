@@ -1,9 +1,9 @@
-/*
- 	¹®Á¦ÃâÃ³ : BACKJOON, https://www.acmicpc.net/problem/15552
- 	¹®Á¦¹øÈ£ : 15552
- 	¾Ë°í¸®Áò : ¼öÇĞ, ±¸Çö, »çÄ¢¿¬»ê
+ï»¿/*
+ 	ë¬¸ì œì¶œì²˜ : BACKJOON, https://www.acmicpc.net/problem/15552
+ 	ë¬¸ì œë²ˆí˜¸ : 15552
+ 	ì•Œê³ ë¦¬ì¦˜ : ìˆ˜í•™, êµ¬í˜„, ì‚¬ì¹™ì—°ì‚°
 */
-package Step_03_¹İº¹¹®.a004_ºü¸¥A´õÇÏ±âB;
+package Step_03_ë°˜ë³µë¬¸.a004_ë¹ ë¥¸Aë”í•˜ê¸°B;
 
 import java.io.BufferedReader;
 import java.io.IOException;

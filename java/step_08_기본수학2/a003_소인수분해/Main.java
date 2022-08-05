@@ -1,9 +1,9 @@
-/*
- 	¹®Á¦ÃâÃ³ : BACKJOON, https://www.acmicpc.net/problem/11653
- 	¹®Á¦¹øÈ£ : 11653
- 	¾Ë°í¸®Áò : ¼öÇĞ, Á¤¼ö·Ğ, ¼Ò¼ö ÆÇÁ¤
+ï»¿/*
+ 	ë¬¸ì œì¶œì²˜ : BACKJOON, https://www.acmicpc.net/problem/11653
+ 	ë¬¸ì œë²ˆí˜¸ : 11653
+ 	ì•Œê³ ë¦¬ì¦˜ : ìˆ˜í•™, ì •ìˆ˜ë¡ , ì†Œìˆ˜ íŒì •
 */
-package step_08_±âº»¼öÇĞ2.a003_¼ÒÀÎ¼öºĞÇØ;
+package step_08_ê¸°ë³¸ìˆ˜í•™2.a003_ì†Œì¸ìˆ˜ë¶„í•´;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -11,14 +11,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-// ¼Ò¼öÁ¤º¸ Å¬·¡½º
+// ì†Œìˆ˜ì •ë³´ í´ë˜ìŠ¤
 class PrimeNumberInfo
 {
-	public int primeNumber;				// ¼ÒÀÎ¼öºĞÇØ ³ª´« °ª(¼Ò¼ö)
-	public int remainder;				// ¼ÒÀÎ¼öºĞÇØÇÏ°í ³²Àº ³ª¸ÓÁö°ª
-	public boolean continueYn; 			// ¼ÒÀÎ¼öºĞÇØ continue ¿©ºÎ. true¶ó¸é °è¼Ó ÁøÇà. false¶ó¸é ¼ÒÀÎ¼öºĞÇØ Stop
+	public int primeNumber;				// ì†Œì¸ìˆ˜ë¶„í•´ ë‚˜ëˆˆ ê°’(ì†Œìˆ˜)
+	public int remainder;				// ì†Œì¸ìˆ˜ë¶„í•´í•˜ê³  ë‚¨ì€ ë‚˜ë¨¸ì§€ê°’
+	public boolean continueYn; 			// ì†Œì¸ìˆ˜ë¶„í•´ continue ì—¬ë¶€. trueë¼ë©´ ê³„ì† ì§„í–‰. falseë¼ë©´ ì†Œì¸ìˆ˜ë¶„í•´ Stop
 	
-	//»ı¼ºÀÚ ¿À¹ö·Îµù
+	//ìƒì„±ì ì˜¤ë²„ë¡œë”©
 	public PrimeNumberInfo(int primeNumber, int remainder, boolean continueYn) {
 		this.primeNumber = primeNumber;
 		this.remainder = remainder;
@@ -32,14 +32,14 @@ public class Main {
 	{
 		for(int i=2; i<_N; i++)
 		{
-			if(_N % i == 0)	// ¼ÒÀÎ¼öºĞÇØ ¼º°ø
+			if(_N % i == 0)	// ì†Œì¸ìˆ˜ë¶„í•´ ì„±ê³µ
 			{
-				return new PrimeNumberInfo(i, _N/i, true);	// i:³ª´«°ª(¼Ò¼ö), _N/i:³ª¸ÓÁö°ª, true:¼ÒÀÎ¼öºĞÇØ °è¼ÓÇØ¼­ ¤¡
+				return new PrimeNumberInfo(i, _N/i, true);	// i:ë‚˜ëˆˆê°’(ì†Œìˆ˜), _N/i:ë‚˜ë¨¸ì§€ê°’, true:ì†Œì¸ìˆ˜ë¶„í•´ ê³„ì†í•´ì„œ ã„±
 			}
 		}
 		
-		// for¹® ¾È¿¡¼­ return ¸øÇÏ°í ¿©±â±îÁö¿Â°Å¸é ´õÀÌ»ó ¼ÒÀÎ¼ö ¾ø´Ù´ÂÀÇ¹ÌÀÓ.
-		// _N : ¼Ò¼ö, -1 : ÀÇ¹Ì¾øÀ½ »ç¿ë¾ÈÇÔ, false : ¼ÒÀÎ¼öºĞÇØ Stop flag
+		// forë¬¸ ì•ˆì—ì„œ return ëª»í•˜ê³  ì—¬ê¸°ê¹Œì§€ì˜¨ê±°ë©´ ë”ì´ìƒ ì†Œì¸ìˆ˜ ì—†ë‹¤ëŠ”ì˜ë¯¸ì„.
+		// _N : ì†Œìˆ˜, -1 : ì˜ë¯¸ì—†ìŒ ì‚¬ìš©ì•ˆí•¨, false : ì†Œì¸ìˆ˜ë¶„í•´ Stop flag
 		return new PrimeNumberInfo(_N, -1, false);
 	}
 	
@@ -56,13 +56,13 @@ public class Main {
 			System.exit(0);
 		}
 		
-		PrimeNumberInfo pni = main.getFactorizationInfo(N);	// Ã¹¹øÂ° getFactorizationInfo ¸Ş¼Òµå ÄİÇÏ¸é¼­ pni ÃÊ±âÈ­
-		bw.write(String.valueOf(pni.primeNumber)+"\n");		// Ãâ·Â
+		PrimeNumberInfo pni = main.getFactorizationInfo(N);	// ì²«ë²ˆì§¸ getFactorizationInfo ë©”ì†Œë“œ ì½œí•˜ë©´ì„œ pni ì´ˆê¸°í™”
+		bw.write(String.valueOf(pni.primeNumber)+"\n");		// ì¶œë ¥
 
-		while(pni.continueYn)								// ¼ÒÀÎ¼öºĞÇØ Continue Flag(PrimeNumberInfo.continueYn)°¡ trueÀÏ¶§±îÁö °è¼Ó ¼öÇà
+		while(pni.continueYn)								// ì†Œì¸ìˆ˜ë¶„í•´ Continue Flag(PrimeNumberInfo.continueYn)ê°€ trueì¼ë•Œê¹Œì§€ ê³„ì† ìˆ˜í–‰
 		{
 			pni = main.getFactorizationInfo(pni.remainder);	// getFactorizationInfo call
-			bw.write(String.valueOf(pni.primeNumber)+"\n");	// Ãâ·Â
+			bw.write(String.valueOf(pni.primeNumber)+"\n");	// ì¶œë ¥
 		}
 
 		bw.flush();

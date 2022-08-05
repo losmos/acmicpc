@@ -1,9 +1,9 @@
-/*
- 	¹®Á¦ÃâÃ³ : BACKJOON, https://www.acmicpc.net/problem/1929
- 	¹®Á¦¹øÈ£ : 1929
- 	¾Ë°í¸®Áò : ¼öÇĞ, Á¤¼ö·Ğ, ¼Ò¼ö ÆÇÁ¤, ¿¡¶óÅä½ºÅ×³×½ºÀÇ Ã¼
+ï»¿/*
+ 	ë¬¸ì œì¶œì²˜ : BACKJOON, https://www.acmicpc.net/problem/1929
+ 	ë¬¸ì œë²ˆí˜¸ : 1929
+ 	ì•Œê³ ë¦¬ì¦˜ : ìˆ˜í•™, ì •ìˆ˜ë¡ , ì†Œìˆ˜ íŒì •, ì—ë¼í† ìŠ¤í…Œë„¤ìŠ¤ì˜ ì²´
 */
-package step_08_±âº»¼öÇĞ2.a005_º£¸£Æ®¶û°øÁØ;
+package step_08_ê¸°ë³¸ìˆ˜í•™2.a005_ë² ë¥´íŠ¸ë‘ê³µì¤€;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -15,29 +15,29 @@ import java.util.StringTokenizer;
 
 public class Main{
 	
-	// _M ÀÌ»ó _NÀÌÇÏÀÇ ¼ö Áß ¼Ò¼öÀÎ°æ¿ì Ãâ·Â
+	// _M ì´ìƒ _Nì´í•˜ì˜ ìˆ˜ ì¤‘ ì†Œìˆ˜ì¸ê²½ìš° ì¶œë ¥
 	public void printPrimeNumber(int _M, int _N) throws IOException
 	{
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		
-		for(; _M<=_N; _M++)				// _MÀÌ»ó _N ÀÌÇÏÀÇ ¼ö¸¦ ÇÏ³ª¾¿ loop µ¹¸é¼­
+		for(; _M<=_N; _M++)				// _Mì´ìƒ _N ì´í•˜ì˜ ìˆ˜ë¥¼ í•˜ë‚˜ì”© loop ëŒë©´ì„œ
 		{
-			if(_M == 2 )				// _M°ªÀÌ 2¶ó¸é
+			if(_M == 2 )				// _Mê°’ì´ 2ë¼ë©´
 			{
-				bw.write(String.valueOf(_M)+"\n");	// ¼Ò¼öÀÓ. Ãâ·Â
+				bw.write(String.valueOf(_M)+"\n");	// ì†Œìˆ˜ì„. ì¶œë ¥
 				continue;
 			}
 			
-			for(int i=2; i<_M; i++)		// ¼Ò¼öÀÎÁö °Ë»ç
+			for(int i=2; i<_M; i++)		// ì†Œìˆ˜ì¸ì§€ ê²€ì‚¬
 			{
 				if(_M % i == 0)
 				{
-					break;		// ¼Ò¼ö°¡ ¾Æ´Ô
+					break;		// ì†Œìˆ˜ê°€ ì•„ë‹˜
 				}
 				
-				if(i == _M-1)	// ³¡±îÁö»ì¾Æ³²¾Ò´Ù´Ï. ³Í ¼Ò¼ö´Ù
+				if(i == _M-1)	// ëê¹Œì§€ì‚´ì•„ë‚¨ì•˜ë‹¤ë‹ˆ. ë„Œ ì†Œìˆ˜ë‹¤
 				{
-					bw.write(String.valueOf(_M)+"\n");	// Ãâ·Â
+					bw.write(String.valueOf(_M)+"\n");	// ì¶œë ¥
 				}
 			}
 		}
@@ -55,6 +55,6 @@ public class Main{
 		int M = Integer.parseInt(st.nextToken());
 		int N = Integer.parseInt(st.nextToken());
 		
-		main.printPrimeNumber(M, N);	// printPrimeNumber ¸Ş¼Òµå È£Ãâ
+		main.printPrimeNumber(M, N);	// printPrimeNumber ë©”ì†Œë“œ í˜¸ì¶œ
 	}
 }

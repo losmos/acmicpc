@@ -1,9 +1,9 @@
-/*
- 	¹®Á¦ÃâÃ³ : BACKJOON, https://www.acmicpc.net/problem/5622
- 	¹®Á¦¹øÈ£ : 5622
- 	¾Ë°í¸®Áò : ±¸Çö
+ï»¿/*
+ 	ë¬¸ì œì¶œì²˜ : BACKJOON, https://www.acmicpc.net/problem/5622
+ 	ë¬¸ì œë²ˆí˜¸ : 5622
+ 	ì•Œê³ ë¦¬ì¦˜ : êµ¬í˜„
 */
-package step_06_¹®ÀÚ¿­.a008_´ÙÀÌ¾ó;
+package step_06_ë¬¸ìì—´.a008_ë‹¤ì´ì–¼;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -21,7 +21,7 @@ class Main {
 		char A = 'A';
 		char Z = 'Z';
 		
-		// dial ÀüÈ­±â ¹øÈ£ ¼ø¼­´ë·Î ¼Ò¿ä½Ã°£°ªÀ» ³Ö¾úÀ½
+		// dial ì „í™”ê¸° ë²ˆí˜¸ ìˆœì„œëŒ€ë¡œ ì†Œìš”ì‹œê°„ê°’ì„ ë„£ì—ˆìŒ
 		int[] dial = new int[]{2,3,3,3,4,4,4,5,5,5,6,6,6,7,7,7,8,8,8,8,9,9,9,10,10,10,10,13};
 		
 		sb.append(br.readLine());
