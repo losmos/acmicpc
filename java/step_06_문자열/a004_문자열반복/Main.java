@@ -3,7 +3,7 @@
  	문제번호 : 2675
  	알고리즘 : 구현, 문자열
 */
-package step_06_문자열.a004_문자열반복;
+package Step_06_문자열.a004_문자열반복;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

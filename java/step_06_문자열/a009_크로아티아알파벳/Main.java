@@ -3,7 +3,7 @@
  	문제번호 : 2941
  	알고리즘 : 구현, 문자열
 */
-package step_06_문자열.a009_크로아티아알파벳;
+package Step_06_문자열.a009_크로아티아알파벳;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

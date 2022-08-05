@@ -3,7 +3,7 @@
  	문제번호 : 1065
  	알고리즘 : 브루트포스 알고리즘
 */
-package step_05_함수.a003_한수;
+package Step_05_함수.a003_한수;
 
 import java.util.Scanner;
 

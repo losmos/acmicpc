@@ -3,7 +3,7 @@
  	문제번호 : 2869
  	알고리즘 : 수학
 */
-package step_07_기본수학1.a004_달팽이는올라가고싶다;
+package Step_07_기본수학1.a004_달팽이는올라가고싶다;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

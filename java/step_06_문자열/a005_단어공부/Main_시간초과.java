@@ -3,7 +3,7 @@
  	문제번호 : 1157
  	알고리즘 : 구현, 문자열
 */
-package step_06_문자열.a005_단어공부;
+package Step_06_문자열.a005_단어공부;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

@@ -3,7 +3,7 @@
  	문제번호 : 2577
  	알고리즘 : 수학, 구현, 사칙연산
 */
-package step_04_1차원배열.a003_숫자의개수;
+package Step_04_1차원배열.a003_숫자의개수;
 
 import java.util.Scanner;
 

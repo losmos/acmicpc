@@ -3,7 +3,7 @@
  	문제번호 : 2908
  	알고리즘 : 수학, 구현
 */
-package step_06_문자열.a007_상수;
+package Step_06_문자열.a007_상수;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

@@ -3,7 +3,7 @@
  	문제번호 : 11720
  	알고리즘 : 수학, 구현, 문자열
 */
-package step_06_문자열.a003_알파벳찾기;
+package Step_06_문자열.a003_알파벳찾기;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

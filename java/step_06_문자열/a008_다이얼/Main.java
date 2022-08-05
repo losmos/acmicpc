@@ -3,7 +3,7 @@
  	문제번호 : 5622
  	알고리즘 : 구현
 */
-package step_06_문자열.a008_다이얼;
+package Step_06_문자열.a008_다이얼;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

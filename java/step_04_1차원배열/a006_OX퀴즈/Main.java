@@ -3,7 +3,7 @@ s 	문제출처 : BACKJOON, https://www.acmicpc.net/problem/8958
  	문제번호 : 8958
  	알고리즘 : 구현, 문자열
 */
-package step_04_1차원배열.a006_OX퀴즈;
+package Step_04_1차원배열.a006_OX퀴즈;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

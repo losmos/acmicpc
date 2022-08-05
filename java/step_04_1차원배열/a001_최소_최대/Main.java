@@ -3,7 +3,7 @@
  	문제번호 : 10818
  	알고리즘 : 수학, 구현
 */
-package step_04_1차원배열.a001_최소_최대;
+package Step_04_1차원배열.a001_최소_최대;
 
 import java.util.Scanner;
 

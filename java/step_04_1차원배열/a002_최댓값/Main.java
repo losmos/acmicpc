@@ -3,7 +3,7 @@
  	문제번호 : 2562
  	알고리즘 : 구현
 */
-package step_04_1차원배열.a002_최댓값;
+package Step_04_1차원배열.a002_최댓값;
 
 import java.util.Scanner;
 

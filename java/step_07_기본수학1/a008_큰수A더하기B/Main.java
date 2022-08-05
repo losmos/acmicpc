@@ -3,7 +3,7 @@
  	문제번호 : 10757
  	알고리즘 : 수학, 구현, 사칙연산, 임의 정밀도/큰 수 연산
 */
-package step_07_기본수학1.a008_큰수A더하기B;
+package Step_07_기본수학1.a008_큰수A더하기B;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

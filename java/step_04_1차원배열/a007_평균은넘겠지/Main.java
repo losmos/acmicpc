@@ -3,7 +3,7 @@ s 	문제출처 : BACKJOON, https://www.acmicpc.net/problem/4344
  	문제번호 : 4344
  	알고리즘 : 수학, 사칙연산
 */
-package step_04_1차원배열.a007_평균은넘겠지;
+package Step_04_1차원배열.a007_평균은넘겠지;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

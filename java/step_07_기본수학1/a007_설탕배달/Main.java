@@ -3,7 +3,7 @@
  	문제번호 : 2839
  	알고리즘 : 수학, 다이나믹 알고리즘, 그리디 알고리즘
 */
-package step_07_기본수학1.a007_설탕배달;
+package Step_07_기본수학1.a007_설탕배달;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

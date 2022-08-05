@@ -3,7 +3,7 @@
  	문제번호 : 1978
  	알고리즘 : 수학, 정수론, 소수 판정, 에라토스테네스의 체
 */
-package step_08_기본수학2.a001_소수찾기;
+package Step_08_기본수학2.a001_소수찾기;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

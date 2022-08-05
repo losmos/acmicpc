@@ -3,7 +3,7 @@ s 	문제출처 : BACKJOON, https://www.acmicpc.net/problem/1546
  	문제번호 : 1546
  	알고리즘 : 수학, 사칙연산
 */
-package step_04_1차원배열.a005_평균;
+package Step_04_1차원배열.a005_평균;
 
 import java.util.Scanner;
 

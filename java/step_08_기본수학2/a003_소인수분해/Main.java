@@ -3,7 +3,7 @@
  	문제번호 : 11653
  	알고리즘 : 수학, 정수론, 소수 판정
 */
-package step_08_기본수학2.a003_소인수분해;
+package Step_08_기본수학2.a003_소인수분해;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

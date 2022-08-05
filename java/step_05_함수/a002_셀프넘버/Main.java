@@ -3,7 +3,7 @@
  	문제번호 : 4673
  	알고리즘 : 수학, 구현, 브루트포스 알고리즘
 */
-package step_05_함수.a002_셀프넘버;
+package Step_05_함수.a002_셀프넘버;
 
 class Main {
 	public int dN(int _param)
