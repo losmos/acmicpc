@@ -27,7 +27,7 @@ func main() {
 		var number int
 		var word string
 		var result int
-		for _, v := range line { // line을 character형으로 하나하나씩 잘른 v
+		for _, v := range line { // line을 character형으로 하나하나씩 자른 v
 			if v == ' ' { // v가 공백이라면(ex: 12 34 입력할경우 중간 공백 인식)
 				number, _ = strconv.Atoi(word) // 숫자로 변환해서 number변수에 담음
 				result += number
