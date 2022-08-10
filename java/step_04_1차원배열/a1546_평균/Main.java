@@ -4,13 +4,11 @@ s 	문제출처 : BACKJOON, https://www.acmicpc.net/problem/1546
  	알고리즘 : 수학, 사칙연산
 */
 package Step_04_1차원배열.a1546_평균;
-
 import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		
 		int N = scan.nextInt();
 		int[] nArray = new int[N];
 		double max = 0;
