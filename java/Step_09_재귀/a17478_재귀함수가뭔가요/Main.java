@@ -3,7 +3,7 @@
  	문제번호 : 17478
  	알고리즘 : 구현, 재귀
 */
-package Step_09_재귀.a003_재귀함수가뭔가요;
+package Step_09_재귀.a17478_재귀함수가뭔가요;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
