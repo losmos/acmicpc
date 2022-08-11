@@ -7,7 +7,6 @@ package main
 
 import (
 	"bufio"
-	"bytes"
 	"os"
 	"strconv"
 )
@@ -17,26 +16,20 @@ func main() {
 	writer := bufio.NewWriter(os.Stdout)
 
 	scanner.Split(bufio.ScanLines)
-	scanner.Scan()
-	total, _ := strconv.Atoi(scanner.Text())
-	scanner.Scan()
-	T, _ := strconv.Atoi(scanner.Text())
 
-	var sum int = 0
-	for i := 0; i < T; i++ {
+	var max, maxIndex int
+	for i := 0; i < 9; i++ {
 		scanner.Scan()
-		line := bytes.Fields(scanner.Bytes())
-		price, _ := strconv.Atoi(string(line[0]))
-		count, _ := strconv.Atoi(string(line[1]))
-
-		sum = sum + (price * count)
+		input, _ := strconv.Atoi(scanner.Text())
+		if input > max {
+			max = input
+			maxIndex = i + 1
+		}
 	}
 
-	if total == sum {
-		writer.WriteString("Yes")
-	} else {
-		writer.WriteString("No")
-	}
-
+	writer.WriteString(strconv.Itoa(max))
+	writer.WriteByte('\n')
+	writer.WriteString(strconv.Itoa(maxIndex))
+	writer.WriteByte('\n')
 	writer.Flush()
 }
