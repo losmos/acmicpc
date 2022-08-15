@@ -1,0 +1,322 @@
+﻿/*
+ 	문제출처 : BACKJOON, https://www.acmicpc.net/problem/11729
+ 	문제번호 : 11729
+ 	알고리즘 : 재귀
+*/
+package Step_09_재귀.a11729_하노이탑이동순서;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+
+class HanoiStack {
+	int[] stack;
+	int top;
+	int size;
+
+	public HanoiStack(int _size) {
+		this.size = _size;
+		stack = new int[_size];
+	}
+
+	public int pop() {;
+		int block = stack[--top];
+		stack[top] = 0;
+		return block;
+	}
+
+	public void push(int _param) {
+		stack[top++] = _param;
+	}
+}
+
+class HanoiTopInfo {
+	HanoiStack[] hanoiStack;
+	int fromIndex;	// 블럭3개가 있던 자리
+	int toIndex;	// 블럭3개가 옮겨간 자리
+
+	int resultCount;
+	String result = "";
+	
+	public HanoiTopInfo(HanoiStack[] hanoiStack, int fromIndex, int toIndex) {
+		this.hanoiStack = hanoiStack;
+		this.fromIndex = fromIndex;
+		this.toIndex = toIndex;
+	}
+
+	// 블럭3개가 위치한 index에서 연속된블럭이 홀수이면 return true, 짝수이면 return false
+	public boolean getOddInfo() {
+		int count = 1;
+		boolean continueYn = false;
+		for(int i = hanoiStack[toIndex].stack.length -1 ; i>0; i--) {
+			if( hanoiStack[toIndex].stack[i] != 0 && (hanoiStack[toIndex].stack[i] + 1 == hanoiStack[toIndex].stack[i-1])) {
+				count++;
+				continueYn = true;	// 블럭이 연속되어있기 시작.
+			} else {				// 불연속적인게 나왔으면
+				if(continueYn) {	// 그이후에 연속적인 블럭이 있더라도 카운팅해주면 안되므로 break (ex : 12378 블럭이 있다면 1.2.3 3개만 연속된걸로 카운팅해야함. 7.8 까지 연속되어있다고 카운팅해주면 안됨 )
+					break;
+				}
+			}
+		}
+
+		if(count % 2 == 1) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public void makeResult(int _fromIndex, int _toIndex) {
+		result += String.valueOf(_fromIndex+1) + " " + String.valueOf(_toIndex+1) + "\n";
+		resultCount++;
+	}
+}
+
+public class Main {
+
+	// 최초 초기화
+	public HanoiTopInfo initHanoiTop(int _size) {
+		HanoiStack[] hanoiStack = new HanoiStack[3];
+		hanoiStack[0] = new HanoiStack(_size);
+		hanoiStack[1] = new HanoiStack(_size);
+		hanoiStack[2] = new HanoiStack(_size);
+
+
+		for(int i=0; i<_size; i++) {
+			hanoiStack[0].stack[i] = _size -i;
+		}
+
+		hanoiStack[0].top = _size;
+
+		return new HanoiTopInfo(hanoiStack, 0, 0);
+	}
+
+
+	public HanoiTopInfo move3Blocks(HanoiTopInfo _hanoiTopInfo, int _toIndex, int _targetIndex, int _elseIndex) {
+		int block = _hanoiTopInfo.hanoiStack[_toIndex].pop();
+			_hanoiTopInfo.hanoiStack[_targetIndex].push(block);
+			_hanoiTopInfo.makeResult(_toIndex, _targetIndex);
+			block = _hanoiTopInfo.hanoiStack[_toIndex].pop();
+			_hanoiTopInfo.hanoiStack[_elseIndex].push(block);
+			_hanoiTopInfo.makeResult(_toIndex, _elseIndex);
+			block = _hanoiTopInfo.hanoiStack[_targetIndex].pop();
+			_hanoiTopInfo.hanoiStack[_elseIndex].push(block);
+			_hanoiTopInfo.makeResult(_targetIndex, _elseIndex);
+			block = _hanoiTopInfo.hanoiStack[_toIndex].pop();
+			_hanoiTopInfo.hanoiStack[_targetIndex].push(block);
+			_hanoiTopInfo.makeResult(_toIndex, _targetIndex);
+			block = _hanoiTopInfo.hanoiStack[_elseIndex].pop();
+			_hanoiTopInfo.hanoiStack[_toIndex].push(block);
+			_hanoiTopInfo.makeResult(_elseIndex, _toIndex);
+			block = _hanoiTopInfo.hanoiStack[_elseIndex].pop();
+			_hanoiTopInfo.hanoiStack[_targetIndex].push(block);
+			_hanoiTopInfo.makeResult(_elseIndex, _targetIndex);
+			block = _hanoiTopInfo.hanoiStack[_toIndex].pop();
+			_hanoiTopInfo.hanoiStack[_targetIndex].push(block);
+			_hanoiTopInfo.makeResult(_toIndex, _targetIndex);
+			
+			_hanoiTopInfo.toIndex = _targetIndex;
+			_hanoiTopInfo.fromIndex = _toIndex;
+
+			return _hanoiTopInfo;
+	}
+
+	public HanoiTopInfo runHanoiBlock(HanoiTopInfo _hanoiTopInfo) {
+
+		/*	하노이탑 현재상태 출력
+		 */
+		/* 실행후 7 입력한다음에 F8 7번누르면 아래출력결과 나오는데 
+		 * ===========
+			1
+			2
+			3
+			4
+			7
+			-----------
+			6
+			-----------
+			5
+			===========
+			이 다음 부분부터 꼬이기시작함. 뭔가 공식을 처음부터 다시 세워야되나봐.
+		 */
+		System.out.println("===========");
+		for(int i=_hanoiTopInfo.hanoiStack[0].top-1; i>=0; i--) {
+			System.out.println(_hanoiTopInfo.hanoiStack[0].stack[i]);
+		}
+		System.out.println("-----------");
+		for(int i=_hanoiTopInfo.hanoiStack[1].top-1; i>=0; i--) {
+			System.out.println(_hanoiTopInfo.hanoiStack[1].stack[i]);
+		}
+		System.out.println("-----------");
+		for(int i=_hanoiTopInfo.hanoiStack[2].top-1; i>=0; i--) {
+			System.out.println(_hanoiTopInfo.hanoiStack[2].stack[i]);
+		}
+		System.out.println("===========");
+
+		if(_hanoiTopInfo.hanoiStack[2].stack[_hanoiTopInfo.hanoiStack[2].size-1] == 1) {
+			return _hanoiTopInfo;
+		}
+
+
+		//첫번째 call 일때
+		if(_hanoiTopInfo.toIndex == 0 && _hanoiTopInfo.fromIndex == 0) {
+			int toIndex;
+			int targetIndex;
+			int elseIndex;
+				
+			if(_hanoiTopInfo.getOddInfo()) {	// 첫 시작 하노이탑 개수가 홀수라면
+				toIndex = 0;
+				targetIndex = 2;
+				elseIndex = 1;
+			} else {	// 짝수라면
+				toIndex = 0;
+				targetIndex = 1;
+				elseIndex = 2;
+			}
+
+
+			//3개블럭 이동
+			_hanoiTopInfo = move3Blocks(_hanoiTopInfo, toIndex, targetIndex, elseIndex);
+			
+			runHanoiBlock(_hanoiTopInfo);
+		}
+		else {	// 첫번째 call이 아니라면
+			int toIndex = _hanoiTopInfo.toIndex;
+			int fromIndex = _hanoiTopInfo.fromIndex;
+			int elseIndex = 3 - fromIndex - toIndex;
+
+			// fromIndex에서 옮길 블럭이 있고, 
+			if(_hanoiTopInfo.hanoiStack[fromIndex].top > 0)  {	
+				// 옮길자리에 블럭이 없거나(크기비교 안해도됨. 그냥 옮길 수 있는 조건 만족)
+				// 옮길자리에 블럭이 이미 존재하면서 , 옮길 블럭이 더 작다면(옮길 수 있는 조건 만족)
+				// // fromIndex -> elseIndex로 블럭을 옮김
+				if(_hanoiTopInfo.hanoiStack[elseIndex].top <= 0 || (_hanoiTopInfo.hanoiStack[elseIndex].top > 0 && (_hanoiTopInfo.hanoiStack[fromIndex].stack[_hanoiTopInfo.hanoiStack[fromIndex].top - 1] < _hanoiTopInfo.hanoiStack[elseIndex].stack[_hanoiTopInfo.hanoiStack[elseIndex].top - 1]))) {
+					int block = _hanoiTopInfo.hanoiStack[fromIndex].pop();	// block pop
+					_hanoiTopInfo.hanoiStack[elseIndex].push(block);
+					_hanoiTopInfo.makeResult(fromIndex, elseIndex);
+					_hanoiTopInfo.fromIndex = elseIndex;
+				}
+				else {	// fromIndex -> elseIndex로 블럭을 옮길 수 없다면
+					int block = _hanoiTopInfo.hanoiStack[elseIndex].pop();	// block pop
+					_hanoiTopInfo.hanoiStack[fromIndex].push(block);
+					_hanoiTopInfo.makeResult(elseIndex, fromIndex);
+					_hanoiTopInfo.fromIndex = fromIndex;
+				}
+			}
+			else {	// fromIndex에서 옮길 블럭이 없을경우 elseIndex -> fromIndex 블럭을 옮김
+				int block = _hanoiTopInfo.hanoiStack[elseIndex].pop();	// block pop
+				_hanoiTopInfo.hanoiStack[fromIndex].push(block);
+				_hanoiTopInfo.makeResult(elseIndex, fromIndex);
+				_hanoiTopInfo.fromIndex = fromIndex;
+			}
+
+
+			//task 블럭3개를 포함한 연속된블럭이 어디로가야할지 정확히 정해야될것같음!!! 
+			// takstask
+			if(_hanoiTopInfo.getOddInfo()) {	// 3개블럭이 위치한 index의 총 블럭을 봤을때, 연속으로있는 블럭의 개수가 홀수인지 검사해서 true라면(홀수일경우)
+
+				int targetIndex;
+				if(toIndex != 2)
+				{
+					//fromIndex에 1개이상의 블럭이 있고, elseIndex에도 1개이상의 블럭이 있을때
+					//elseIndex에 있는 top 블럭이 fromIndex에있는 top 블럭이 보다 작다면
+					if((_hanoiTopInfo.hanoiStack[fromIndex].top > 0 && _hanoiTopInfo.hanoiStack[elseIndex].top > 0) && 
+						(_hanoiTopInfo.hanoiStack[elseIndex].stack[_hanoiTopInfo.hanoiStack[elseIndex].top-1] < _hanoiTopInfo.hanoiStack[fromIndex].stack[_hanoiTopInfo.hanoiStack[fromIndex].top-1] )) {
+							targetIndex = elseIndex;
+							elseIndex = 3 - targetIndex - toIndex;
+					}
+					// 3개블럭이 위치한 Index가 3개 + 맨아래 마지막 최종블럭으로 구성되어있을경우
+					else if(_hanoiTopInfo.hanoiStack[_hanoiTopInfo.toIndex].top == 4 &&_hanoiTopInfo.hanoiStack[_hanoiTopInfo.toIndex].stack[0] == _hanoiTopInfo.hanoiStack[_hanoiTopInfo.fromIndex].size) {
+						targetIndex = 1 - toIndex;
+						elseIndex = 3 - targetIndex - toIndex;
+					}
+					else{
+						targetIndex = 2;
+						elseIndex = 3 - targetIndex - toIndex;
+					}
+				}
+				else {
+					targetIndex = _hanoiTopInfo.fromIndex;
+					elseIndex = 3 - targetIndex - toIndex;
+				}
+
+				//3개블럭 이동
+				_hanoiTopInfo = move3Blocks(_hanoiTopInfo, toIndex, targetIndex, elseIndex);
+				
+				runHanoiBlock(_hanoiTopInfo);
+			}
+			else {	// 3개블럭이 위치한 index의 총 블럭을 봤을때, 연속으로있는 블럭의 개수가 홀수인지 검사해서 false라면(짝수일경우)
+				int targetIndex;
+				if(toIndex != 2)
+				{
+					// targetIndex = 1 - toIndex;
+					// elseIndex = 3 - targetIndex - toIndex;
+					targetIndex = 3 - fromIndex - toIndex;
+					elseIndex = 3 - targetIndex - toIndex;
+				}
+				else {
+					// targetIndex에 마지막 최종블럭이 위치한경우는 ,최종블럭 위치Index위에다가 옮긴다.(짝수인경우임)
+					if(_hanoiTopInfo.hanoiStack[_hanoiTopInfo.fromIndex].stack[0] == _hanoiTopInfo.hanoiStack[_hanoiTopInfo.fromIndex].size) {
+						// targetIndex = _hanoiTopInfo.fromIndex;	// 최종블럭이 위치한 index
+						// elseIndex = 3 - targetIndex - toIndex;
+						targetIndex = 3 - fromIndex - toIndex;
+						elseIndex = 3 - targetIndex - toIndex;
+					}
+					else {
+						// targetIndex = elseIndex;
+						// elseIndex = 3 - targetIndex - toIndex;
+						targetIndex = 3 - fromIndex - toIndex;
+						elseIndex = 3 - targetIndex - toIndex;
+					}
+				}
+
+				//3개블럭 이동
+				_hanoiTopInfo = move3Blocks(_hanoiTopInfo, toIndex, targetIndex, elseIndex);
+				
+				runHanoiBlock(_hanoiTopInfo);
+			}
+			
+		}
+
+		return _hanoiTopInfo;
+
+	}
+
+	// 처음시작 1번자리 탑개수가 홀수라면  1번자리 3개를 최종 목표위치로(3번) 이동시키고
+	// 처음시작 1번자리 탑개수가 짝수라면  1번자리 3개를 최종 목표위치가 아닌곳(2번)으로 이동
+
+	// 3개블럭이(3번) 원래있던 from 자리(1번)먼저 체크해서 옮길 블럭이있으면 그걸 옮기고. 옮길 블럭이 없다면 나머지 자리(else)에서 블럭을 옮김.
+	// if		3개가 있는자리(3번) (연속된)전체개수가 홀수라면 최종 목표자리(3번자리)로 옮기고. 최종목표자리(3번자리)로 옮길 수 없다면 최근 블럭1개를이동시켰던 그 to자리로 이동 (그게 최종 맨마지막 최종 블락이라면 그곳에 옮기지않고, else 자리에 옮김.)
+	// else if	3개가 있는자리(3번) (연속된)전체개수가 짝수라면 최종 목표자리(3번자리)가 아닌곳으로 옮기는데. 두자리다 옮길 수 있는경우 최근 블럭1개를이동시켰던 그 to자리가 아닌 나머지자리(else)로 이동 (옮길곳이 맨마지막 최종 블락이라면 다른곳으로 이동)
+	public static void main(String[] args) throws IOException {
+		Main main = new Main();
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+		int N = Integer.parseInt(br.readLine());
+
+		if(N <= 2) {
+			if(N == 2 ) {
+				bw.write("3" + "\n");
+				bw.write("1 2" + "\n");
+				bw.write("1 3" + "\n");
+				bw.write("2 3" + "\n");
+			} else {
+				bw.write("1" + "\n");
+				bw.write("1 3" + "\n");
+			}
+		}
+		else {
+			HanoiTopInfo hanoiTopInfo = main.initHanoiTop(N);
+			hanoiTopInfo = main.runHanoiBlock(hanoiTopInfo);
+			bw.write(String.valueOf(hanoiTopInfo.resultCount) + "\n");
+			bw.write(hanoiTopInfo.result);
+		}
+
+
+		bw.flush();
+		bw.close();
+	}
+}
