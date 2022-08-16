@@ -53,10 +53,10 @@ public class Main {
 		// 중첩for문으로 newStarSquare 배열값 할당
 		for(int i=0; i<size; i++) {
 			for(int j=0; j<size; j++) {
-				if((i == size/3 && j == size/3) || (i%3 == 1 && j%3 == 1)) {
+				if(i%3 == 1 && j%3 == 1) {	// 공백조건
 					newStarSquare[i][j] = " ";
 				} else {
-					newStarSquare[i][j] = _starSquare.starSquare[i/3][j/3];
+					newStarSquare[i][j] = _starSquare.starSquare[i/3][j/3];	// i/3 주기로 starSquare배열에있는 모양을따서 큰 newStarSquare에 할당
 				}
 			}
 		}
