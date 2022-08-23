@@ -315,6 +315,8 @@ public class Main {
 
 	// '제일무거운 블락'이 3번째자리로 이동했다면 더이상 움직일 필요가 없으므로. 앞으로는 '제일무거운 블락'을 그보다 한단계 작은크기의 블럭으로 변경시킨다.
 	public static void main(String[] args) throws IOException {
+		// long start = System.nanoTime();
+
 		Main main = new Main();
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -342,6 +344,9 @@ public class Main {
 		}
 
 		bw.flush();
+		// long end = System.nanoTime();
+		// bw.write("수행시간: " + (end - start) / 1000000 + " ms");
+		// bw.flush();
 		bw.close();
 	}
 }

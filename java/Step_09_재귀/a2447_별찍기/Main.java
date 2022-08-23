@@ -64,6 +64,7 @@ public class Main {
 	}
 
 	public static void main(String[] args) throws IOException {
+		// long start = System.nanoTime();
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		int N = Integer.parseInt(br.readLine());	//N은 3의 거듭제곱
@@ -81,6 +82,9 @@ public class Main {
 		}
 
 		bw.flush();
+		// long end = System.nanoTime();
+		// bw.write("수행시간: " + (end - start) / 1000000 + " ms");
+		// bw.flush();
 		bw.close();
 	}
 }
