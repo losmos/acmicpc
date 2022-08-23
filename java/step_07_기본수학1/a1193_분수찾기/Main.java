@@ -47,7 +47,7 @@ public class Main {
 		}
 		int numerator = coordinate - N + 1;			// 분모값
 		int denominator = N - (coordinate-index);	// 분자값, 계차수열을 초과할때 break되므로 입력값N에서, 초과하는 그 전 계차수열값을 빼야 해당 distance에서 나머지를 구할수있고
-													// 이 나머지값을 index번? 계차에서 몇칸더 나아갔는지를 계산해 낼 수 있다.
+													// 이 나머지값을 index번째 계차에서 몇칸더 나아갔는지를 계산해 낼 수 있다.
 		
 		// 숫자가 지그재그로 진행했네...
 		if(index % 2 == 1)
