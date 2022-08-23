@@ -9,31 +9,39 @@ import (
 	"bufio"
 	"bytes"
 	"os"
+	"strconv"
 )
 
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 	writer := bufio.NewWriter(os.Stdout)
 
-	scanner.Split(bufio.ScanLines)
+	scanner.Split(bufio.ScanLines) // 한 라인을 읽어들여서
 	scanner.Scan()
 
-	inputArr := bytes.Fields(scanner.Bytes())
+	inputArr := bytes.Fields(scanner.Bytes()) // whitespace를 구분자로하여 byte[][] return
 
 	var a, b string
-	for _, v := range inputArr {
+	for index, v := range inputArr {
 		for i := len(v) - 1; i >= 0; i-- {
-			writer.WriteByte(v[i])
-			writer.WriteByte('\n')
+			if index == 0 {
+				a = a + string(v[i]) // a 값 reverse
+			} else {
+				b = b + string(v[i]) // b 값 reverse
+			}
+			// writer.WriteByte(v[i])
+			// writer.WriteByte('\n')
 		}
 	}
 
-	/*
-		for i := 0; i < len(inputArr); i++ {
-			writer.Write(inputArr[i])
-			writer.WriteByte('\n')
-		}
-	*/
+	numberA, _ := strconv.Atoi(a) // string -> int
+	numberB, _ := strconv.Atoi(b) // string -> int
+	if numberA > numberB {
+		writer.WriteString(a)
+	} else {
+		writer.WriteString(b)
+	}
 
+	writer.WriteByte('\n')
 	writer.Flush()
 }
