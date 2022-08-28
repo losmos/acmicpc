@@ -31,7 +31,7 @@ class Main {
 				continue;
 			}
 
-			slice[index++] = Arrays.copyOfRange(item, _startX + _startY, _startX + _startY + 8);
+			slice[index++] = Arrays.copyOfRange(item, _startY, _startY + 8);
 		}
 		return slice;
 	}
@@ -47,12 +47,12 @@ class Main {
 			for(int j = 0; j < 8; j ++) {
 				if((i + j) % 2 == 0) {	// 짝수인경우 white 칠할차례
 					if(!_board[i][j].equals("W")) {
-						_board[i][j]="W";
+						// _board[i][j]="W";
 						caseWhiteCnt += 1;
 					}
 				} else {	// 홀수인 경우 black 칠할 차례
 					if(!_board[i][j].equals("B")) {
-						_board[i][j]="B";
+						// _board[i][j]="B";
 						caseWhiteCnt += 1;
 					}
 				}
@@ -65,12 +65,12 @@ class Main {
 			for(int j = 0; j < 8; j ++) {
 				if((i + j) % 2 == 0) {	// 짝수인경우 black 칠할차례
 					if(!_board[i][j].equals("B")) {
-						_board[i][j]="B";
+						// _board[i][j]="B";
 						caseBlackCnt += 1;
 					}
 				} else {	// 홀수인 경우 white 칠할 차례
 					if(!_board[i][j].equals("W")) {
-						_board[i][j]="W";
+						// _board[i][j]="W";
 						caseBlackCnt += 1;
 					}
 				}
@@ -93,7 +93,6 @@ class Main {
 		st = new StringTokenizer(br.readLine(), " ");
 		String[][] board = new String[Integer.parseInt(st.nextToken())][Integer.parseInt(st.nextToken())];
 
-		int index = 0;
 		for(int i = 0; i < board.length; i ++) {		// 칠판 초기화
 			String input = br.readLine();
 			for(int j = 0; j < board[0].length; j ++) {
@@ -102,8 +101,8 @@ class Main {
 		}
 
 		int minResult = 64;
-		for(int i = 0; i < board.length - 8; i++) {			// 행 길이
-			for(int j = 0; j < board[0].length - 8; j++) {		// 열 길이
+		for(int i = 0; i <= board.length - 8; i++) {			// 행 길이
+			for(int j = 0; j <= board[0].length - 8; j++) {		// 열 길이
 				int paintingCnt = main.howManyPaint(main.getSlice(board, i, j));
 				if(paintingCnt < minResult) {	// 체스판을 만들기위한 최소 painting횟수 갱신
 					minResult = paintingCnt;
