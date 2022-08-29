@@ -45,7 +45,7 @@ public class Main {
 		double B = Double.parseDouble(st.nextToken());	// 밤되면 미끄러지는 거리 B
 		double V = Double.parseDouble(st.nextToken());	// 올라가고자하는 목표 정상거리 C
 		
-		double targetV = V - A;	// 낮 A만큼을 뺀 거리. 즉 targetV만큼 도달한다음에. 다음날 낮에 A만큼 한번만 올라가면 정상도함.
+		double targetV = V - A;	// 낮 A만큼을 뺀 거리. 즉 targetV만큼 도달한다음에. 다음날 낮에 A만큼 한번만 올라가면 정상에 도달함.
 		
 		int day = (int)Math.ceil(targetV / (A-B)); 
 		
