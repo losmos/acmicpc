@@ -16,7 +16,6 @@ import java.util.StringTokenizer;
 class Main {
 
 	/**
-	 * 
 	 * @param _inputNumbers	: 정렬해야될 input값 배열(함수가 호출될수록 점차적으로 정렬됨)
 	 * @param _start		: 정렬해야할 배열의 시작 주소값
 	 * @param _end			: 정렬해야할 배열의 마지막 주소값

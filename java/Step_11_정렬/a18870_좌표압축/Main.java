@@ -1,9 +1,9 @@
 ﻿/*
- 	문제출처 : BACKJOON, https://www.acmicpc.net/problem/11650
- 	문제번호 : 11650
- 	알고리즘 : 정렬
+ 	문제출처 : BACKJOON, https://www.acmicpc.net/problem/18870
+ 	문제번호 : 18870
+ 	알고리즘 : 정렬, 값 / 좌표 압축
 */
-package Step_11_정렬.a11650_좌표정렬하기;
+package Step_11_정렬.a18870_좌표압축;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -15,12 +15,6 @@ import java.util.StringTokenizer;
 
 class Main {
 
-	/**
-	 * @param _inputNumbers	: 정렬해야될 input값 배열(함수가 호출될수록 점차적으로 정렬됨)
-	 * @param _start		: 정렬해야할 배열의 시작 주소값
-	 * @param _end			: 정렬해야할 배열의 마지막 주소값
-	 * @return				: _inputNumbers
-	 */
 	public int[][] devide(int[][] _inputNumbers, int[][] _tempArr, int _start, int _end) {
 		if(_start < _end) {
 			int mid = (_start + _end) / 2;	// 배열의 중간지점
@@ -34,7 +28,6 @@ class Main {
 		return _inputNumbers;
 	}
 
-
 	public int[][] merge(int[][] _inputNumbers, int[][] _tempArr, int _start, int _end) {
 		int mid = (_start + _end) / 2;	// 배열의 중간지점
 		int leftPoint = _start;
@@ -43,7 +36,7 @@ class Main {
 
 		// 크기비교후 더 작은값을 tempArr에 차곡차곡 넣음
 		while(leftPoint <= mid && rightPoint <= _end) {		// 왼쪽요소가 먼저 정렬이 끝나거나, 오른쪽요소가 정렬이 먼저 끝났을경우 종료하고
-			if(_inputNumbers[leftPoint][0] < _inputNumbers[rightPoint][0]) {
+			if(_inputNumbers[leftPoint][0] <= _inputNumbers[rightPoint][0]) {
 				_tempArr[tempArrIndex][0] = _inputNumbers[leftPoint][0];
 				_tempArr[tempArrIndex][1] = _inputNumbers[leftPoint][1];
 				leftPoint++;
@@ -53,18 +46,6 @@ class Main {
 				_tempArr[tempArrIndex][1] = _inputNumbers[rightPoint][1];
 				rightPoint++;
 				tempArrIndex++;
-			} else {	// 두 수가 같을경우
-				if(_inputNumbers[leftPoint][1] <= _inputNumbers[rightPoint][1]) {
-					_tempArr[tempArrIndex][0] = _inputNumbers[leftPoint][0];
-					_tempArr[tempArrIndex][1] = _inputNumbers[leftPoint][1];
-					leftPoint++;
-					tempArrIndex++;
-				} else if(_inputNumbers[leftPoint][1] > _inputNumbers[rightPoint][1]) { 
-					_tempArr[tempArrIndex][0] = _inputNumbers[rightPoint][0];
-					_tempArr[tempArrIndex][1] = _inputNumbers[rightPoint][1];
-					rightPoint++;
-					tempArrIndex++;
-				}
 			}
 		}
 
@@ -93,30 +74,47 @@ class Main {
 		return _inputNumbers;	// 정렬된 배열 return
 	}
 
-	/*
-	 * 병합정렬 쓸거임
+
+	/* 이것도 input값과 입력된순서를 기억하고있다가, 출력을 입력순서대로 하면됨
+	 * 단, 정렬된값을 그대로출력하지않고 숫자 0부터 오름차순으로 변환해줌.
 	 */
 	public static void main(String[] args) throws IOException{
 		Main main = new Main();
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		StringTokenizer st = null;
+
 		int N = Integer.parseInt(br.readLine());
+		int[][] inputArr = new int[N][2];
+		int[][] tempArr = new int[N][2];
 
-		int[][] inputNumbers = new int[N][2];
-		int[][] tempArr = new int[N][2];	// 임시배열. _start 부터 _end 범위까지의 배열요소를 정리하여 가지고 있음
-
+		st = new StringTokenizer(br.readLine(), " ");
 		for(int i = 0; i < N; i ++) {
-			st = new StringTokenizer(br.readLine(), " ");
-			inputNumbers[i][0] = Integer.parseInt(st.nextToken());
-			inputNumbers[i][1] = Integer.parseInt(st.nextToken());
+			inputArr[i][0] = Integer.parseInt(st.nextToken());
+			inputArr[i][1] = i;
 		}
 
-		inputNumbers = main.devide(inputNumbers, tempArr, 0, N-1);
+		inputArr = main.devide(inputArr, tempArr, 0, N-1);	// 정렬 완료된 input값들
 
-		for(int i = 0; i < inputNumbers.length; i++) {
-			bw.write(String.valueOf(inputNumbers[i][0]) + " ");
-			bw.write(String.valueOf(inputNumbers[i][1]) + "\n");
+		int indexVal = 0;
+		int prevVal = inputArr[0][0];
+		inputArr[0][0] = 0;
+		int[] resultArr = new int[N];
+
+		for(int i = 1; i < inputArr.length; i++) {	// 숫자를 압축해줌
+			if(prevVal == inputArr[i][0]) {
+				prevVal = inputArr[i][0];
+				inputArr[i][0] = indexVal;
+			} else {
+				prevVal = inputArr[i][0];
+				inputArr[i][0] = ++indexVal;
+			}
+			resultArr[inputArr[i][1]] = inputArr[i][0];	// 입력순서대로 출력하기위해 입력순서번지수에 압축한숫자 할당
+		}
+
+		// 출력
+		for(int item : resultArr) {
+			bw.write(String.valueOf(item) + " ");
 		}
 
 		br.close();

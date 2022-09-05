@@ -1,9 +1,9 @@
 ﻿/*
- 	문제출처 : BACKJOON, https://www.acmicpc.net/problem/11650
- 	문제번호 : 11650
+ 	문제출처 : BACKJOON, https://www.acmicpc.net/problem/10814
+ 	문제번호 : 10814
  	알고리즘 : 정렬
 */
-package Step_11_정렬.a11650_좌표정렬하기;
+package Step_11_정렬.a10814_나이순정렬;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -15,12 +15,6 @@ import java.util.StringTokenizer;
 
 class Main {
 
-	/**
-	 * @param _inputNumbers	: 정렬해야될 input값 배열(함수가 호출될수록 점차적으로 정렬됨)
-	 * @param _start		: 정렬해야할 배열의 시작 주소값
-	 * @param _end			: 정렬해야할 배열의 마지막 주소값
-	 * @return				: _inputNumbers
-	 */
 	public int[][] devide(int[][] _inputNumbers, int[][] _tempArr, int _start, int _end) {
 		if(_start < _end) {
 			int mid = (_start + _end) / 2;	// 배열의 중간지점
@@ -93,30 +87,28 @@ class Main {
 		return _inputNumbers;	// 정렬된 배열 return
 	}
 
-	/*
-	 * 병합정렬 쓸거임
-	 */
 	public static void main(String[] args) throws IOException{
 		Main main = new Main();
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		StringTokenizer st = null;
-		int N = Integer.parseInt(br.readLine());
 
-		int[][] inputNumbers = new int[N][2];
-		int[][] tempArr = new int[N][2];	// 임시배열. _start 부터 _end 범위까지의 배열요소를 정리하여 가지고 있음
+		int N = Integer.parseInt(br.readLine());
+		int[][] age = new int[N][2];		// 첫번째[] : 나이, 두번째[] = 입력순서
+		int[][] tempArr = new int[N][2];
+		String[] name = new String[N];
 
 		for(int i = 0; i < N; i ++) {
 			st = new StringTokenizer(br.readLine(), " ");
-			inputNumbers[i][0] = Integer.parseInt(st.nextToken());
-			inputNumbers[i][1] = Integer.parseInt(st.nextToken());
+			age[i][0] = Integer.parseInt(st.nextToken());
+			age[i][1] = i;
+			name[i] = st.nextToken();
 		}
 
-		inputNumbers = main.devide(inputNumbers, tempArr, 0, N-1);
+		age = main.devide(age, tempArr, 0, N-1);
 
-		for(int i = 0; i < inputNumbers.length; i++) {
-			bw.write(String.valueOf(inputNumbers[i][0]) + " ");
-			bw.write(String.valueOf(inputNumbers[i][1]) + "\n");
+		for(int i = 0; i < N; i++) {
+			bw.write(String.valueOf(age[i][0]) + " " + name[age[i][1]] + "\n");	//나이와 입력순서가 매핑되서 있으므로. name[입력순서] 출력하면됨
 		}
 
 		br.close();
