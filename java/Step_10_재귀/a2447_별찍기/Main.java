@@ -3,7 +3,7 @@
  	문제번호 : 2447
  	알고리즘 : 분할정복, 재귀
 */
-package Step_09_재귀.a2447_별찍기;
+package Step_10_재귀.a2447_별찍기;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

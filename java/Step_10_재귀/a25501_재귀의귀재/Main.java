@@ -3,7 +3,7 @@
  	문제번호 : 25501
  	알고리즘 : 구현, 문자열, 재귀
 */
-package Step_09_재귀.a25501_재귀의귀재;
+package Step_10_재귀.a25501_재귀의귀재;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

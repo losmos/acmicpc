@@ -3,7 +3,7 @@
  	문제번호 : 2108
  	알고리즘 : 수학, 구현, 정렬
 */
-package Step_11_정렬.a2108_통계학;
+package Step_09_정렬.a2108_통계학;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

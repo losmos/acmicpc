@@ -3,7 +3,7 @@
  	문제번호 : 10872
  	알고리즘 : 수학, 구현, 조합론
 */
-package Step_09_재귀.a10872_팩토리얼;
+package Step_10_재귀.a10872_팩토리얼;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

@@ -3,7 +3,7 @@
  	문제번호 : 11651
  	알고리즘 : 정렬
 */
-package Step_11_정렬.a11651_좌표정렬하기2;
+package Step_09_정렬.a11651_좌표정렬하기2;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

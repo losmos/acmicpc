@@ -3,7 +3,7 @@
  	문제번호 : 1427
  	알고리즘 : 문자열, 정렬
 */
-package Step_11_정렬.a1427_소트인사이드;
+package Step_09_정렬.a1427_소트인사이드;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

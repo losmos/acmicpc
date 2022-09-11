@@ -3,7 +3,7 @@
  	문제번호 : 25501
  	알고리즘 : 구현, 문자열, 재귀
 */
-package Step_09_재귀.a24060_알고리즘수업_병합정렬1;
+package Step_10_재귀.a24060_알고리즘수업_병합정렬1;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

@@ -3,7 +3,7 @@
  	문제번호 : 10814
  	알고리즘 : 정렬
 */
-package Step_11_정렬.a10814_나이순정렬;
+package Step_09_정렬.a10814_나이순정렬;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

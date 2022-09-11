@@ -3,7 +3,7 @@
  	문제번호 : 10870
  	알고리즘 : 수학, 구현
 */
-package Step_09_재귀.a10870_피보나치수5;
+package Step_10_재귀.a10870_피보나치수5;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

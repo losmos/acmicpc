@@ -3,7 +3,7 @@
  	문제번호 : 1436
  	알고리즘 : 브루트포스 알고리즘
 */
-package Step_10_브루트포스.a1436_영화감독숌;
+package Step_11_브루트포스.a1436_영화감독숌;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
