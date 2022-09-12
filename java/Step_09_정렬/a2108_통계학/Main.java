@@ -13,7 +13,6 @@ import java.io.OutputStreamWriter;
 
 class SortInfo {
 	int avg;	// 산술평균
-	int median;	// 중앙값
 	int mode;	// 최빈값
 	int range;	// 범위
 	int[] sortedArr;	// 최종적으로 sorting된 결과를 담을 배열
