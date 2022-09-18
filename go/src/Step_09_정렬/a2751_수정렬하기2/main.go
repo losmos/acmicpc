@@ -54,7 +54,7 @@ func merge(_inputNumbers []int, _tempArr []int, _start int, _end int) []int {
 			_tempArr[tempArrIndex] = _inputNumbers[i]
 			tempArrIndex++
 		}
-	} else { // 오른쪽 배열 정렬이 전부 끝났다면, 이미 정렬되어있는 나머지 오른쪽 배열을 갖다붙임
+	} else { // 오른쪽 배열 정렬이 전부 끝났다면, 이미 정렬되어있는 나머지 왼쪽 배열을 갖다붙임
 		for i := leftPoint; i <= mid; i++ {
 			_tempArr[tempArrIndex] = _inputNumbers[i]
 			tempArrIndex++

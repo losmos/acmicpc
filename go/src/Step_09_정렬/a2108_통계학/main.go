@@ -121,7 +121,7 @@ func main() {
 	writer.WriteByte('\n')
 	writer.WriteString(strconv.Itoa(mode - correctionValue)) // 최빈값
 	writer.WriteByte('\n')
-	writer.WriteString(strconv.Itoa(inputRange)) // 최빈값
+	writer.WriteString(strconv.Itoa(inputRange)) // 범위
 	writer.WriteByte('\n')
 
 	writer.Flush()
