@@ -1,0 +1,62 @@
+﻿/*
+ 	문제출처 : BACKJOON, https://www.acmicpc.net/problem/2981
+ 	문제번호 : 2981
+ 	알고리즘 : 수학, 정수론, 유클리드 호제법
+*/
+package Step_14_정수론및조합론.a2981_검문;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.Arrays;
+
+class Main {
+
+	/**
+	 * 주어지는 input값을 어떠한수 M으로나누었을때 나머지가 모두 같으면 되는데
+	 * M을 ++ 해줘가며 input값들의 나머지가 전부 일치하는지 확인한다.
+	 * 나머지값은 inputArr배열을 오름차순으로 정렬후 inputArr[0]을 M으로나눈값을 나머지의 기준으로둠.
+	 * M을 1씩늘려가다가 inputArr[1]을 넘을때 inputArr[0]의 나머지값과 inputArr[1]의 나머지값은 같을 수 없으므로 더이상 검사를 진행할 필요 없음
+	 * (inputArr[1] - 1) 까지는 inputArr[0]의 값이 나머지값이 될 가능성이 있음(ex 1과 17은 16으로나누었을때 나머지가 1로 같음)
+	 * 
+	 * (추가+) 해당풀이방법은 시간초과뜸.
+	 */
+	public static void main(String[] args) throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		int N = Integer.parseInt(br.readLine());
+		int[] inputArr = new int[N];
+
+		for(int i = 0; i < N; i++) {
+			inputArr[i] = Integer.parseInt(br.readLine());
+		}
+
+		Arrays.sort(inputArr);	// 정렬
+		int reaminder = 0;		// 나머지
+		int M = 2;				// M
+		boolean isSame = true;	// isSame이 true라면 모든 input에대해 M으로 나눈 나머지값이 같은 경우
+		for(int i = 0; i < inputArr[1]; i++) {
+			isSame = true;					// true로 초기화
+			reaminder = inputArr[0] % M;	// 기준이될 나머지 값
+			for(int j = 0; j < N; j++) {
+				if(inputArr[j] % M != reaminder) {	//input배열의 모든 나머지값이 remainder 로 같지않은경우가 하나라도 발견된다면
+					isSame = false;	// 나머지가 같지 않음
+					M++;	// answer을 1 증가시키고 다시 나머지연산해볼거임
+					break;
+				}
+			}
+
+			if(isSame) {
+				bw.write(String.valueOf(M + "\n"));
+				M++;
+			}
+		}
+
+		br.close();
+		bw.flush();
+		bw.close();
+	}
+}
