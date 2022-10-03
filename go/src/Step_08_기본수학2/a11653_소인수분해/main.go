@@ -1,7 +1,7 @@
 /*
-	문제출처 : BACKJOON, https://www.acmicpc.net/problem/11653
-	문제번호 : 11653
-	알고리즘 : 수학, 정수론, 소수 판정
+문제출처 : BACKJOON, https://www.acmicpc.net/problem/11653
+문제번호 : 11653
+알고리즘 : 수학, 정수론, 소수 판정
 */
 package main
 
