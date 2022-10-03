@@ -1,186 +1,88 @@
 ﻿/*
- 	문제출처 : BACKJOON, https://www.acmicpc.net/problem/9663
- 	문제번호 : 9663
- 	알고리즘 : 브루트포스 알고리즘, 백트래킹
+ 	문제출처 : BACKJOON, https://www.acmicpc.net/problem/15652
+ 	문제번호 : 15652
+ 	알고리즘 : 백트래킹
 */
 package Step_15_백트래킹.a9663_NQueen;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 
-class IO {
-	Scanner scan = new Scanner(System.in);
-	
-	public int input()
-	{
-		int N = scan.nextInt();
-		
-		return N;
-	}
-}
+/**
+ * 문제풀이 컨셉
+ * 퀸이 위치할수있는 체스판의 2차원배열 정보를 recursive call 할때마다 사본을만들어서 파라미터로 던졌었는데
+ * 메모리초과가 났다.
+ * 
+ * 문제풀이 방식을 바꿔서 진행할 예정.
+ * 배열은 1차원 배열로도 충분하단것을 알았고, 퀸이 위치할수 체스판 정보를 따로 가지고있지않고,
+ * 재귀를 탈때마다 세로,대각선 방향으로 이미 다른 퀸이 있는지 검사하는방식을 진행할것임.
+ */
 
-class Calc{
-	
-	int N = 0;
-	boolean[] checkBoard = null;
-	int resultCnt = 0;
-	int yLastQueen = -10;
-	
-	int tempYval = -10; 
-	
-	ArrayList<Integer> tempAr = new ArrayList<Integer>();	// nQueen 위치 출력용
-	
-	public int calc(int _N)
-	{
-		N = _N;
-		checkBoard = new boolean[_N];
-		nQueen(0);
-		
-		return resultCnt;
-		
-	}
-	
-	public void nQueen(int _Yval)
-	{
-		if(_Yval > tempYval)
-		{
-			tempYval = _Yval;	//_Yval > tempYval 일경우는 체스판 다음 행으로 이동해서 진입한 case.
-		}
-		else if (tempYval > _Yval)
-		{
-			tempYval = _Yval +1 ;	//tempYval > _Yval 일경우는 체스판 다음 행에서 까꾸로 돌아온 case.
-		}
-		
-		int lastNqueen = -10;
-		
-		for( int i = 0; i < N; i++)
-		{
-			if(_Yval == 0)
-			{
-				yLastQueen = -10;
-//				if(tempAr.size() > 0)
-//					tempAr.remove(0);
-//				lastNqueen = -10;
-//				checkBoard[0] = false;  
-			}
-			
-//			if(checkBoard[i] == false && i != (yLastQueen -1) && (i != yLastQueen +1))
-			if(checkBoard[i] == false && (_Yval == 0 || ddd(i, tempAr, _Yval)?true : false) )
-			{
-				if(lastNqueen != -10)
-				{
-					checkBoard[lastNqueen] = false;  
-					tempAr.remove(tempAr.size()-1);	// nQueen 위치 출력용
-					tempYval = _Yval;
-					lastNqueen = -10;
-					
-					if(tempAr.size() -1 > 0)
-					{
-						yLastQueen = tempAr.get(tempAr.size()-2);
-					}
-					else
-					{
-						yLastQueen = -10;
-					}
-				}
-				
-				
-				tempAr.add(i);	// nQueen 위치 출력용
-				yLastQueen = tempAr.get(tempAr.size()-1);
-				checkBoard[i] = true;
-				lastNqueen = i;
-				
-				if(_Yval == N-1)
-				{
-					resultCnt ++;
-					
-					// nQueen 위치 출력용
-					/*
-					String resultStr = "";
-					for(int x=0; x<tempAr.size(); x++)
-					{
-						resultStr = resultStr + tempAr.get(x) + "";
-					}
-					System.out.println("RESULT : " + resultStr);
-					*/
-					
-				}
-				else
-				{
-//					yLastQueen = lastNqueen;
-					nQueen(_Yval+1);
-					/*
-					 * if(lastNqueen != -10) { checkBoard[lastNqueen] = false;
-					 * tempAr.remove(tempAr.size()-1); // nQueen 위치 출력용 lastNqueen = -10; }
-					 */
-				}
-				
+class Main {
+
+	int result = 0;
+
+	// 
+	public boolean canPlaceQueen(int[] whereisQueen, int nowDepth) {
+
+		for(int i = 0; i < nowDepth; i++) {
+			if(whereisQueen[nowDepth] == whereisQueen[i]) {	// 세로축에 퀸이 있다면
+    				return false;
 			}
 
-			if(i == N-1)
-			{
-				if(lastNqueen != -10)
-				{
-					checkBoard[lastNqueen] = false;
-					tempAr.remove(tempAr.size()-1);	// nQueen 위치 출력용
-					tempYval = _Yval;
-					if(tempAr.size() -1 > 0)
-					{
-						yLastQueen = tempAr.get(tempAr.size()-2);
-					}
-					else
-					{
-						yLastQueen = -10;
-					}
-				}
+			if(Math.abs(nowDepth - i) == Math.abs(whereisQueen[nowDepth] - whereisQueen[i])) {	// 대각선에 퀸이 있다면
+				return false;
 			}
-			
 		}
-	}
-	
-	public boolean ddd(int _i, ArrayList<Integer> _tempAr, int _Yval)
-	{
-		for(int i=0; i<_tempAr.size(); i++)
-		{
-			if(tempYval > _Yval)
-			{
-				if(_tempAr.size()-2-i >= 0)
-				{
-					if(_i == _tempAr.get(_tempAr.size()-2-i) -i-1 || _i == _tempAr.get(_tempAr.size()-2-i) +i+1 )
-					{
-						return false;
-					}
-					
-				}
-			}
-			else
-			{
-				if(_i == _tempAr.get(_tempAr.size()-1-i) -i-1 || _i == _tempAr.get(_tempAr.size()-1-i) +i+1 )
-				{
-					return false;
-				}
-			}
-			
-		}
-		
+
 		return true;
 	}
-	
-}
 
+	// 퀸이 위치할 수 있는지 검사하고 위치할 수 있다면 퀸을 배치시키는 함수
+	public void dfs(int[] whereisQueen, int nowDepth, int N) {
+		if(nowDepth == N) {
+			result++;
+			return;
+		}
 
-public class Main {
-	
-	public static void main(String args[])
-	{
-		IO io = new IO();
-		Calc calc = new Calc();
-		
-		int N = io.input();
-		int result = calc.calc(N);
-		
-		System.out.println(result);
-		
+		for(int i = 0; i < N; i++) {
+			whereisQueen[nowDepth] = i;	// 퀸을 (x,y)좌표 (nowDepth,i) 값놓아본다.
+			if(canPlaceQueen(whereisQueen, nowDepth)) {	// (x,y)좌표 (nowDepth,i)위치에 놓은 퀸을 그대로 두어도 되는지 검사
+				dfs(whereisQueen, nowDepth+1, N);
+			}
+		}
+
+		// 퀸위치 출력용
+		/*
+		for(int v : whereisQueen) {
+			System.out.print(v + " ");
+		}
+		System.out.println();
+		 */
+
+		return;
 	}
-		
+
+	public static void main(String[] args) throws IOException{
+		Main main = new Main();
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+		int N = Integer.parseInt(br.readLine());
+
+		// 퀸의 위치를 저장할 배열 생성. 1차원 배열만으로도 퀸의 x,y 좌표값을 알 수 있는 이유는
+		// i번째 index값인 i값을 기본적으로 x좌표로 두고 생략 할 수 있기때문. 배열값은 y좌표.
+		// ex) whereisQueen[3] 값이 2 라면. queen은 (x,y) = (3,2) 위치에 있는 것임.
+		int[] whereisQueen = new int[N];			
+
+		main.dfs(whereisQueen, 0, N);
+
+		bw.write(main.result + "");
+		br.close();
+		bw.flush();
+		bw.close();
+	}
 }
