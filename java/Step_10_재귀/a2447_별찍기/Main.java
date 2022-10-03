@@ -60,6 +60,15 @@ public class Main {
 				}
 			}
 		}
+		// 중간결과 출력
+		/*
+		for(String[] item1 : newStarSquare) {
+			for(String item2 : item1) {
+				System.out.print(item2);
+			}
+			System.out.println();
+		}
+		 */
 		return makeStarSquare(new StarSquare(newStarSquare, size), _N/3);	// call 재귀
 	}
 
