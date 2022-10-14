@@ -1,0 +1,77 @@
+﻿/*
+ 	문제출처 : BACKJOON, https://www.acmicpc.net/problem/1904
+ 	문제번호 : 1904
+ 	알고리즘 : 다이나믹 프로그래밍
+*/
+package Step_16_동적계획법1.a1904_01타일;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.math.BigInteger;
+
+
+/**
+ * [문제풀이 컨셉]
+ * 이 문제는 조합으로 접근해야되는줄알고, 파스칼의 삼각형으로 풀려고 했었으나. 길을 잘못짚었었고.
+ * 
+ * nPr 순열공식 nPr = n! / (n-r)! 을 활용해서 내나름대로의 점화식을 만듦
+ * 예를들어서
+ * n = 5일때
+ * 
+ * x x x x x 다섯자리가있음. 여기서 만들 수 있는 경우의 수는 1가지임. 왜냐하면 0은 타일이붙어있어서 00으로 2bit를 차지하기때문에 1bit 자리에 들어갈 수 있는 숫자는 1 뿐이고
+ * 1 1 1 1 1 은 순서가 없기때문에 1가지경우임.
+ * 마찬가지로 
+ * 
+ *  x x x  00  경우를보면
+ * ↑ ↑ ↑ ↑	화살표 사이사이에 00을 넣을수있음. 따라서 x x x 00 이 가질수있는 경우의 수는 총 4가지임. (00xxx, x00xx, xx00x, xxx00)
+ * 
+ * 다시 처음부터 정리해보면
+ * 
+ * x x x x x	 =>	(n-0)! / (n-0)! 0!
+ * x x x 00		 => (n-1)! / (n-2)! 1!
+ * x 00 00		 => (n-2)! / (n-4)! 2!
+ * 
+ * 위와같은 패턴을 얻을 수 있음.
+ * n = 6일때도 마찬가지인데
+ * 
+ * x x x x x x	 => (n-0)! / (n-0)! 0!
+ * x x x x 00	 => (n-1)! / (n-2)! 1!
+ * x x 00 00	 => (n-2)! / (n-4)! 2!
+ * 00 00 00		 => (n-3)! / (n-6)! 3!
+ * 
+ * 위에처럼 특정패턴을 얻을 수 있어서
+ * dp를활용하여 구현을 하였음
+ * 
+ * (참고로 아래 코드에서 모듈러 분배법칙을 활용하고자 했으나, 나눗셈에는 적용이되질않아 부득이하게 BigInteger를 쓸 수 밖에 없었음)
+ */
+public class Main {
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+		int N = Integer.parseInt(br.readLine());
+
+		BigInteger[] factorial = new BigInteger[N+1];
+
+		factorial[0] = BigInteger.valueOf(1);
+		factorial[1] = BigInteger.valueOf(1);
+		for(int i = 2; i <= N; i++) {
+			factorial[i] = factorial[i-1].multiply(BigInteger.valueOf(i));
+		}
+
+		BigInteger result = BigInteger.valueOf(0);
+
+		for(int i = 0, range = N/2; i <= range; i++) {
+			result = result.add(factorial[N-i].divide((factorial[N-(i*2)].multiply(factorial[i]))));
+		}
+
+		br.close();
+		bw.write(result.remainder(BigInteger.valueOf(15746)) + "");
+		bw.flush();
+		bw.close();
+	}
+}
