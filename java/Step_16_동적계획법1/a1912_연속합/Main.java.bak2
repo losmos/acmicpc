@@ -1,0 +1,87 @@
+﻿/*
+ 	문제출처 : BACKJOON, https://www.acmicpc.net/problem/1912
+ 	문제번호 : 1912
+ 	알고리즘 : 다이나믹 프로그래밍
+*/
+package Step_16_동적계획법1.a1912_연속합;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
+
+/**
+ * [문제풀이 컨셉]
+ * 
+ * 내용추가+)
+ * 반례
+ * 10
+ * 10 -4 3 1 5 6 -35 12 1 -1
+ * answer : 21
+ * output : 13
+ * 
+ * max값기준으로 해서는 항상 맞는 답이 나올 수 없음. max값이 포함된 부분수열 {12, 1} max값이 포함되지 않은 부분수열 {10, -4, 3, 1, 5, 6}의 합이 더 크다.
+ * max값기준이아니라 for문돌면서 i를 기준으로 왼쪽방향, 오른쪽방향의 sum값의 max값을 구해본다.
+ * 즉, 다시말해 만들 수 있는 연속된 부분수열의 합을 모두 구해보는 방법(브루트포스)
+ * 
+ * ===========================================================================
+ * 
+ * 중간에 음수가나온다고 끊으면 안된다.
+ * 예를들어서 수열 1, 2, 3, -1, 100이 주어졌다고 했을때. 오른쪽 방향으로 진행중, 중간에 음수가 있더라도 그 다음 더 큰수가 올 수 있기 때문에 중간에 멈춰서 max를 판단하면 안됨.
+ * 이런식으로 수열의 부분수열을 구하기위해서는 경우의수가 너무나도많음. 즉, 끝까지 더해봐야 max값이 어떤지알수가있음
+ * 따라서 수열에서 제일큰수 max값을 구한다음에 그값을 기준으로 좌든 우든 index값을 차례차례 더해가면서 sum값을 먼저 쭉 구하고, 거기서 제일 큰 부분수열을구해서 한쪽방향의 범위를 정함.
+ * 나머지 방향으로 진행하면서 max sum 값을구하면 부분수열의 max값을 구할 수 있음.
+ * 즉, 다시 말해서 수열의 max값을기준으로 왼쪽으로 하나하나 더해가며 진행하다보면 maxSum 값을 구할 수 있고
+ * 오른쪽방향으로도 maxSum값을 구한뒤에. 두수를 더해주고. 양쪽에 중복으로 더해준 max값만 빼주면.
+ * 부분수열의 maxSum값이 몇인지구할 수 있음
+ * 
+ */
+public class Main {
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		StringTokenizer st = null;	
+		int n = Integer.parseInt(br.readLine());
+		int[] arr = new int[n];		// input값 저장
+		
+		st = new StringTokenizer(br.readLine());
+		for(int i = 0; i < n; i++) {
+			arr[i] = Integer.parseInt(st.nextToken());
+		}
+		
+		int max = -1000;
+
+		for(int i = 0; i < n; i++) {		// for돌면서 i를기준점으로 왼쪽방향으로 누적max값 구하고, 오른쪽방향으로 누적 max값을 구해본다.
+
+			int leftSum = 0;				// 기준점 i로부터 왼쪽 방향으로 더해가는 누적값
+			int leftMaxSum = -1000;
+			for(int j = i; j >= 0; j--) {	// 기준점 i로 부터 왼쪽 방향으로 더해감
+				leftSum += arr[j];
+				if(leftSum > leftMaxSum) {	// leftMax값 갱신
+					leftMaxSum = leftSum;
+				}
+			}
+	
+			int rightSum = 0;					// 기준점 i로부터 오른쪽 방향으로 더해가는 누적값
+			int rightMaxSum = -1000;
+			for(int j = i; j < n; j++) {		// 기준점 i로부터 오른쪽 방향으로 더해감
+				rightSum += arr[j];
+				if(rightSum > rightMaxSum) {	// rightMax값 갱신
+					rightMaxSum = rightSum;
+				}
+			}
+
+			if(leftMaxSum + rightMaxSum - arr[i] > max) {	// 전체 부분수열합의 max값 갱신조건
+				max = leftMaxSum + rightMaxSum - arr[i];	// leftMaxSum, rightMaxSum 양쪽에 arr[i]값을 중복해서 더해준상태이기때문에 arr[i]값을 한번 빼줌
+			}
+		}
+
+		br.close();
+		bw.write(max + "");	
+		bw.flush();
+		bw.close();
+	}
+}
