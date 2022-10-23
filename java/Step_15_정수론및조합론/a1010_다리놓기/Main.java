@@ -3,7 +3,7 @@
  	문제번호 : 1010
  	알고리즘 : 수학, 다이나믹 프로그래밍, 조합론
 */
-package Step_14_정수론및조합론.a1010_다리놓기;
+package Step_15_정수론및조합론.a1010_다리놓기;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

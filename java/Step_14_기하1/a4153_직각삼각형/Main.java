@@ -3,7 +3,7 @@
  	문제번호 : 4153
  	알고리즘 : 수학, 기하학, 피타고라스 정리
 */
-package Step_13_기하1.a4153_직각삼각형;
+package Step_14_기하1.a4153_직각삼각형;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

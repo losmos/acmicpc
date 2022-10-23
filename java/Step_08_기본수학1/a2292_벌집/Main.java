@@ -3,7 +3,7 @@
  	문제번호 : 2292
  	알고리즘 : 수학
 */
-package Step_07_기본수학1.a2292_벌집;
+package Step_08_기본수학1.a2292_벌집;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

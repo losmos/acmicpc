@@ -3,7 +3,7 @@
  	문제번호 : 14889
  	알고리즘 : 브루트포스 알고리즘, 백트래킹
 */
-package Step_15_백트래킹.a14889_스타트와링크;
+package Step_16_백트래킹.a14889_스타트와링크;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

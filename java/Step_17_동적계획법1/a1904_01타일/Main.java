@@ -3,7 +3,7 @@
  	문제번호 : 1904
  	알고리즘 : 다이나믹 프로그래밍
 */
-package Step_16_동적계획법1.a1904_01타일;
+package Step_17_동적계획법1.a1904_01타일;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

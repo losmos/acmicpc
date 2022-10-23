@@ -3,7 +3,7 @@
  	문제번호 : 14888
  	알고리즘 : 브루트포스 알고리즘, 백트래킹
 */
-package Step_15_백트래킹.a14888_연산자끼워넣기;
+package Step_16_백트래킹.a14888_연산자끼워넣기;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

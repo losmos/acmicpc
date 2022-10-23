@@ -3,7 +3,7 @@
  	문제번호 : 5086
  	알고리즘 : 수학, 사칙연산
 */
-package Step_14_정수론및조합론.a5086_배수와약수;
+package Step_15_정수론및조합론.a5086_배수와약수;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

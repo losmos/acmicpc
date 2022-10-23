@@ -3,7 +3,7 @@
  	문제번호 : 9461
  	알고리즘 : 수학, 다이나믹 프로그래밍
 */
-package Step_16_동적계획법1.a9461_파도반수열;
+package Step_17_동적계획법1.a9461_파도반수열;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

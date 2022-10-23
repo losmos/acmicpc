@@ -3,7 +3,7 @@
  	문제번호 : 15651
  	알고리즘 : 백트래킹
 */
-package Step_15_백트래킹.a15651_N과M3;
+package Step_16_백트래킹.a15651_N과M3;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

@@ -3,7 +3,7 @@
  	문제번호 : 11478
  	알고리즘 : 자료구조, 문자열, 해시를 사용한 집합과 맵, 트리를 사용한 집합과 맵
 */
-package Step_12_집합과맵.a11478_서로다른부분문자열의개수;
+package Step_13_집합과맵.a11478_서로다른부분문자열의개수;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

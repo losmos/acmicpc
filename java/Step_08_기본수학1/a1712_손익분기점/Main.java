@@ -3,7 +3,7 @@
  	문제번호 : 1712
  	알고리즘 : 수학, 사칙연산
 */
-package Step_07_기본수학1.a1712_손익분기점;
+package Step_08_기본수학1.a1712_손익분기점;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

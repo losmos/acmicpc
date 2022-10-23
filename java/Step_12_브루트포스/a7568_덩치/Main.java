@@ -3,7 +3,7 @@
  	문제번호 : 7568
  	알고리즘 : 구현, 브루트포스 알고리즘
 */
-package Step_11_브루트포스.a7568_덩치;
+package Step_12_브루트포스.a7568_덩치;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

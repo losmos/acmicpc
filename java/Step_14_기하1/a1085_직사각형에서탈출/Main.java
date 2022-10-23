@@ -3,7 +3,7 @@
  	문제번호 : 1085
  	알고리즘 : 수학, 기하학
 */
-package Step_13_기하1.a1085_직사각형에서탈출;
+package Step_14_기하1.a1085_직사각형에서탈출;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

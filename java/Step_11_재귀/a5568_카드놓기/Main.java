@@ -3,7 +3,7 @@
  	문제번호 : 5568
  	알고리즘 : 자료 구조, 브루트포스 알고리즘, 해시를 사용한 집합과 맵, 재귀
 */
-package Step_10_재귀.a5568_카드놓기;
+package Step_11_재귀.a5568_카드놓기;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

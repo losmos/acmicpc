@@ -3,7 +3,7 @@
  	문제번호 : 2981
  	알고리즘 : 수학, 정수론, 유클리드 호제법
 */
-package Step_14_정수론및조합론.a2981_검문;
+package Step_15_정수론및조합론.a2981_검문;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

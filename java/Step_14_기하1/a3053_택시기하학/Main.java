@@ -3,7 +3,7 @@
  	문제번호 : 3053
  	알고리즘 : 수학, 기하학
 */
-package Step_13_기하1.a3053_택시기하학;
+package Step_14_기하1.a3053_택시기하학;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

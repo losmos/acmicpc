@@ -3,7 +3,7 @@
  	문제번호 : 11729
  	알고리즘 : 재귀
 */
-package Step_10_재귀.a11729_하노이탑이동순서;
+package Step_11_재귀.a11729_하노이탑이동순서;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

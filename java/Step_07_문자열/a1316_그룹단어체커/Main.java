@@ -3,7 +3,7 @@
  	문제번호 : 1316
  	알고리즘 : 구현, 문자열
 */
-package Step_06_문자열.a1316_그룹단어체커;
+package Step_07_문자열.a1316_그룹단어체커;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

@@ -3,7 +3,7 @@
  	문제번호 : 11720
  	알고리즘 : 수학, 구현, 문자열
 */
-package Step_06_문자열.a11720_숫자의합;
+package Step_07_문자열.a11720_숫자의합;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

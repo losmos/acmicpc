@@ -3,7 +3,7 @@
  	문제번호 : 2477
  	알고리즘 : 수학, 구현, 기하학
 */
-package Step_13_기하1.a2477_참외밭;
+package Step_14_기하1.a2477_참외밭;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

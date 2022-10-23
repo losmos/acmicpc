@@ -3,7 +3,7 @@
  	문제번호 : 25305
  	알고리즘 : 구현, 정렬
 */
-package Step_09_정렬.a25305_커트라인;
+package Step_10_정렬.a25305_커트라인;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

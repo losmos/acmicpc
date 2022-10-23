@@ -3,7 +3,7 @@
  	문제번호 : 11051
  	알고리즘 : 수학, 다이나믹 프로그래밍, 조합론
 */
-package Step_14_정수론및조합론.a11051_이항계수2;
+package Step_15_정수론및조합론.a11051_이항계수2;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

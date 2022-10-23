@@ -3,7 +3,7 @@
  	문제번호 : 1769
  	알고리즘 : 구현, 문자열, 재귀
 */
-package Step_10_재귀.a1769_3의배수;
+package Step_11_재귀.a1769_3의배수;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

@@ -3,7 +3,7 @@
  	문제번호 : 1620
  	알고리즘 : 자료구조, 해시를 사용한 집합과 맵
 */
-package Step_12_집합과맵.a1620_나는야포켓몬마스터이다솜;
+package Step_13_집합과맵.a1620_나는야포켓몬마스터이다솜;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

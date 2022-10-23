@@ -3,7 +3,7 @@
  	문제번호 : 9375
  	알고리즘 : 수학, 자료구조, 조합론, 해시를 사용한 집합과 맵
 */
-package Step_14_정수론및조합론.a9375_패션왕신해빈;
+package Step_15_정수론및조합론.a9375_패션왕신해빈;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

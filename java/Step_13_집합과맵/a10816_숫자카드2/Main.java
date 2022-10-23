@@ -3,7 +3,7 @@
  	문제번호 : 10816
  	알고리즘 : 자료구조, 정렬, 이분탐색, 해시를 사용한 집합과 맵
 */
-package Step_12_집합과맵.a10816_숫자카드2;
+package Step_13_집합과맵.a10816_숫자카드2;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

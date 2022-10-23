@@ -3,7 +3,7 @@
  	문제번호 : 6603
  	알고리즘 : 수학, 조합론, 백트래킹, 재귀
 */
-package Step_10_재귀.a6603_로또;
+package Step_11_재귀.a6603_로또;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

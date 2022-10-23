@@ -3,7 +3,7 @@
  	문제번호 : 18870
  	알고리즘 : 정렬, 값 / 좌표 압축
 */
-package Step_09_정렬.a18870_좌표압축;
+package Step_10_정렬.a18870_좌표압축;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

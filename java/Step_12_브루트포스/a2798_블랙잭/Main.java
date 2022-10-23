@@ -3,7 +3,7 @@
  	문제번호 : 2798
  	알고리즘 : 브루트포스 알고리즘
 */
-package Step_11_브루트포스.a2798_블랙잭;
+package Step_12_브루트포스.a2798_블랙잭;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

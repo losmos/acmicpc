@@ -3,7 +3,7 @@
  	문제번호 : 2775
  	알고리즘 : 수학, 구현
 */
-package Step_07_기본수학1.a2775_부녀회장이될테야;
+package Step_08_기본수학1.a2775_부녀회장이될테야;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

@@ -3,7 +3,7 @@
  	문제번호 : 10994
  	알고리즘 : 구현, 재귀
 */
-package Step_10_재귀.a10994_별찍기19;
+package Step_11_재귀.a10994_별찍기19;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

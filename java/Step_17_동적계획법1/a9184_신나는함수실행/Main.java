@@ -3,7 +3,7 @@
  	문제번호 : 9184
  	알고리즘 : 다이나믹 프로그래밍, 재귀
 */
-package Step_16_동적계획법1.a9184_신나는함수실행;
+package Step_17_동적계획법1.a9184_신나는함수실행;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

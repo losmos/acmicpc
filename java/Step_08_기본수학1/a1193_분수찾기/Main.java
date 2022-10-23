@@ -3,7 +3,7 @@
  	문제번호 : 1193
  	알고리즘 : 수학, 구현
 */
-package Step_07_기본수학1.a1193_분수찾기;
+package Step_08_기본수학1.a1193_분수찾기;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

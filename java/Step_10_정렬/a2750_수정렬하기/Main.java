@@ -3,7 +3,7 @@
  	문제번호 : 2750
  	알고리즘 : 구현, 정렬
 */
-package Step_09_정렬.a2750_수정렬하기;
+package Step_10_정렬.a2750_수정렬하기;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

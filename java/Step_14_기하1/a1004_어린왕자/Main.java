@@ -3,7 +3,7 @@
  	문제번호 : 1004
  	알고리즘 : 기하학
 */
-package Step_13_기하1.a1004_어린왕자;
+package Step_14_기하1.a1004_어린왕자;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

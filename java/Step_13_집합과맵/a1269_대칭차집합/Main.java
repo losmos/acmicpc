@@ -3,7 +3,7 @@
  	문제번호 : 1269
  	알고리즘 : 자료구조, 해시를 사용한 집합과 맵, 트리를 사용한 집합과 맵
 */
-package Step_12_집합과맵.a1269_대칭차집합;
+package Step_13_집합과맵.a1269_대칭차집합;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

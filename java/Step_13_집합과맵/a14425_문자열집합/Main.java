@@ -3,7 +3,7 @@
  	문제번호 : 14425
  	알고리즘 : 자료구조, 문자열, 해시를 사용한 집합과 맵, 트리를 사용한 집합과 맵
 */
-package Step_12_집합과맵.a14425_문자열집합;
+package Step_13_집합과맵.a14425_문자열집합;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

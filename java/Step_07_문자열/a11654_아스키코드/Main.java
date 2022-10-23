@@ -4,7 +4,7 @@
  	알고리즘 : 구현
 */
 
-package Step_06_문자열.a11654_아스키코드;
+package Step_07_문자열.a11654_아스키코드;
 
 import java.util.Scanner;
 

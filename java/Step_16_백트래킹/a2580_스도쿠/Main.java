@@ -3,7 +3,7 @@
  	문제번호 : 2580
  	알고리즘 : 백트래킹
 */
-package Step_15_백트래킹.a2580_스도쿠;
+package Step_16_백트래킹.a2580_스도쿠;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

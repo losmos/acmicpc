@@ -3,7 +3,7 @@
  	문제번호 : 4948
  	알고리즘 : 수학, 정수론, 소수 판정, 에라토스테네스의 체
 */
-package Step_08_기본수학2.a4948_베르트랑공준;
+package Step_09_기본수학2.a4948_베르트랑공준;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

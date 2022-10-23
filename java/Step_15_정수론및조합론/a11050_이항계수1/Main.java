@@ -3,7 +3,7 @@
  	문제번호 : 11050
  	알고리즘 : 수학, 구현, 조합론
 */
-package Step_14_정수론및조합론.a11050_이항계수1;
+package Step_15_정수론및조합론.a11050_이항계수1;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

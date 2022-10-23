@@ -3,7 +3,7 @@
  	문제번호 : 10815
  	알고리즘 : 자료구조, 정렬, 이분탐색
 */
-package Step_12_집합과맵.a10815_숫자카드;
+package Step_13_집합과맵.a10815_숫자카드;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

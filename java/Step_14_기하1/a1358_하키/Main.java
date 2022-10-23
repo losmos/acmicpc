@@ -3,7 +3,7 @@
  	문제번호 : 1358
  	알고리즘 : 기하학
 */
-package Step_13_기하1.a1358_하키;
+package Step_14_기하1.a1358_하키;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

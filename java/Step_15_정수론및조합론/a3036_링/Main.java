@@ -3,7 +3,7 @@
  	문제번호 : 3036
  	알고리즘 : 수학, 정수론, 유클리드 호제법
 */
-package Step_14_정수론및조합론.a3036_링;
+package Step_15_정수론및조합론.a3036_링;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

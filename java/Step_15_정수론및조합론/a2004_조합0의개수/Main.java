@@ -3,7 +3,7 @@
  	문제번호 : 2004
  	알고리즘 : 수학, 정수론
 */
-package Step_14_정수론및조합론.a2004_조합0의개수;
+package Step_15_정수론및조합론.a2004_조합0의개수;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

@@ -3,7 +3,7 @@
  	문제번호 : 2609
  	알고리즘 : 수학, 정수론, 유클리드 호제법
 */
-package Step_14_정수론및조합론.a2609_최대공약수와최소공배수;
+package Step_15_정수론및조합론.a2609_최대공약수와최소공배수;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

@@ -3,7 +3,7 @@
  	문제번호 : 1764
  	알고리즘 : 자료구조, 문자열, 정렬, 해시를 사용한 집합과 맵
 */
-package Step_12_집합과맵.a1764_듣보잡;
+package Step_13_집합과맵.a1764_듣보잡;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

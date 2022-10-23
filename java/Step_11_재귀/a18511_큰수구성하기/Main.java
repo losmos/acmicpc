@@ -3,7 +3,7 @@
  	문제번호 : 18511
  	알고리즘 : 브루트포스 알고리즘, 재귀
 */
-package Step_10_재귀.a18511_큰수구성하기;
+package Step_11_재귀.a18511_큰수구성하기;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

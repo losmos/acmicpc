@@ -3,7 +3,7 @@
  	문제번호 : 10250
  	알고리즘 : 수학, 구현, 사칙연산
 */
-package Step_07_기본수학1.a10250_ACM호텔;
+package Step_08_기본수학1.a10250_ACM호텔;
 
 import java.io.BufferedReader;
 import java.io.IOException;

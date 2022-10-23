@@ -3,7 +3,7 @@
  	문제번호 : 10809
  	알고리즘 : 구현, 문자열
 */
-package Step_06_문자열.a10809_알파벳찾기;
+package Step_07_문자열.a10809_알파벳찾기;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

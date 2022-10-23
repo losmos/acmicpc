@@ -3,7 +3,7 @@
  	문제번호 : 10989
  	알고리즘 : 정렬
 */
-package Step_09_정렬.a10989_수정렬하기3;
+package Step_10_정렬.a10989_수정렬하기3;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

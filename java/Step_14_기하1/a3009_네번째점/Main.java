@@ -3,7 +3,7 @@
  	문제번호 : 3009
  	알고리즘 : 구현, 기하학
 */
-package Step_13_기하1.a3009_네번째점;
+package Step_14_기하1.a3009_네번째점;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

@@ -3,7 +3,7 @@
  	문제번호 : 1018
  	알고리즘 : 브루트포스 알고리즘
 */
-package Step_11_브루트포스.a1018_체스판다시칠하기;
+package Step_12_브루트포스.a1018_체스판다시칠하기;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
