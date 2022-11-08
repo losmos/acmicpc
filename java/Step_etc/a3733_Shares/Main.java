@@ -18,8 +18,8 @@ public class Main {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         StringTokenizer st = null;
 
+        // 파일의 끝 EOF가 올때까지 입력받는다.
         String input = "";
-
         while((input = br.readLine()) != null && !input.isEmpty()) {
             st = new StringTokenizer(input, " ");
 
