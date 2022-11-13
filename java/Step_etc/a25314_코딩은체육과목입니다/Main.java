@@ -1,7 +1,7 @@
 /*
  	문제출처 : BACKJOON, https://www.acmicpc.net/problem/25372
  	문제번호 : 11382
- 	알고리즘 : 수학, 구현, 사칙연산
+ 	알고리즘 : 구현
 */
 package Step_etc.a25314_코딩은체육과목입니다;
 
