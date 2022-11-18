@@ -3,7 +3,7 @@
  	문제번호 : 1931
  	알고리즘 : 그리디 알고리즘, 정렬
 */
-package Step_18_그리디알고리즘.a1931_회의실배정;
+package Step_19_그리디알고리즘.a1931_회의실배정;
 
 
 import java.util.Arrays;
