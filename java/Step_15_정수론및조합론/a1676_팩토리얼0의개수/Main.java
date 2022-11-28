@@ -31,7 +31,8 @@ class Main {
 			factorial = factorial.multiply(BigInteger.valueOf(i));
 			
 			// 10으로 나눴다가 다시 10으로곱해준값이 원래값과 동일하다는 뜻은. 1의자리수가 0이라는 의미.
-			if(factorial.divide(BigInteger.valueOf(10)).multiply(BigInteger.valueOf(10)).equals(factorial)) {
+			// if(factorial.divide(BigInteger.valueOf(10)).multiply(BigInteger.valueOf(10)).equals(factorial)) {
+			if(factorial.mod(BigInteger.valueOf(10)).toString().equals("0")) {
 				result++;	// 0의 개수 +1
 				factorial = factorial.divide(BigInteger.valueOf(10));	// factorial를 10으로나눠주면서 1의자리수 0을 없앰(오른쪽으로 시프트)
 			}
