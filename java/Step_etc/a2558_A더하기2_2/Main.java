@@ -3,7 +3,7 @@
  	문제번호 : 2558
  	알고리즘 : 수학, 구현, 사칙연산
 */
-package Step_etc.a2558_A더하기2빼기2;
+package Step_etc.a2558_A더하기2_2;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

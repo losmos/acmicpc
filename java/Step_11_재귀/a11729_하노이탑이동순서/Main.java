@@ -205,8 +205,8 @@ public class Main {
 			_hanoiTopInfo.hanoiStack[_elseIndex].push(block);
 			_hanoiTopInfo.makeResult(_targetIndex, _elseIndex);
 			block = _hanoiTopInfo.hanoiStack[_nowIndex].pop();
-			_hanoiTopInfo.hanoiStack[_targetIndex].push(block);
 			_hanoiTopInfo.makeResult(_nowIndex, _targetIndex);
+			_hanoiTopInfo.hanoiStack[_targetIndex].push(block);
 			block = _hanoiTopInfo.hanoiStack[_elseIndex].pop();
 			_hanoiTopInfo.hanoiStack[_nowIndex].push(block);
 			_hanoiTopInfo.makeResult(_elseIndex, _nowIndex);
@@ -303,17 +303,22 @@ public class Main {
 	// 최상단에있는 제일작은 블럭 3개를 기준으로 할거임. 편의상 이 3개블락을 통칭해서 '기준블락' 이라 칭하겠음.
 	// 제일 큰 블락을 편의상 '제일무거운 블락'이라 칭하겠음.
 
+	// 제일 첫 실행에서는, 기준블락을 이동시킨다. 이후부터 아래 로직적용용
+
+	// ====== 반복 start ======
 	// '제일무거운 블락'이 위치한곳에서 꼭대기에있는 블락을 pop함
 		// 만약에 '제일무거운 블락'이 '기준블락과' 동일한곳에 위치한다면 해당index에서 pop하지 않고. 남은 두 index중에서 좀더 크기가 작은 블락이 있는index에서 pop한다.
-		// 만약에 '제일무거운 블락' 위치한곳에서 pop할 수 없다면(pop을해도 push할 자리가 없다면). 다른 나머지 index에서 pop함.(둘중에 하나는 '기준블락'이 위치해있으므로 남는자리는 하나임)
+		// 만약에 '제일무거운 블락' 위치한곳에서 pop할 수 없다면(pop을해도 push할 자리가 없다면). 기준블락이 위치하지않은 다른 나머지 index에서 pop함.
 	// push할 targetIndex는 '기준블락'이 위치하지 않은곳으로 함.
 	
 	// '기준블락' 포함해서 연속된 블락개수가 홀수개라면. targetIndex로 이동
-		// targetIndex	: '기준블락'을 제외한 index에있는 블락 중 더 작은블락이 위치한곳
+		// targetIndex	: '기준블락'을 제외한 index에있는 존재하는 블락이 있는 index 중 더 작은블락이 위치한곳
 	// '기준블락' 포함해서 연속된 블락개수가 짝수개라면. elseIndex로 이동
-		// elseIndex	: '기준블락'을 제외한 index에있는 블락 중 더 큰 블락이 위치한곳
+		// elseIndex	: '기준블락'을 제외한 index에있는 존재하는 블락이 있는 index 중 더 큰 블락이 위치한곳
+	
+	// ====== 반복 end ======
 
-	// '제일무거운 블락'이 3번째자리로 이동했다면 더이상 움직일 필요가 없으므로. 앞으로는 '제일무거운 블락'을 그보다 한단계 작은크기의 블럭으로 변경시킨다.
+	// 참고로 위 반복을 수행중에, '제일무거운 블락'이 3번째자리로 이동했다면 더이상 움직일 필요가 없으므로. 앞으로는 '제일무거운 블락'을 그보다 한단계 작은크기의 블럭으로 변경시킨다.
 	public static void main(String[] args) throws IOException {
 		// long start = System.nanoTime();
 
