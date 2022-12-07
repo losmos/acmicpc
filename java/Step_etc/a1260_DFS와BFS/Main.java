@@ -10,16 +10,18 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.StringTokenizer;
 
 class NodeInfo {
 	int N;
-	boolean[][] arr = null; // arr[n][m] == true 일경우 노드 n과 m은 간선으로 연결되어있다.
-	boolean[] visited = null;
+	boolean[][] arr = null; 	// arr[n][m] == true 일경우 노드 n과 m은 간선으로 연결되어있다.
+	boolean[] visited = null;	// dfs visited
 
 	StringBuilder sb = new StringBuilder();
 
-	NodeInfo(int N, int M) {
+	NodeInfo(int N) {
 		this.N = N;
 		arr = new boolean[N+1][N+1];
 		visited = new boolean[N+1];
@@ -48,6 +50,27 @@ public class Main {
 		return nodeInfo;
 	}
 
+	public StringBuilder bfs(NodeInfo nodeInfo, int V) {
+		Queue<Integer> q = new LinkedList<>();
+		StringBuilder sb = new StringBuilder();
+		q.add(V);
+		nodeInfo.visited[V] = true;
+
+		while(!q.isEmpty()) {
+			V = q.poll();
+			sb.append(V).append(" ");
+
+			for(int i = 1; i <= nodeInfo.N; i++) {
+				if(nodeInfo.arr[V][i] && !nodeInfo.visited[i]) {
+					q.add(i);
+					nodeInfo.visited[i] = true;
+				}
+			}
+		}
+
+		return sb;
+	}
+
 	public static void main(String[] args) throws IOException {
 		Main main = new Main();
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -57,24 +80,27 @@ public class Main {
 
 		
 		int N = Integer.parseInt(st.nextToken());	// 정점(노드)의 개수
-		int M = Integer.parseInt(st.nextToken());	// 간선의 개수
+		int M = Integer.parseInt(st.nextToken());	// 간선(엣지)의 개수
 		int V = Integer.parseInt(st.nextToken());	// 출발 노드번호
 		
-		NodeInfo nodeInfo = new NodeInfo(N, M);
+		NodeInfo nodeInfo = new NodeInfo(N);
 
 		for(int i = 0; i < M; i++) {
 			st = new StringTokenizer(br.readLine());
 			int node1 = Integer.parseInt(st.nextToken());
 			int node2 = Integer.parseInt(st.nextToken());
 
-			nodeInfo.arr[node1][node2] = true;
-			nodeInfo.arr[node2][node1] = true;
+			nodeInfo.arr[node1][node2] = true;	// 간선 연결
+			nodeInfo.arr[node2][node1] = true;	// 간선 연결
 		}
 
-		nodeInfo = main.dfs(nodeInfo, V);	// node번호는 1번부터 시작함
+		nodeInfo = main.dfs(nodeInfo, V);	// V부터 시작함
 
+		nodeInfo.visited = new boolean[N+1];
+		
 		br.close();
-		bw.write(nodeInfo.sb.toString());
+		bw.write(nodeInfo.sb.toString() + "\n");
+		bw.write(main.bfs(nodeInfo, V).toString());
 		bw.flush();
 		bw.close();
 	}
