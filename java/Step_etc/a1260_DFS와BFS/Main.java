@@ -30,24 +30,20 @@ class NodeInfo {
 
 public class Main {
 
-	public NodeInfo dfs(NodeInfo nodeInfo, int index) {
+	public void dfs(NodeInfo nodeInfo, int index, int depth) {
 
-		for(int i = index; i <= nodeInfo.N; i++) {
-			if(!nodeInfo.visited[i]) {
-				nodeInfo.visited[i] = true;
-				nodeInfo.sb.append(i).append(" ");
-			} else {
-				continue;
-			}
-
-			for(int j = 1; j <= nodeInfo.N; j++) {
-				if(nodeInfo.arr[i][j] && !nodeInfo.visited[j]) {	// i와j가 간선으로 연결되어있고, 한번도 방문 한적 없으면
-					dfs(nodeInfo, j);
-				}
-			}
+		if(depth == nodeInfo.arr.length) {
+			return;
 		}
 
-		return nodeInfo;
+		nodeInfo.visited[index] = true;
+		nodeInfo.sb.append(index).append(" ");
+		
+		for(int j = 1; j <= nodeInfo.N; j++) {
+			if(nodeInfo.arr[index][j] && !nodeInfo.visited[j]) {	// i와j가 간선으로 연결되어있고, 한번도 방문 한적 없으면
+				dfs(nodeInfo, j, depth++);
+			}
+		}
 	}
 
 	public StringBuilder bfs(NodeInfo nodeInfo, int V) {
@@ -94,7 +90,7 @@ public class Main {
 			nodeInfo.arr[node2][node1] = true;	// 간선 연결
 		}
 
-		nodeInfo = main.dfs(nodeInfo, V);	// V부터 시작함
+		main.dfs(nodeInfo, V, 1);	// V부터 시작함
 
 		nodeInfo.visited = new boolean[N+1];
 		
