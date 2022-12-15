@@ -19,7 +19,7 @@ import java.util.StringTokenizer;
  * 
  * 참조 : https://fbtmdwhd33.tistory.com/60
  * 
- * 
+ * 위 블로그 참조하여 겨우 품.
  */
 public class Main {
 
@@ -32,33 +32,27 @@ public class Main {
 		int N = Integer.parseInt(st.nextToken());	// 물품 수
 		int K = Integer.parseInt(st.nextToken());	// 버틸수있는 최대 무게
 
-		int[] itemWeight = new int[N];
-		int[] itemValue = new int[N];
-		int[][] dp = new int[N][K+1];	// N : 아이템번호, K : 아이템무게
+		int[] itemWeight = new int[N+1];
+		int[] itemValue = new int[N+1];
+		int[][] dp = new int[N+1][K+1];	// N : 아이템번호, K : 아이템무게
 		
-		for(int i = 0; i < N; i++) {
+		for(int i = 1; i <= N; i++) {
 			st = new StringTokenizer(br.readLine());
 			itemWeight[i] = Integer.parseInt(st.nextToken());	// 물건의 무게
 			itemValue[i] = Integer.parseInt(st.nextToken());	// 물건의 가치
-			for(int j = itemWeight[i]; j <= K; j++) {	// 반복문을 돌면서, 매번 무게를 J만큼 담을 수 있을때의 조건을 체크한다. (+ i번째 아이템까지를 가진채로)
-				if(itemWeight[i] <= K) {	// 아이템의무게가 가방에 수용할 수 있는 최대무게를 넘지 않을경우
-					if(i == 0) {
-						dp[i][j] = itemValue[i];
-						continue;
-					}
+			for(int j = 1; j <= K; j++) {	// 반복문을 돌면서, 매번 무게를 J만큼 담을 수 있을때의 조건을 체크한다. (+ i번째 아이템까지를 가진채로)
 
-					if(dp[i-1][j] + itemWeight[i] <= K) {	// 전까지 담았던 아이템에 더해서(+) 더 담을 수 있을경우
-						// dp[i][j] = dp[i-1][j] + itemValue[i];
-						dp[i][j] = Math.max(dp[i-1][j] + itemValue[i], itemValue[i] + dp[i][K-i]);
-					} else {
-						dp[i][j] = Math.max(dp[i-1][j], itemValue[i] + dp[i-1][K-i]);
-					}
-				} else {
-					dp[i][j] = dp[i][j-1];
+				dp[i][j] = dp[i-1][j];	// 직전 아이템까지의 dp정보를 그대로 내려받는다.
+
+				if(j - itemWeight[i] >= 0) {	// 무게를 J만큼 담을 수 있을때, J - itemWeight[i] >= 0 이라면 (현재 아이템의 무게를 추가하고도 더넣을 공간이 있다면)
+					dp[i][j] = Math.max(dp[i-1][j], itemValue[i] + dp[i-1][j-itemWeight[i]]);	// 직전 아이템까지의 가치값 dp value와 , 현재 아이템의 가치 + 남은 무게의 가치중 큰값을 취한다.
 				}
 			}
 		}
 
 		br.close();
+		bw.write(dp[N][K] + "");
+		bw.flush();
+		bw.close();
 	}
 }
