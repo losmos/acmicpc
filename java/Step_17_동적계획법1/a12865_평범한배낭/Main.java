@@ -29,43 +29,36 @@ public class Main {
 		StringTokenizer st = null;
 		
 		st = new StringTokenizer(br.readLine());
-		int N = Integer.parseInt(st.nextToken());
-		int K = Integer.parseInt(st.nextToken());
-		int[] arrW = new int[N];
-		int[] arrV = new int[N];
-		int[] dpW = new int[N];
-		int[] dpV = new int[N];
+		int N = Integer.parseInt(st.nextToken());	// 물품 수
+		int K = Integer.parseInt(st.nextToken());	// 버틸수있는 최대 무게
+
+		int[] itemWeight = new int[N];
+		int[] itemValue = new int[N];
+		int[][] dp = new int[N][K+1];	// N : 아이템번호, K : 아이템무게
 		
 		for(int i = 0; i < N; i++) {
 			st = new StringTokenizer(br.readLine());
-			arrW[i] = Integer.parseInt(st.nextToken());
-			arrV[i] = Integer.parseInt(st.nextToken());
-		}
-
-		int max = 0;
-		for(int i = 0; i < N; i++) {
-			if(arrW[i] <= K) {
-				dpW[i] = arrW[i];
-				dpV[i] = arrV[i];
-			}
-
-			for(int j = 0; j < i; j++) {
-				if(dpW[j] + arrW[i] <= K && arrV[j] != 0) {
-					if(dpV[j] + arrV[i] > dpV[i]) {
-						dpV[i] = dpV[j] + arrV[i];
-						dpW[i] = dpW[j] + arrW[i];
+			itemWeight[i] = Integer.parseInt(st.nextToken());	// 물건의 무게
+			itemValue[i] = Integer.parseInt(st.nextToken());	// 물건의 가치
+			for(int j = itemWeight[i]; j <= K; j++) {	// 반복문을 돌면서, 매번 무게를 J만큼 담을 수 있을때의 조건을 체크한다. (+ i번째 아이템까지를 가진채로)
+				if(itemWeight[i] <= K) {	// 아이템의무게가 가방에 수용할 수 있는 최대무게를 넘지 않을경우
+					if(i == 0) {
+						dp[i][j] = itemValue[i];
+						continue;
 					}
-				}
-			}
 
-			if(dpV[i] > max) {
-				max = dpV[i];
+					if(dp[i-1][j] + itemWeight[i] <= K) {	// 전까지 담았던 아이템에 더해서(+) 더 담을 수 있을경우
+						// dp[i][j] = dp[i-1][j] + itemValue[i];
+						dp[i][j] = Math.max(dp[i-1][j] + itemValue[i], itemValue[i] + dp[i][K-i]);
+					} else {
+						dp[i][j] = Math.max(dp[i-1][j], itemValue[i] + dp[i-1][K-i]);
+					}
+				} else {
+					dp[i][j] = dp[i][j-1];
+				}
 			}
 		}
 
 		br.close();
-		bw.write(max + "");
-		bw.flush();
-		bw.close();
 	}
 }
