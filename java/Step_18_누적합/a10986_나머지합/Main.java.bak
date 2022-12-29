@@ -1,0 +1,65 @@
+﻿/*
+ 	문제출처 : BACKJOON, https://www.acmicpc.net/problem/10986
+ 	문제번호 : 10986
+ 	알고리즘 : 수학, 누적 합
+*/
+package Step_18_누적합.a10986_나머지합;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.StringTokenizer;
+
+/**
+ * [문제풀이 컨셉]
+ * 연속된 부분구간의 합을 구하는 것이므로(불연속적이라면 알고리즘이 달라져야됨)
+ * 2중for문 돌리면서 버블정렬느낌(?)으로 각 요소를 더한 누적합(dp랑 비슷한개념)을 구한다.
+ */
+public class Main {
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		StringTokenizer st = null;
+
+		st = new StringTokenizer(br.readLine());
+		int N = Integer.parseInt(st.nextToken());
+		int M = Integer.parseInt(st.nextToken());
+		
+		int[] arr = new int[N];
+		int[] prefixSum = new int[N];
+		st = new StringTokenizer(br.readLine());
+		for(int i = 0; i < N; i++) {
+			arr[i] = Integer.parseInt(st.nextToken());
+		}
+
+		int result = 0;
+
+		// 버블정렬(?) 느낌으로 요소들의 누적합을 구해서 dp에 저장한다.
+		for(int i = 0; i < N; i++) {
+			
+			prefixSum[i] = arr[i];
+			for(int j = i; j < N; j++) {
+
+				if(j == i) {	// inner for문의 첫번째 요소 검사는 j-1을 플러스 해주지 않기 위해 continue
+					if(prefixSum[j] % M == 0) {
+						result++;
+					}
+					continue;
+				}
+
+				prefixSum[j] = prefixSum[j-1] + arr[j];	// 누적합
+				if(prefixSum[j] % M == 0) {
+					result++;
+				}
+			}
+		}
+
+		br.close();
+		bw.write(result + "");
+		bw.flush();
+		bw.close();
+	}
+}
