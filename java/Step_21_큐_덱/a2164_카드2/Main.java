@@ -3,7 +3,7 @@
  	문제번호 : 2164
  	알고리즘 : 자료 구조, 큐
 */
-package Step_etc.a2164_카드2;
+package Step_21_큐_덱.a2164_카드2;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
